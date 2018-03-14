@@ -1,0 +1,44 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+    <h1>Contrat</h1>
+
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contrat.id }}</td>
+            </tr>
+            <tr>
+                <th>Startdate</th>
+                <td>{% if contrat.startDate %}{{ contrat.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Enddate</th>
+                <td>{% if contrat.endDate %}{{ contrat.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Salairebrute</th>
+                <td>{{ contrat.salaireBrute }}</td>
+            </tr>
+            <tr>
+                <th>Typecontrat</th>
+                <td>{{ contrat.typeContrat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contrat_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('contrat_edit', { 'id': contrat.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

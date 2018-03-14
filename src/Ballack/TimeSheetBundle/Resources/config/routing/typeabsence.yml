@@ -1,0 +1,24 @@
+typeabsence_index:
+    path:     /
+    defaults: { _controller: "BallackTimeSheetBundle:TypeAbsence:index" }
+    methods:  GET
+
+typeabsence_show:
+    path:     /{id}/show
+    defaults: { _controller: "BallackTimeSheetBundle:TypeAbsence:show" }
+    methods:  GET
+
+typeabsence_new:
+    path:     /new
+    defaults: { _controller: "BallackTimeSheetBundle:TypeAbsence:new" }
+    methods:  [GET, POST]
+
+typeabsence_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BallackTimeSheetBundle:TypeAbsence:edit" }
+    methods:  [GET, POST]
+
+typeabsence_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BallackTimeSheetBundle:TypeAbsence:delete" }
+    methods:  DELETE

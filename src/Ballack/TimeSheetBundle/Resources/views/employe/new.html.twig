@@ -1,0 +1,134 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+    <h1>Employe creation</h1>
+<form action="{{ path('employe_new') }}" method="post" {{ form_enctype(form) }} class="form-horizontal form-label-left">
+
+            {# Les erreurs générales du formulaire. #}
+            {{ form_errors(form) }}
+    <div class="" style="border: #0000F0 solid">
+    <div class="form-group">
+        {# Génération du label. #}
+        <div class="control-label col-md-3 col-sm-3 col-xs-12">
+            {{ form_label(form.compte.email, "email ") }}
+        </div>
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors(form.compte.email) }}
+        <div class="control-label col-md-3 col-sm-3 col-xs-12">
+            {# Génération de l'input. #}
+            {{ form_widget(form.compte.email) }}
+        </div></div>
+    <div class="form-group">
+        {# Génération du label. #}
+        <div class="control-label col-md-3 col-sm-3 col-xs-12">
+            {{ form_label(form.compte.username, "username ") }}
+        </div>
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors(form.compte.username) }}
+        <div class="control-label col-md-3 col-sm-3 col-xs-12">
+            {# Génération de l'input. #}
+            {{ form_widget(form.compte.username) }}
+        </div></div>
+    <div class="form-group">
+        {# Génération du label. #}
+        <div class="control-label col-md-3 col-sm-3 col-xs-12">
+
+        </div>
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors(form.compte.plainPassword) }}
+        <div class="control-label col-md-3 col-sm-3 col-xs-12">
+            {# Génération de l'input. #}
+            {{ form_widget(form.compte.plainPassword) }}
+        </div></div>
+    </div>
+            <div class="form-group">
+                {# Génération du label. #}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {{ form_label(form.nom, "nom ") }}
+                </div>
+                {# Affichage des erreurs pour ce champ précis. #}
+                {{ form_errors(form.nom) }}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.nom) }}
+                </div></div>
+                <div class="form-group">
+                {# Génération du label. #}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {{ form_label(form.prenom, "prenom ") }}
+                </div>
+                {# Affichage des erreurs pour ce champ précis. #}
+                {{ form_errors(form.prenom) }}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.prenom) }}
+                </div></div>
+                <div class="form-group">
+                {# Génération du label. #}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {{ form_label(form.situation, "situation ") }}
+                </div>
+                {# Affichage des erreurs pour ce champ précis. #}
+                {{ form_errors(form.situation) }}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.situation) }}
+                </div></div>
+                <div class="form-group">
+                {# Génération du label. #}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {{ form_label(form.dateNaissance, "dateNaissance ") }}
+                </div>
+                {# Affichage des erreurs pour ce champ précis. #}
+                {{ form_errors(form.dateNaissance) }}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.dateNaissance) }}
+                </div></div>
+                <div class="form-group">
+                {# Génération du label. #}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {{ form_label(form.departement, "departement ") }}
+                </div>
+                {# Affichage des erreurs pour ce champ précis. #}
+                {{ form_errors(form.departement) }}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.departement) }}
+                </div></div>
+                <div class="form-group">
+                {# Génération du label. #}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {{ form_label(form.isChef, "isChef ") }}
+                </div>
+                {# Affichage des erreurs pour ce champ précis. #}
+                {{ form_errors(form.isChef) }}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.isChef) }}
+                </div></div>
+
+
+                {{ form_rest(form) }}
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <button class="btn btn-primary" type="button">Cancel</button>
+                    <button class="btn btn-primary" type="reset">Reset</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+
+
+        </form>
+{#    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}#}
+
+    <ul>
+        <li>
+            <a href="{{ path('employe_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

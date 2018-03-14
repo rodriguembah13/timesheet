@@ -1,0 +1,87 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+    <h1>Projet creation</h1>
+<form action="{{ path('departement_new') }}" method="post" {{ form_enctype(form) }} class="form-horizontal form-label-left">
+
+            {# Les erreurs générales du formulaire. #}
+            {{ form_errors(form) }}
+
+            <div class="form-group">
+                {# Génération du label. #}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {{ form_label(form.nomProjet, "nomProjet ") }}
+                </div>
+                {# Affichage des erreurs pour ce champ précis. #}
+                {{ form_errors(form.nomProjet) }}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.nomProjet) }}
+                </div></div>
+                <div class="form-group">
+                {# Génération du label. #}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {{ form_label(form.client, "client ") }}
+                </div>
+                {# Affichage des erreurs pour ce champ précis. #}
+                {{ form_errors(form.client) }}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.client) }}
+                </div></div>
+                <div class="form-group">
+                {# Génération du label. #}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {{ form_label(form.description, "description ") }}
+                </div>
+                {# Affichage des erreurs pour ce champ précis. #}
+                {{ form_errors(form.description) }}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.description) }}
+                </div></div>
+                <div class="form-group">
+                {# Génération du label. #}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {{ form_label(form.dateStart, "dateStart ") }}
+                </div>
+                {# Affichage des erreurs pour ce champ précis. #}
+                {{ form_errors(form.dateStart) }}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.dateStart) }}
+                </div></div>
+                <div class="form-group">
+                {# Génération du label. #}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {{ form_label(form.dateStop, "dateStop ") }}
+                </div>
+                {# Affichage des erreurs pour ce champ précis. #}
+                {{ form_errors(form.dateStop) }}
+                <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.dateStop) }}
+                </div></div>
+           
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <button class="btn btn-primary" type="button">Cancel</button>
+                    <button class="btn btn-primary" type="reset">Reset</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+            {{ form_rest(form) }}
+
+        </form>
+{#    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+#}
+    <ul>
+        <li>
+            <a href="{{ path('projet_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

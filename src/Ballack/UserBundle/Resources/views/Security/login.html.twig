@@ -1,0 +1,50 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="container">
+    <div class="jumbotron">
+            <center>
+                <h1 class="animated wow fadeInDown">TimeSheet Application</h1>
+                </center>
+        </div> 
+    {% if error %}
+        <div>{{ error }}</div>
+    {% endif %}
+    {#       <form role="form">
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd">
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox"> Remember me</label>
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>#}
+
+    <div class="panel col-md-5 center-block" style="margin-left: 25%">
+        <div class="panel-body ">
+            <form action="{{ path("fos_user_security_check") }}" method="post"  class="form form-label-left">
+                <div class="form-group">
+                    <label for="username">{{ 'security.login.username'|trans([], 'FOSUserBundle') }}</label>
+                    <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" />
+                </div>
+                <div class="form-group">
+                    <label for="password">{{ 'security.login.password'|trans([], 'FOSUserBundle') }}</label>
+                    <input class="form-control" type="password" id="password" name="_password" />
+                </div> 
+                <div class="checkbox">
+                    <label for="remember_me">  <input type="checkbox" id="remember_me" />
+                        {{ 'security.login.remember_me'|trans([], 'FOSUserBundle') }}</label>
+                </div>
+
+                <button type="submit" class="btn btn-success">{{ 'security.login.submit'|trans([], 'FOSUserBundle') }}</button>
+            </form>
+            <p>
+                <a href="{{ path('fos_user_change_password') }}">{{ 'resetting.request.submit'|trans([], 'FOSUserBundle') }}</a>
+            </p>
+        </div></div></div>
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+{# Dans notre layout, il faut définir le block body #}
+{% block main %}
+    
+    <div>
+        {% block content %}
+        {% block fos_user_content %}{% endblock %}
+        {% endblock %}
+    </div>
+{% endblock %}
