@@ -14,6 +14,10 @@ $(function () {
 
 $(document).ready(function ()
 {
+    jQuery('.datepicker').datetimepicker();
+  /*  $('.datepicker').datepicker({
+        locale: 'fr'
+    });*/
     $('#side-menu').metisMenu();
     $('.search input[type="submit"]').hide();
 

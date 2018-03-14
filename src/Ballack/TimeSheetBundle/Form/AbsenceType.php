@@ -24,7 +24,8 @@ class AbsenceType extends AbstractType{
     {
         $builder
             ->add('startDate')
-            ->add('endDate')
+            ->add('endDate','datetime',array('widget'=>'single_text',
+                'attr'=>array('class'=>'datepicker')))
             ->add('remarque')
             ->add('typeAbsence', 'entity', array(
                     'class' => 'Ballack\TimeSheetBundle\Entity\TypeAbsence',

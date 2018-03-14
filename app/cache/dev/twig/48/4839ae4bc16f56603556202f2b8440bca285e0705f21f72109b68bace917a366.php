@@ -30,21 +30,9 @@ class __TwigTemplate_e7398caf3dfea434175cb4535b7d5993fa6620bb58f61dc22ab2d97b3aa
         // line 4
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.choisir_langue"), "html", null, true);
         echo "<span class=\"caret\"></span></button>
-            <ul class=\"dropdown-menu\">
-                <li><a href=\"";
-        // line 6
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("setlocale", array("language" => "en"));
-        echo "\"><img src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/en.gif"), "html", null, true);
-        echo "\" alt=\"\" /> English</a></li>
-                <li><a href=\"";
-        // line 7
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("setlocale", array("language" => "fr"));
-        echo "\"><img src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/fr.gif"), "html", null, true);
-        echo "\" alt=\"\" /> French</a></li>
-            </ul>
-        </div>
+            ";
+        // line 9
+        echo "        </div>
     </li>
     ";
         // line 11
@@ -103,7 +91,7 @@ class __TwigTemplate_e7398caf3dfea434175cb4535b7d5993fa6620bb58f61dc22ab2d97b3aa
 
     public function getDebugInfo()
     {
-        return array (  86 => 21,  79 => 19,  72 => 18,  67 => 16,  63 => 15,  58 => 13,  53 => 12,  51 => 11,  42 => 7,  36 => 6,  31 => 4,  26 => 1,);
+        return array (  74 => 21,  67 => 19,  60 => 18,  55 => 16,  51 => 15,  46 => 13,  41 => 12,  39 => 11,  35 => 9,  31 => 4,  26 => 1,);
     }
 
     public function getSourceContext()
@@ -112,10 +100,10 @@ class __TwigTemplate_e7398caf3dfea434175cb4535b7d5993fa6620bb58f61dc22ab2d97b3aa
     <li> 
         <div class=\"dropdown\" style=\"margin-top:5px\">
             <button class=\"btn btn-success dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\"><i class='glyphicon glyphicon-flag'></i>{{ 'menu.choisir_langue'|trans }}<span class=\"caret\"></span></button>
-            <ul class=\"dropdown-menu\">
+            {#<ul class=\"dropdown-menu\">
                 <li><a href=\"{{ path('setlocale',{'language':'en'}) }}\"><img src=\"{{ asset('images/en.gif') }}\" alt=\"\" /> English</a></li>
                 <li><a href=\"{{ path('setlocale',{'language':'fr'}) }}\"><img src=\"{{ asset('images/fr.gif') }}\" alt=\"\" /> French</a></li>
-            </ul>
+            </ul>#}
         </div>
     </li>
     {% if is_granted(\"IS_AUTHENTICATED_REMEMBERED\") %}

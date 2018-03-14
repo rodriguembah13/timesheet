@@ -23,7 +23,9 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BallackTimeSheetBundle:Default:sibar.html.twig"));
 
         // line 1
-        echo "<div class=\"navbar-default sidebar\" role=\"navigation\">
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 2
+            echo "<div class=\"navbar-default sidebar\" role=\"navigation\">
     <div class=\"sidebar-nav navbar-collapse\">
         <ul class=\"nav\" id=\"side-menu\">
             <li class=\"sidebar-search\">
@@ -46,15 +48,15 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
                 <ul class=\"nav nav-second-level\">
                     <li>
                         <a href=\"";
-        // line 23
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_index");
-        echo "\">Liste demandes</a>
+            // line 24
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_index");
+            echo "\">Liste demandes</a>
                     </li>
                     <li>
                         <a href=\"";
-        // line 26
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_index");
-        echo "\">Mes demandes</a>
+            // line 27
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_my");
+            echo "\">Mes demandes</a>
                     </li>
                     <li>
                         <a href=\"#\">Etat demande</a>
@@ -72,15 +74,18 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
                         <a href=\"#\">Absences</a>
                     </li>
                 </ul>
-            </li>
-            <li>
+            </li>";
+            // line 45
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CHEF")) {
+                // line 46
+                echo "            <li>
                 <a href=\"#\"><i class=\"fa fa-check fa-fw\"></i> Validation<span class=\"fa plus-minus\"></span></a>
                 <ul class=\"nav nav-second-level\">
                     <li>
                         <a href=\"";
-        // line 49
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validation");
-        echo "\">Conges</a>
+                // line 50
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validation");
+                echo "\">Conges</a>
                     </li>
                     <li>
                         <a href=\"#\">Heures Supplémentaires</a>
@@ -88,63 +93,70 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
                  
                 </ul>
                 <!-- /.nav-second-level -->
-            </li>
-            <li>
+            </li>";
+            }
+            // line 59
+            echo "            <li>
                 <a href=\"#\"><i class=\"fa fa-sitemap fa-fw\"></i> Projet<span class=\"fa plus-minus\"></span></a>
                 <ul class=\"nav nav-second-level\">
                     <li>
                         <a href=\"";
-        // line 62
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projet_index");
-        echo "\">Liste Projets</a>
+            // line 63
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projet_index");
+            echo "\">Liste Projets</a>
                     </li>
                     <li>
                         <a href=\"";
-        // line 65
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_index");
-        echo "\">Liste Clients</a>
+            // line 66
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_index");
+            echo "\">Liste Clients</a>
                     </li>
                     
                 </ul>
                 <!-- /.nav-second-level -->
             </li>";
-        // line 71
-        echo "            <li>
+            // line 71
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+                // line 72
+                echo "            <li>
                 <a href=\"#\"><i class=\"fa fa-files-o fa-fw\"></i> Administration<span class=\"fa plus-minus\"></span></a>
                 <ul class=\"nav nav-second-level\">
                     <li>
                         <a href=\"";
-        // line 75
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_index");
-        echo "\">Liste Employes</a>
+                // line 76
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_index");
+                echo "\">Liste Employes</a>
                     </li>
                     <li>
                         <a href=\"";
-        // line 78
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("departement_index");
-        echo "\">Liste Departements</a>
+                // line 79
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("departement_index");
+                echo "\">Liste Departements</a>
                     </li>
                     <li>
                         <a href=\"";
-        // line 81
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contrat_index");
-        echo "\">Liste Contrats</a>
+                // line 82
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contrat_index");
+                echo "\">Liste Contrats</a>
                     </li>
                     <li>
                         <a href=\"";
-        // line 84
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("typeabsence_index");
-        echo "\">Liste Type</a>
+                // line 85
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("typeabsence_index");
+                echo "\">Liste Type</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>";
-        // line 89
-        echo "        </ul>
+            }
+            // line 90
+            echo "        </ul>
     </div>
     <!-- /.sidebar-collapse -->
-</div>
-<!-- /.navbar-static-side -->
+</div>";
+        }
+        // line 94
+        echo "<!-- /.navbar-static-side -->
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -163,12 +175,13 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
 
     public function getDebugInfo()
     {
-        return array (  143 => 89,  136 => 84,  130 => 81,  124 => 78,  118 => 75,  112 => 71,  104 => 65,  98 => 62,  82 => 49,  56 => 26,  50 => 23,  26 => 1,);
+        return array (  159 => 94,  153 => 90,  145 => 85,  139 => 82,  133 => 79,  127 => 76,  121 => 72,  119 => 71,  111 => 66,  105 => 63,  99 => 59,  87 => 50,  81 => 46,  79 => 45,  58 => 27,  52 => 24,  28 => 2,  26 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("<div class=\"navbar-default sidebar\" role=\"navigation\">
+        return new Twig_Source("{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+<div class=\"navbar-default sidebar\" role=\"navigation\">
     <div class=\"sidebar-nav navbar-collapse\">
         <ul class=\"nav\" id=\"side-menu\">
             <li class=\"sidebar-search\">
@@ -193,7 +206,7 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
                         <a href=\"{{ path('absence_index') }}\">Liste demandes</a>
                     </li>
                     <li>
-                        <a href=\"{{ path('absence_index') }}\">Mes demandes</a>
+                        <a href=\"{{ path('absence_my') }}\">Mes demandes</a>
                     </li>
                     <li>
                         <a href=\"#\">Etat demande</a>
@@ -211,7 +224,7 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
                         <a href=\"#\">Absences</a>
                     </li>
                 </ul>
-            </li>
+            </li>{% if is_granted('ROLE_CHEF') %}
             <li>
                 <a href=\"#\"><i class=\"fa fa-check fa-fw\"></i> Validation<span class=\"fa plus-minus\"></span></a>
                 <ul class=\"nav nav-second-level\">
@@ -224,7 +237,7 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
                  
                 </ul>
                 <!-- /.nav-second-level -->
-            </li>
+            </li>{% endif%}
             <li>
                 <a href=\"#\"><i class=\"fa fa-sitemap fa-fw\"></i> Projet<span class=\"fa plus-minus\"></span></a>
                 <ul class=\"nav nav-second-level\">
@@ -237,7 +250,7 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
                     
                 </ul>
                 <!-- /.nav-second-level -->
-            </li>{#{% if is_granted('ROLE_USER') %}#}
+            </li>{% if is_granted('ROLE_ADMIN') %}
             <li>
                 <a href=\"#\"><i class=\"fa fa-files-o fa-fw\"></i> Administration<span class=\"fa plus-minus\"></span></a>
                 <ul class=\"nav nav-second-level\">
@@ -255,11 +268,11 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
-            </li>{#{% endif %}#}
+            </li>{% endif %}
         </ul>
     </div>
     <!-- /.sidebar-collapse -->
-</div>
+</div>{% endif %}
 <!-- /.navbar-static-side -->
 ", "BallackTimeSheetBundle:Default:sibar.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/Default/sibar.html.twig");
     }

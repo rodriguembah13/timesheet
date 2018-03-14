@@ -41,7 +41,9 @@ class __TwigTemplate_81e30cd0ab51a5010b3d2f4f8807f584379aef0ef6cb2a43b0ef6843e46
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "   <a class=\"btn btn-primary\" href=\"";
+        echo "
+   <a class=\"btn btn-primary\" href=\"";
+        // line 5
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_new");
         echo "\">Create a new entry</a>
     <table class=\"table table-striped\">
@@ -59,32 +61,32 @@ class __TwigTemplate_81e30cd0ab51a5010b3d2f4f8807f584379aef0ef6cb2a43b0ef6843e46
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["absences"]) || array_key_exists("absences", $context) ? $context["absences"] : (function () { throw new Twig_Error_Runtime('Variable "absences" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["absences"]) || array_key_exists("absences", $context) ? $context["absences"] : (function () { throw new Twig_Error_Runtime('Variable "absences" does not exist.', 20, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["absence"]) {
-            // line 20
+            // line 21
             echo "            <tr>
                 <td><a href=\"";
-            // line 21
+            // line 22
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_show", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()), "html", null, true);
             echo "</a></td>
                 <td>";
-            // line 22
+            // line 23
             if (twig_get_attribute($this->env, $this->source, $context["absence"], "startDate", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "startDate", array()), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
                 <td>";
-            // line 23
+            // line 24
             if (twig_get_attribute($this->env, $this->source, $context["absence"], "endDate", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "endDate", array()), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
                 <td>";
-            // line 24
+            // line 25
             if (twig_get_attribute($this->env, $this->source, $context["absence"], "statutChef", array())) {
                 echo "Yes";
             } else {
@@ -92,7 +94,7 @@ class __TwigTemplate_81e30cd0ab51a5010b3d2f4f8807f584379aef0ef6cb2a43b0ef6843e46
             }
             echo "</td>
                 <td>";
-            // line 25
+            // line 26
             if (twig_get_attribute($this->env, $this->source, $context["absence"], "statut", array())) {
                 echo "Yes";
             } else {
@@ -100,11 +102,11 @@ class __TwigTemplate_81e30cd0ab51a5010b3d2f4f8807f584379aef0ef6cb2a43b0ef6843e46
             }
             echo "</td>
                 <td>";
-            // line 26
+            // line 27
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "remarque", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 27
+            // line 28
             if (twig_get_attribute($this->env, $this->source, $context["absence"], "date", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "date", array()), "Y-m-d H:i:s"), "html", null, true);
             }
@@ -113,7 +115,7 @@ class __TwigTemplate_81e30cd0ab51a5010b3d2f4f8807f584379aef0ef6cb2a43b0ef6843e46
                 <td><div class=\"btn-group\">
                         <button type=\"submit\"
                                 onclick=\"location.href = '";
-            // line 31
+            // line 32
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_show", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
             echo "'\"
                                 class=\"btn btn-info btn-sm\">
@@ -122,7 +124,7 @@ class __TwigTemplate_81e30cd0ab51a5010b3d2f4f8807f584379aef0ef6cb2a43b0ef6843e46
                         </button>
                         <button type=\"submit\" class=\"btn btn-success btn-sm\"
                                 onclick=\"location.href = '";
-            // line 37
+            // line 38
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
             echo "'\"
                                 >
@@ -136,7 +138,7 @@ class __TwigTemplate_81e30cd0ab51a5010b3d2f4f8807f584379aef0ef6cb2a43b0ef6843e46
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['absence'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 46
         echo "        </tbody>
     </table>
 ";
@@ -157,7 +159,7 @@ class __TwigTemplate_81e30cd0ab51a5010b3d2f4f8807f584379aef0ef6cb2a43b0ef6843e46
 
     public function getDebugInfo()
     {
-        return array (  140 => 45,  126 => 37,  117 => 31,  108 => 27,  104 => 26,  96 => 25,  88 => 24,  82 => 23,  76 => 22,  70 => 21,  67 => 20,  63 => 19,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  142 => 46,  128 => 38,  119 => 32,  110 => 28,  106 => 27,  98 => 26,  90 => 25,  84 => 24,  78 => 23,  72 => 22,  69 => 21,  65 => 20,  47 => 5,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -165,6 +167,7 @@ class __TwigTemplate_81e30cd0ab51a5010b3d2f4f8807f584379aef0ef6cb2a43b0ef6843e46
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
+
    <a class=\"btn btn-primary\" href=\"{{ path('absence_new') }}\">Create a new entry</a>
     <table class=\"table table-striped\">
         <thead>

@@ -3,8 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+$(function () {
+//    $('#search').keyup(function(key)
+//    {
+//        if(this.value.length >= 3 || this.value == '') {
+//            $('#loader').show();
+//          }
+//    });
+});
+
 $(document).ready(function ()
 {
+    jQuery('.datepicker').datetimepicker();
+  /*  $('.datepicker').datepicker({
+        locale: 'fr'
+    });*/
     $('#side-menu').metisMenu();
     $('.search input[type="submit"]').hide();
 
