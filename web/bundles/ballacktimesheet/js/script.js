@@ -14,8 +14,28 @@ $(function () {
 
 $(document).ready(function ()
 {
-    jQuery('.datepicker').datetimepicker();
-  /*  $('.datepicker').datepicker({
+   /* jQuery('.datepicker').datetimepicker({
+        format: "Y-m-d",
+        timepicker: false,
+        datepicker: true,
+    });*/
+    $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+    $(".datepicker").datetimepicker({
+        format: "dd MM yyyy - hh:ii",
+        autoclose: true,
+        todayBtn: true,
+        startDate: "2013-02-14 10:00",
+        minuteStep: 10
+    });
+    $('[data-datetimepicker]').datetimepicker({
+        widgetPositioning:{
+            vertical: '{{v}}',
+            horizontal: '{{h}}'
+        }
+    });
+    $('input[data-click-target]').focus();
+    $('span[data-click-target]').click();
+  /*  $('.form_datetime').datepicker({
         locale: 'fr'
     });*/
     $('#side-menu').metisMenu();

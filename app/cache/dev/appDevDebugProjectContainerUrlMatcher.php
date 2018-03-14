@@ -491,16 +491,52 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_absence_my:
 
-            // validation
-            if ('/absence/validation' === $pathinfo) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_validation;
+            if (0 === strpos($pathinfo, '/absence/validation')) {
+                // validation
+                if ('/absence/validation' === $pathinfo) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_validation;
+                    }
+
+                    return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\AbsenceController::validationAction',  '_route' => 'validation',);
+                }
+                not_validation:
+
+                // validation_final
+                if ('/absence/validation_final' === $pathinfo) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_validation_final;
+                    }
+
+                    return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\AbsenceController::validation_finalAction',  '_route' => 'validation_final',);
+                }
+                not_validation_final:
+
+            }
+
+            // validation_ok
+            if (preg_match('#^/absence/(?P<id>[^/]++)/ok$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_validation_ok;
                 }
 
-                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\AbsenceController::validationAction',  '_route' => 'validation',);
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'validation_ok')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\AbsenceController::validation_okAction',));
             }
-            not_validation:
+            not_validation_ok:
+
+            // validation_ok_final
+            if (preg_match('#^/absence/(?P<id>[^/]++)/ok_final$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_validation_ok_final;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'validation_ok_final')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\AbsenceController::validation_ok_finalAction',));
+            }
+            not_validation_ok_final:
 
         }
 

@@ -15,10 +15,23 @@ class AbsenceRepository extends \Doctrine\ORM\EntityRepository
         return $this->createQueryBuilder('a')
             ->leftJoin('a.employe', 'e')
             ->addSelect('e')
-            ->andWhere('e.departement = :depa')
-            ->setParameter('depa', $departement)
             ->andWhere('a.statutChef = :statutChef')
             ->setParameter('statutChef', false)
+            ->orWhere('a.statut = :statut')
+            ->setParameter('statut', false)
+            ->andWhere('e.departement = :depa')
+            ->setParameter('depa', $departement)
+            ->getQuery()
+            ->execute();
+    }
+    public function findAllAbsenceByDepartement()
+    {
+        return $this->createQueryBuilder('a')
+            ->leftJoin('a.employe', 'e')
+            ->addSelect('e')
+            ->andWhere('a.statutChef = :statutChef')
+            ->setParameter('statutChef', true)
+            ->addOrderBy('a.statutChef')
             ->getQuery()
             ->execute();
     }

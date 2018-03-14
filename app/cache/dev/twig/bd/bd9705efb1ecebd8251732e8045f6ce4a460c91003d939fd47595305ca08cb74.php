@@ -93,9 +93,9 @@ class __TwigTemplate_580a4a30750af1e326826749ca9d6f976d42ba3e2ee6e85461863d828e5
                 <td>";
             // line 26
             if (twig_get_attribute($this->env, $this->source, $context["absence"], "statut", array())) {
-                echo "Yes";
+                echo "<span class=\"fa fa-check\"></span>Yes";
             } else {
-                echo "No";
+                echo "<span class=\"fa fa-close bg-danger fa-2x\"></span>No";
             }
             echo "</td>
                 <td>";
@@ -109,40 +109,36 @@ class __TwigTemplate_580a4a30750af1e326826749ca9d6f976d42ba3e2ee6e85461863d828e5
             }
             echo "</td>
 
-                <td><div class=\"btn-group\">
-                        <button type=\"submit\"
-                                onclick=\"location.href = '";
-            // line 32
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_show", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
-            echo "'\"
-                                class=\"btn btn-info btn-sm\">
-                            <span class=\"glyphicon glyphicon-eye-open\"></span>
-                            <span class=\"hidden-sm-down\" data-translate=\"entity.action.view\"></span>
-                        </button>
-                        <button type=\"submit\" class=\"btn btn-success btn-sm\"
-                                onclick=\"location.href = '";
-            // line 38
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
-            echo "'\"
-                                >
-                            <span class=\"glyphicon glyphicon-pencil\"></span>
-                            <span class=\"hidden-sm-down\" data-translate=\"entity.action.edit\"></span>
-                        </button>
-                    </div></td>
+                <td>
+                    <div class=\"dropdown\">
+                        <button class=\"btn btn-primary dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\">actions
+                            <span class=\"caret\"></span></button>
+                        <ul class=\"dropdown-menu\">
+                            <li class=\"\"><a href=\"";
+            // line 35
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validation_ok", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
+            echo "\">valide</a></li>
+                            <li class=\"\"><a href=\"";
+            // line 36
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validation_non_ok", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
+            echo "\">invalide</a></li>
+                        </ul>
+                    </div>
+                    </td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['absence'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
+        // line 42
         echo "        </tbody>
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 51
+        // line 47
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_new");
         echo "\">Create a new entry</a>
         </li>
@@ -165,7 +161,7 @@ class __TwigTemplate_580a4a30750af1e326826749ca9d6f976d42ba3e2ee6e85461863d828e5
 
     public function getDebugInfo()
     {
-        return array (  146 => 51,  139 => 46,  125 => 38,  116 => 32,  107 => 28,  103 => 27,  95 => 26,  87 => 25,  81 => 24,  75 => 23,  69 => 22,  66 => 21,  62 => 20,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  142 => 47,  135 => 42,  123 => 36,  119 => 35,  107 => 28,  103 => 27,  95 => 26,  87 => 25,  81 => 24,  75 => 23,  69 => 22,  66 => 21,  62 => 20,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -195,24 +191,20 @@ class __TwigTemplate_580a4a30750af1e326826749ca9d6f976d42ba3e2ee6e85461863d828e5
                 <td>{% if absence.startDate %}{{ absence.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if absence.endDate %}{{ absence.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if absence.statutChef %}Yes{% else %}No{% endif %}</td>
-                <td>{% if absence.statut %}Yes{% else %}No{% endif %}</td>
+                <td>{% if absence.statut %}<span class=\"fa fa-check\"></span>Yes{% else %}<span class=\"fa fa-close bg-danger fa-2x\"></span>No{% endif %}</td>
                 <td>{{ absence.remarque }}</td>
                 <td>{% if absence.date %}{{ absence.date|date('Y-m-d H:i:s') }}{% endif %}</td>
 
-                <td><div class=\"btn-group\">
-                        <button type=\"submit\"
-                                onclick=\"location.href = '{{ path('absence_show', { 'id': absence.id }) }}'\"
-                                class=\"btn btn-info btn-sm\">
-                            <span class=\"glyphicon glyphicon-eye-open\"></span>
-                            <span class=\"hidden-sm-down\" data-translate=\"entity.action.view\"></span>
-                        </button>
-                        <button type=\"submit\" class=\"btn btn-success btn-sm\"
-                                onclick=\"location.href = '{{ path('absence_edit', { 'id': absence.id }) }}'\"
-                                >
-                            <span class=\"glyphicon glyphicon-pencil\"></span>
-                            <span class=\"hidden-sm-down\" data-translate=\"entity.action.edit\"></span>
-                        </button>
-                    </div></td>
+                <td>
+                    <div class=\"dropdown\">
+                        <button class=\"btn btn-primary dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\">actions
+                            <span class=\"caret\"></span></button>
+                        <ul class=\"dropdown-menu\">
+                            <li class=\"\"><a href=\"{{ path('validation_ok', { 'id': absence.id }) }}\">valide</a></li>
+                            <li class=\"\"><a href=\"{{ path('validation_non_ok', { 'id': absence.id }) }}\">invalide</a></li>
+                        </ul>
+                    </div>
+                    </td>
             </tr>
         {% endfor %}
         </tbody>

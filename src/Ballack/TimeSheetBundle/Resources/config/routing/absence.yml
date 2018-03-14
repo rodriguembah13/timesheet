@@ -30,3 +30,15 @@ validation:
     path:     /validation
     defaults: { _controller: "BallackTimeSheetBundle:Absence:validation" }
     methods:  GET
+validation_final:
+    path:     /validation_final
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:validation_final" }
+    methods:  GET
+validation_ok:
+    path:     /{id}/ok
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:validation_ok" }
+    methods:  [GET, POST]
+validation_ok_final:
+    path:     /{id}/ok_final
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:validation_ok_final" }
+    methods:  [GET, POST]

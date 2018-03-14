@@ -3,7 +3,10 @@
 {% block main %}
     <h1>Absence creation</h1>
 <form action="{{ path('absence_new') }}" method="post" {{ form_enctype(form) }} class="form-horizontal form-label-left">
-
+    <div class="input-append date form_datetime">
+        <input size="16" type="text" value="" readonly>
+        <span class="add-on"><i class="icon-th"></i></span>
+    </div>
             {# Les erreurs générales du formulaire. #}
             {{ form_errors(form) }}
 

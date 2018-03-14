@@ -92,7 +92,7 @@ class __TwigTemplate_ea9bf67089fb131416190444de85a5c701ae3353978e6ea8dad3864fbf1
                 ";
         // line 54
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 63
+        // line 64
         echo "    </body>
 </html>
 ";
@@ -127,7 +127,7 @@ class __TwigTemplate_ea9bf67089fb131416190444de85a5c701ae3353978e6ea8dad3864fbf1
         echo "\" type=\"text/css\" media=\"all\"/>
     <link rel=\"stylesheet\" href=\"";
         // line 11
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/ballacktimesheet/css/jquery.datetimepicker.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/ballacktimesheet/css/bootstrap-datetimepicker.css"), "html", null, true);
         echo "\" type=\"text/css\" media=\"all\"/>
             <link rel=\"stylesheet\" href=\"";
         // line 12
@@ -181,19 +181,23 @@ class __TwigTemplate_ea9bf67089fb131416190444de85a5c701ae3353978e6ea8dad3864fbf1
         echo "\"></script>
                     <script  src=\"";
         // line 57
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/ballacktimesheet/js/jquery.datetimepicker.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/ballacktimesheet/js/bootstrap-datetimepicker.min.js"), "html", null, true);
         echo "\"></script>
             <script  src=\"";
         // line 58
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/ballacktimesheet/js/moment.min.js"), "html", null, true);
+        echo "\"></script>
+                    <script  src=\"";
+        // line 59
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/ballacktimesheet/js/wow.js"), "html", null, true);
         echo "\"></script>
 
             <script  src=\"";
-        // line 60
+        // line 61
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/ballacktimesheet/MetisMenu/MetisMenu.js"), "html", null, true);
         echo "\"></script>
                     <script  src=\"";
-        // line 61
+        // line 62
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/ballacktimesheet/js/script.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -214,7 +218,7 @@ class __TwigTemplate_ea9bf67089fb131416190444de85a5c701ae3353978e6ea8dad3864fbf1
 
     public function getDebugInfo()
     {
-        return array (  197 => 61,  193 => 60,  188 => 58,  184 => 57,  180 => 56,  175 => 55,  169 => 54,  161 => 51,  155 => 50,  143 => 13,  134 => 12,  130 => 11,  126 => 10,  122 => 9,  118 => 8,  114 => 7,  111 => 6,  105 => 5,  96 => 63,  94 => 54,  90 => 52,  88 => 50,  82 => 47,  71 => 38,  69 => 37,  43 => 14,  38 => 13,  36 => 5,  30 => 1,);
+        return array (  201 => 62,  197 => 61,  192 => 59,  188 => 58,  184 => 57,  180 => 56,  175 => 55,  169 => 54,  161 => 51,  155 => 50,  143 => 13,  134 => 12,  130 => 11,  126 => 10,  122 => 9,  118 => 8,  114 => 7,  111 => 6,  105 => 5,  96 => 64,  94 => 54,  90 => 52,  88 => 50,  82 => 47,  71 => 38,  69 => 37,  43 => 14,  38 => 13,  36 => 5,  30 => 1,);
     }
 
     public function getSourceContext()
@@ -229,7 +233,7 @@ class __TwigTemplate_ea9bf67089fb131416190444de85a5c701ae3353978e6ea8dad3864fbf1
             <link rel=\"stylesheet\" href=\"{{ asset('bundles/ballacktimesheet/css/font-awesome.min.css') }}\" type=\"text/css\" media=\"all\"/>
             <link rel=\"stylesheet\" href=\"{{ asset('bundles/ballacktimesheet/css/animate.css') }}\" type=\"text/css\" media=\"all\"/>
              <link rel=\"stylesheet\" href=\"{{ asset('bundles/ballacktimesheet/css/script.css') }}\" type=\"text/css\" media=\"all\"/>
-    <link rel=\"stylesheet\" href=\"{{ asset('bundles/ballacktimesheet/css/jquery.datetimepicker.css') }}\" type=\"text/css\" media=\"all\"/>
+    <link rel=\"stylesheet\" href=\"{{ asset('bundles/ballacktimesheet/css/bootstrap-datetimepicker.css') }}\" type=\"text/css\" media=\"all\"/>
             <link rel=\"stylesheet\" href=\"{{ asset('bundles/ballacktimesheet/MetisMenu/metisMenu.css') }}\" type=\"text/css\" media=\"all\"/>
         {% endblock %}<title>{% block title %}Ballack{% endblock %}</title>
         <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
@@ -275,8 +279,9 @@ class __TwigTemplate_ea9bf67089fb131416190444de85a5c701ae3353978e6ea8dad3864fbf1
                 {% block javascripts %}
             <script  src=\"{{ asset('bundles/ballacktimesheet/js/jquery.min.js') }}\"></script>
             <script  src=\"{{ asset('bundles/ballacktimesheet/js/bootstrap.js') }}\"></script>
-                    <script  src=\"{{ asset('bundles/ballacktimesheet/js/jquery.datetimepicker.js') }}\"></script>
-            <script  src=\"{{ asset('bundles/ballacktimesheet/js/wow.js') }}\"></script>
+                    <script  src=\"{{ asset('bundles/ballacktimesheet/js/bootstrap-datetimepicker.min.js') }}\"></script>
+            <script  src=\"{{ asset('bundles/ballacktimesheet/js/moment.min.js') }}\"></script>
+                    <script  src=\"{{ asset('bundles/ballacktimesheet/js/wow.js') }}\"></script>
 
             <script  src=\"{{ asset('bundles/ballacktimesheet/MetisMenu/MetisMenu.js') }}\"></script>
                     <script  src=\"{{ asset('bundles/ballacktimesheet/js/script.js') }}\"></script>

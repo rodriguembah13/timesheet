@@ -52,6 +52,9 @@
                     <li>
                         <a href="#">Heures Supplémentaires</a>
                     </li>
+                    {% if is_granted('ROLE_ADMIN') %}     <li>
+                        <a href="{{ path('validation_final') }}">Valide Conges</a>
+                    </li>{% endif %}
                  
                 </ul>
                 <!-- /.nav-second-level -->

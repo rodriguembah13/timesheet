@@ -34,32 +34,85 @@ class AbsenceController extends Controller
             'absences' => $absences,
         ));
     }
+
     public function validationAction()
     {
 
         $em = $this->getDoctrine()->getManager();
-        $user= $this->get('Security.context')->gettoken()->getuser();
-        $emp=$em->getRepository('BallackTimeSheetBundle:Employe')->findOneByCompte($user);
-        $absences='';
-        if($emp->getIsChef()==true){
+        $user = $this->get('Security.context')->gettoken()->getuser();
+        $emp = $em->getRepository('BallackTimeSheetBundle:Employe')->findOneByCompte($user);
+        $absences = '';
+        if ($emp->getIsChef() == true) {
             $absences = $em->getRepository('BallackTimeSheetBundle:Absence')->findAllAbsencebyNotValidByDepartement($emp->getDepartement());
         }
-        return $this->render('BallackTimeSheetBundle:Absence:index.html.twig', array(
+        return $this->render('BallackTimeSheetBundle:Absence:validation.html.twig', array(
             'absences' => $absences,
         ));
     }
-    public function myAbsenceAction(){
+    public function validation_finalAction()
+    {
+
         $em = $this->getDoctrine()->getManager();
-        $usermanager=$this->get('fos_user.user_manager');
-        $user= $this->get('Security.context')->gettoken()->getuser();
-        $user1=$usermanager->findUserByUsername($user);
+  /*      $user = $this->get('Security.context')->gettoken()->getuser();
+        $emp = $em->getRepository('BallackTimeSheetBundle:Employe')->findOneByCompte($user);
+      */
+            $absences = $em->getRepository('BallackTimeSheetBundle:Absence')->findAllAbsenceByDepartement();
+        return $this->render('BallackTimeSheetBundle:Absence:validation_final.html.twig', array(
+            'absences' => $absences,
+        ));
+    }
+
+    public function myAbsenceAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $usermanager = $this->get('fos_user.user_manager');
+        $user = $this->get('Security.context')->gettoken()->getuser();
+        $user1 = $usermanager->findUserByUsername($user);
         //$emp=$em->getRepository('BallackTimeSheetBundle:Employe')->findBy(array('compte'=>$user1));
-        $emp=$em->getRepository('BallackTimeSheetBundle:Employe')->findOneByCompte($usermanager->findUserByUsername($user));
+        $emp = $em->getRepository('BallackTimeSheetBundle:Employe')->findOneByCompte($usermanager->findUserByUsername($user));
         $absences = $em->getRepository('BallackTimeSheetBundle:Absence')->findByEmploye($emp);
 
         return $this->render('BallackTimeSheetBundle:Absence:myAbsence.html.twig', array(
-            'absences' => $absences,'user' => $emp,
+            'absences' => $absences, 'user' => $emp,
         ));
+    }
+
+    public function validation_okAction(Absence $absence)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if ($absence->getStatutChef() == false) {
+            $absence->setStatutChef(true);
+        } else {
+            $absence->setStatutChef(false);
+        }
+        $em->persist($absence);
+        $em->flush();
+        $user = $this->get('Security.context')->gettoken()->getuser();
+        $emp = $em->getRepository('BallackTimeSheetBundle:Employe')->findOneByCompte($user);
+        $absences = $em->getRepository('BallackTimeSheetBundle:Absence')->findAllAbsencebyNotValidByDepartement($emp->getDepartement());
+
+      /*  return $this->render('BallackTimeSheetBundle:Absence:validation.html.twig', array(
+            'absences' => $absences,
+        ));*/
+        return $this->redirectToRoute('validation', array('absences' => $absences));
+    }
+    public function validation_ok_finalAction(Absence $absence)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if ($absence->getStatut() == false) {
+            $absence->setStatut(true);
+        } else {
+            $absence->setStatut(false);
+        }
+        $em->persist($absence);
+        $em->flush();
+
+        $absences = $em->getRepository('BallackTimeSheetBundle:Absence')->findAllAbsenceByDepartement();
+
+       /* return $this->render('BallackTimeSheetBundle:Absence:validation.html.twig', array(
+            'absences' => $absences,
+        ));*/
+        return $this->redirectToRoute('validation_final', array('absences' => $absences));
     }
     /**
      * Creates a new Absence entity.
@@ -72,12 +125,12 @@ class AbsenceController extends Controller
         $absence = new Absence();
         $form = $this->createForm(new AbsenceType(), $absence);
         $form->handleRequest($request);
-        $usermanager=$this->get('fos_user.user_manager');
-        $user= $this->get('Security.context')->gettoken()->getuser();
-        $user1=$usermanager->findUserByUsername($user);
+        $usermanager = $this->get('fos_user.user_manager');
+        $user = $this->get('Security.context')->gettoken()->getuser();
+        $user1 = $usermanager->findUserByUsername($user);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $emp=$em->getRepository('BallackTimeSheetBundle:Employe')->findOneByCompte($user1);
+            $emp = $em->getRepository('BallackTimeSheetBundle:Employe')->findOneByCompte($user1);
             $absence->setEmploye($emp);
             $em->persist($absence);
             $em->flush();
@@ -166,7 +219,6 @@ class AbsenceController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('absence_delete', array('id' => $absence->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }
