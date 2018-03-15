@@ -90,24 +90,35 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
                     <li>
                         <a href=\"#\">Heures Supplémentaires</a>
                     </li>
-                 
+                    ";
+                // line 55
+                if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+                    echo "     <li>
+                        <a href=\"";
+                    // line 56
+                    echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validation_final");
+                    echo "\">Valide Conges</a>
+                    </li>";
+                }
+                // line 58
+                echo "                 
                 </ul>
                 <!-- /.nav-second-level -->
             </li>";
             }
-            // line 59
+            // line 62
             echo "            <li>
                 <a href=\"#\"><i class=\"fa fa-sitemap fa-fw\"></i> Projet<span class=\"fa plus-minus\"></span></a>
                 <ul class=\"nav nav-second-level\">
                     <li>
                         <a href=\"";
-            // line 63
+            // line 66
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projet_index");
             echo "\">Liste Projets</a>
                     </li>
                     <li>
                         <a href=\"";
-            // line 66
+            // line 69
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_index");
             echo "\">Liste Clients</a>
                     </li>
@@ -115,33 +126,33 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
                 </ul>
                 <!-- /.nav-second-level -->
             </li>";
-            // line 71
+            // line 74
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 72
+                // line 75
                 echo "            <li>
                 <a href=\"#\"><i class=\"fa fa-files-o fa-fw\"></i> Administration<span class=\"fa plus-minus\"></span></a>
                 <ul class=\"nav nav-second-level\">
                     <li>
                         <a href=\"";
-                // line 76
+                // line 79
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_index");
                 echo "\">Liste Employes</a>
                     </li>
                     <li>
                         <a href=\"";
-                // line 79
+                // line 82
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("departement_index");
                 echo "\">Liste Departements</a>
                     </li>
                     <li>
                         <a href=\"";
-                // line 82
+                // line 85
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contrat_index");
                 echo "\">Liste Contrats</a>
                     </li>
                     <li>
                         <a href=\"";
-                // line 85
+                // line 88
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("typeabsence_index");
                 echo "\">Liste Type</a>
                     </li>
@@ -149,13 +160,13 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
                 <!-- /.nav-second-level -->
             </li>";
             }
-            // line 90
+            // line 93
             echo "        </ul>
     </div>
     <!-- /.sidebar-collapse -->
 </div>";
         }
-        // line 94
+        // line 97
         echo "<!-- /.navbar-static-side -->
 ";
         
@@ -175,7 +186,7 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
 
     public function getDebugInfo()
     {
-        return array (  159 => 94,  153 => 90,  145 => 85,  139 => 82,  133 => 79,  127 => 76,  121 => 72,  119 => 71,  111 => 66,  105 => 63,  99 => 59,  87 => 50,  81 => 46,  79 => 45,  58 => 27,  52 => 24,  28 => 2,  26 => 1,);
+        return array (  170 => 97,  164 => 93,  156 => 88,  150 => 85,  144 => 82,  138 => 79,  132 => 75,  130 => 74,  122 => 69,  116 => 66,  110 => 62,  104 => 58,  99 => 56,  95 => 55,  87 => 50,  81 => 46,  79 => 45,  58 => 27,  52 => 24,  28 => 2,  26 => 1,);
     }
 
     public function getSourceContext()
@@ -234,6 +245,9 @@ class __TwigTemplate_47318a2a4d99a859469bc6b66db4318e37afa5f6f3bb45cedd2136edd18
                     <li>
                         <a href=\"#\">Heures Supplémentaires</a>
                     </li>
+                    {% if is_granted('ROLE_ADMIN') %}     <li>
+                        <a href=\"{{ path('validation_final') }}\">Valide Conges</a>
+                    </li>{% endif %}
                  
                 </ul>
                 <!-- /.nav-second-level -->

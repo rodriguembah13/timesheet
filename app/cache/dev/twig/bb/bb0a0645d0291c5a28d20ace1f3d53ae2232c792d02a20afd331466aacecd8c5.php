@@ -85,25 +85,29 @@ class __TwigTemplate_0ae300dfc7726f7bbe1c2f28129ed92e4db0fad21f6106698eaae68670d
                 <td>";
             // line 25
             if (twig_get_attribute($this->env, $this->source, $context["absence"], "statutChef", array())) {
-                echo "Yes";
+                echo "<span class=\"fa fa-check fa-2x bg-success success\"></span>";
             } else {
-                echo "No";
-            }
-            echo "</td>
-                <td>";
-            // line 26
-            if (twig_get_attribute($this->env, $this->source, $context["absence"], "statut", array())) {
-                echo "Yes";
-            } else {
-                echo "No";
+                // line 26
+                echo "                        <span class=\"fa fa-close bg-danger fa-2x\"></span>";
             }
             echo "</td>
                 <td>";
             // line 27
+            if (twig_get_attribute($this->env, $this->source, $context["absence"], "statut", array())) {
+                echo "<span class=\"fa fa-check fa-2x bg-success success\"></span>";
+            } else {
+                // line 28
+                echo "                        <span class=\"fa fa-close bg-danger fa-2x\"></span>
+                    ";
+            }
+            // line 29
+            echo "</td>
+                <td>";
+            // line 30
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "remarque", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 28
+            // line 31
             if (twig_get_attribute($this->env, $this->source, $context["absence"], "date", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "date", array()), "Y-m-d H:i:s"), "html", null, true);
             }
@@ -112,7 +116,7 @@ class __TwigTemplate_0ae300dfc7726f7bbe1c2f28129ed92e4db0fad21f6106698eaae68670d
                              <td><div class=\"btn-group\">
                             <button type=\"submit\"
                                     onclick=\"location.href = '";
-            // line 32
+            // line 35
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_show", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
             echo "'\"
                                     class=\"btn btn-info btn-sm\">
@@ -121,7 +125,7 @@ class __TwigTemplate_0ae300dfc7726f7bbe1c2f28129ed92e4db0fad21f6106698eaae68670d
                             </button>
                             <button type=\"submit\" class=\"btn btn-success btn-sm\"
                                     onclick=\"location.href = '";
-            // line 38
+            // line 41
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
             echo "'\"
                                     >
@@ -135,14 +139,14 @@ class __TwigTemplate_0ae300dfc7726f7bbe1c2f28129ed92e4db0fad21f6106698eaae68670d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['absence'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
+        // line 49
         echo "        </tbody>
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 51
+        // line 54
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_new");
         echo "\">Create a new entry</a>
         </li>
@@ -165,7 +169,7 @@ class __TwigTemplate_0ae300dfc7726f7bbe1c2f28129ed92e4db0fad21f6106698eaae68670d
 
     public function getDebugInfo()
     {
-        return array (  146 => 51,  139 => 46,  125 => 38,  116 => 32,  107 => 28,  103 => 27,  95 => 26,  87 => 25,  81 => 24,  75 => 23,  69 => 22,  66 => 21,  62 => 20,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  150 => 54,  143 => 49,  129 => 41,  120 => 35,  111 => 31,  107 => 30,  104 => 29,  100 => 28,  96 => 27,  91 => 26,  87 => 25,  81 => 24,  75 => 23,  69 => 22,  66 => 21,  62 => 20,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -194,8 +198,11 @@ class __TwigTemplate_0ae300dfc7726f7bbe1c2f28129ed92e4db0fad21f6106698eaae68670d
                 <td><a href=\"{{ path('absence_show', { 'id': absence.id }) }}\">{{ absence.id }}</a></td>
                 <td>{% if absence.startDate %}{{ absence.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if absence.endDate %}{{ absence.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if absence.statutChef %}Yes{% else %}No{% endif %}</td>
-                <td>{% if absence.statut %}Yes{% else %}No{% endif %}</td>
+                <td>{% if absence.statutChef %}<span class=\"fa fa-check fa-2x bg-success success\"></span>{% else %}
+                        <span class=\"fa fa-close bg-danger fa-2x\"></span>{% endif %}</td>
+                <td>{% if absence.statut %}<span class=\"fa fa-check fa-2x bg-success success\"></span>{% else %}
+                        <span class=\"fa fa-close bg-danger fa-2x\"></span>
+                    {% endif %}</td>
                 <td>{{ absence.remarque }}</td>
                 <td>{% if absence.date %}{{ absence.date|date('Y-m-d H:i:s') }}{% endif %}</td>
                           

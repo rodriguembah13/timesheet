@@ -40,7 +40,7 @@ class EmployeType extends AbstractType {
                 ))
                 ->add('isChef')
                 ->add('compte',   new UserType())
-                ->add('image', FileType::class, array('label' => 'Image(JPG)'))
+                ->add('image', FileType::class, array('label' => 'Image(JPG)','data_class' => null))
 
         ;
     }

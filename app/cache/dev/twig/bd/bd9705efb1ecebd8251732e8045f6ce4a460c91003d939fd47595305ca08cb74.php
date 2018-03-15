@@ -85,25 +85,33 @@ class __TwigTemplate_580a4a30750af1e326826749ca9d6f976d42ba3e2ee6e85461863d828e5
                 <td>";
             // line 25
             if (twig_get_attribute($this->env, $this->source, $context["absence"], "statutChef", array())) {
-                echo "Yes";
+                echo "<a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validation_ok", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
+                echo "\">
+                        <span class=\"fa fa-check fa-2x bg-success success\"></span></a>";
             } else {
-                echo "No";
+                // line 26
+                echo "<a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validation_ok", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
+                echo "\">
+                            <span class=\"fa fa-close bg-danger fa-2x\"></span></a>";
             }
-            echo "</td>
-                <td>";
-            // line 26
-            if (twig_get_attribute($this->env, $this->source, $context["absence"], "statut", array())) {
-                echo "<span class=\"fa fa-check\"></span>Yes";
-            } else {
-                echo "<span class=\"fa fa-close bg-danger fa-2x\"></span>No";
-            }
-            echo "</td>
-                <td>";
             // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "remarque", array()), "html", null, true);
             echo "</td>
                 <td>";
             // line 28
+            if (twig_get_attribute($this->env, $this->source, $context["absence"], "statut", array())) {
+                echo "<span class=\"fa fa-check fa-2x bg-success\"></span>";
+            } else {
+                echo "<span class=\"fa fa-close bg-danger fa-2x\"></span>";
+            }
+            echo "</td>
+                <td>";
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "remarque", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 30
             if (twig_get_attribute($this->env, $this->source, $context["absence"], "date", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "date", array()), "Y-m-d H:i:s"), "html", null, true);
             }
@@ -115,13 +123,9 @@ class __TwigTemplate_580a4a30750af1e326826749ca9d6f976d42ba3e2ee6e85461863d828e5
                             <span class=\"caret\"></span></button>
                         <ul class=\"dropdown-menu\">
                             <li class=\"\"><a href=\"";
-            // line 35
+            // line 37
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validation_ok", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
             echo "\">valide</a></li>
-                            <li class=\"\"><a href=\"";
-            // line 36
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validation_non_ok", array("id" => twig_get_attribute($this->env, $this->source, $context["absence"], "id", array()))), "html", null, true);
-            echo "\">invalide</a></li>
                         </ul>
                     </div>
                     </td>
@@ -131,14 +135,14 @@ class __TwigTemplate_580a4a30750af1e326826749ca9d6f976d42ba3e2ee6e85461863d828e5
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['absence'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
+        // line 43
         echo "        </tbody>
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 47
+        // line 48
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_new");
         echo "\">Create a new entry</a>
         </li>
@@ -161,7 +165,7 @@ class __TwigTemplate_580a4a30750af1e326826749ca9d6f976d42ba3e2ee6e85461863d828e5
 
     public function getDebugInfo()
     {
-        return array (  142 => 47,  135 => 42,  123 => 36,  119 => 35,  107 => 28,  103 => 27,  95 => 26,  87 => 25,  81 => 24,  75 => 23,  69 => 22,  66 => 21,  62 => 20,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  146 => 48,  139 => 43,  127 => 37,  115 => 30,  111 => 29,  103 => 28,  100 => 27,  94 => 26,  87 => 25,  81 => 24,  75 => 23,  69 => 22,  66 => 21,  62 => 20,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -190,8 +194,10 @@ class __TwigTemplate_580a4a30750af1e326826749ca9d6f976d42ba3e2ee6e85461863d828e5
                 <td><a href=\"{{ path('absence_show', { 'id': absence.id }) }}\">{{ absence.id }}</a></td>
                 <td>{% if absence.startDate %}{{ absence.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if absence.endDate %}{{ absence.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if absence.statutChef %}Yes{% else %}No{% endif %}</td>
-                <td>{% if absence.statut %}<span class=\"fa fa-check\"></span>Yes{% else %}<span class=\"fa fa-close bg-danger fa-2x\"></span>No{% endif %}</td>
+                <td>{% if absence.statutChef %}<a href=\"{{ path('validation_ok', { 'id': absence.id }) }}\">
+                        <span class=\"fa fa-check fa-2x bg-success success\"></span></a>{% else %}<a href=\"{{ path('validation_ok', { 'id': absence.id }) }}\">
+                            <span class=\"fa fa-close bg-danger fa-2x\"></span></a>{% endif %}</td>
+                <td>{% if absence.statut %}<span class=\"fa fa-check fa-2x bg-success\"></span>{% else %}<span class=\"fa fa-close bg-danger fa-2x\"></span>{% endif %}</td>
                 <td>{{ absence.remarque }}</td>
                 <td>{% if absence.date %}{{ absence.date|date('Y-m-d H:i:s') }}{% endif %}</td>
 
@@ -201,7 +207,6 @@ class __TwigTemplate_580a4a30750af1e326826749ca9d6f976d42ba3e2ee6e85461863d828e5
                             <span class=\"caret\"></span></button>
                         <ul class=\"dropdown-menu\">
                             <li class=\"\"><a href=\"{{ path('validation_ok', { 'id': absence.id }) }}\">valide</a></li>
-                            <li class=\"\"><a href=\"{{ path('validation_non_ok', { 'id': absence.id }) }}\">invalide</a></li>
                         </ul>
                     </div>
                     </td>

@@ -82,20 +82,21 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
         echo "            <th>";
         echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->sortable($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 31, $this->source); })()), "Id", "id");
         echo "</th>
+            <th>Photo</th>
             <th";
-        // line 32
-        if (twig_get_attribute($this->env, $this->source, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 32, $this->source); })()), "isSorted", array(0 => "nom"), "method")) {
+        // line 33
+        if (twig_get_attribute($this->env, $this->source, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 33, $this->source); })()), "isSorted", array(0 => "nom"), "method")) {
             echo " class=\"sorted\"";
         }
         echo ">";
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->sortable($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 32, $this->source); })()), "Nom", "nom");
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->sortable($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 33, $this->source); })()), "Nom", "nom");
         echo "</th>
 
             <th>Prenom</th>
             <th>Situation</th>
             <th>";
-        // line 36
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->sortable($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 36, $this->source); })()), "Datenaissance", array(0 => "employe.dateNaissance", 1 => "a.time"));
+        // line 37
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->sortable($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 37, $this->source); })()), "Datenaissance", array(0 => "employe.dateNaissance", 1 => "a.time"));
         echo "</th>
 
             <th>Ischef</th>
@@ -104,39 +105,44 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
         </thead>
         <tbody>
         ";
-        // line 43
+        // line 44
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 43, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 44, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["employe"]) {
-            // line 44
+            // line 45
             echo "
             <tr>
                 <td><a href=\"";
-            // line 46
+            // line 47
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_show", array("id" => twig_get_attribute($this->env, $this->source, $context["employe"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["employe"], "id", array()), "html", null, true);
             echo "</a></td>
+                <td><img src=\"";
+            // line 48
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["employe"], "image", array()))), "html", null, true);
+            echo "\" height=\"50px\" width=\"50px\"></td>
+
                 <td>";
-            // line 47
+            // line 50
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["employe"], "nom", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 48
+            // line 51
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["employe"], "prenom", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 49
+            // line 52
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["employe"], "situation", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 50
+            // line 53
             if (twig_get_attribute($this->env, $this->source, $context["employe"], "dateNaissance", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["employe"], "dateNaissance", array()), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
                 <td>";
-            // line 51
+            // line 54
             if (twig_get_attribute($this->env, $this->source, $context["employe"], "isChef", array())) {
                 echo "Yes";
             } else {
@@ -148,7 +154,7 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
                     <div class=\"btn-group\">
                         <button type=\"submit\"
                                 onclick=\"location.href = '";
-            // line 56
+            // line 59
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_show", array("id" => twig_get_attribute($this->env, $this->source, $context["employe"], "id", array()))), "html", null, true);
             echo "'\"
                                 class=\"btn btn-info btn-sm\">
@@ -157,7 +163,7 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
                         </button>
                         <button type=\"submit\" class=\"btn btn-success btn-sm\"
                                 onclick=\"location.href = '";
-            // line 62
+            // line 65
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["employe"], "id", array()))), "html", null, true);
             echo "'\"
                                 >
@@ -166,7 +172,7 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
                         </button>
                         <button type=\"submit\" class=\"btn btn-success btn-sm\"
                                 onclick=\"location.href = '";
-            // line 68
+            // line 71
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_role", array("id" => twig_get_attribute($this->env, $this->source, $context["employe"], "id", array()))), "html", null, true);
             echo "'\"
                                 >
@@ -181,13 +187,13 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['employe'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 77
+        // line 80
         echo "        </tbody>
     </table>
     <div class=\"navigation\">
         ";
-        // line 80
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 80, $this->source); })()));
+        // line 83
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 83, $this->source); })()));
         echo "
     </div>
 ";
@@ -208,7 +214,7 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
 
     public function getDebugInfo()
     {
-        return array (  190 => 80,  185 => 77,  170 => 68,  161 => 62,  152 => 56,  140 => 51,  134 => 50,  130 => 49,  126 => 48,  122 => 47,  116 => 46,  112 => 44,  108 => 43,  98 => 36,  87 => 32,  82 => 31,  74 => 25,  71 => 24,  65 => 20,  56 => 14,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  196 => 83,  191 => 80,  176 => 71,  167 => 65,  158 => 59,  146 => 54,  140 => 53,  136 => 52,  132 => 51,  128 => 50,  123 => 48,  117 => 47,  113 => 45,  109 => 44,  99 => 37,  88 => 33,  82 => 31,  74 => 25,  71 => 24,  65 => 20,  56 => 14,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -244,6 +250,7 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
         <tr>
             {# sorting of properties based on query components #}
             <th>{{ knp_pagination_sortable(pagination, 'Id', 'id') }}</th>
+            <th>Photo</th>
             <th{% if pagination.isSorted('nom') %} class=\"sorted\"{% endif %}>{{ knp_pagination_sortable(pagination, 'Nom', 'nom') }}</th>
 
             <th>Prenom</th>
@@ -259,6 +266,8 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
 
             <tr>
                 <td><a href=\"{{ path('employe_show', { 'id': employe.id }) }}\">{{ employe.id }}</a></td>
+                <td><img src=\"{{ asset('uploads/images/' ~ employe.image) }}\" height=\"50px\" width=\"50px\"></td>
+
                 <td>{{ employe.nom }}</td>
                 <td>{{ employe.prenom }}</td>
                 <td>{{ employe.situation }}</td>

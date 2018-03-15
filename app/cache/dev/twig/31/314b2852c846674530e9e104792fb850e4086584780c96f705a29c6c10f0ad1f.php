@@ -41,8 +41,8 @@ class __TwigTemplate_53006d68c4bd9abcb8c7c7a3ef5d600fabd195b823ae3ac99f3a4d2f570
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "
-   <a class=\"btn btn-primary\" href=\"";
+        echo "    <h3 style=\"margin:25px\"><span class=\"fa fa-angle-double-right\"></span>Mes Demandes</h3>
+   <a class=\"btn btn-primary pull-right\" href=\"";
         // line 5
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("absence_new");
         echo "\">Create a new entry</a>
@@ -167,8 +167,8 @@ class __TwigTemplate_53006d68c4bd9abcb8c7c7a3ef5d600fabd195b823ae3ac99f3a4d2f570
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
-
-   <a class=\"btn btn-primary\" href=\"{{ path('absence_new') }}\">Create a new entry</a>
+    <h3 style=\"margin:25px\"><span class=\"fa fa-angle-double-right\"></span>Mes Demandes</h3>
+   <a class=\"btn btn-primary pull-right\" href=\"{{ path('absence_new') }}\">Create a new entry</a>
     <table class=\"table table-striped\">
         <thead>
         <tr>

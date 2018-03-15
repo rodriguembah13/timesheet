@@ -242,11 +242,32 @@ class __TwigTemplate_3d9f74d16a336812e5bbcd3efa1fd1e0b39ae44ed8c918996791b13b1a8
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 108, $this->source); })()), "isChef", array()), 'widget');
         echo "
                 </div></div>
+    <div class=\"form-group\">
+        ";
+        // line 112
+        echo "        <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+            ";
+        // line 113
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 113, $this->source); })()), "image", array()), 'label', array("label" => "image "));
+        echo "
+        </div>
+        ";
+        // line 116
+        echo "        ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 116, $this->source); })()), "image", array()), 'errors');
+        echo "
+        <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+            ";
+        // line 119
+        echo "            ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 119, $this->source); })()), "image", array()), 'widget');
+        echo "
+        </div></div>
 
 
                 ";
-        // line 112
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 112, $this->source); })()), 'rest');
+        // line 123
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 123, $this->source); })()), 'rest');
         echo "
             <div class=\"ln_solid\"></div>
             <div class=\"form-group\">
@@ -260,12 +281,12 @@ class __TwigTemplate_3d9f74d16a336812e5bbcd3efa1fd1e0b39ae44ed8c918996791b13b1a8
 
         </form>
 ";
-        // line 128
+        // line 139
         echo "
     <ul>
         <li>
             <a href=\"";
-        // line 131
+        // line 142
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_index");
         echo "\">Back to the list</a>
         </li>
@@ -288,7 +309,7 @@ class __TwigTemplate_3d9f74d16a336812e5bbcd3efa1fd1e0b39ae44ed8c918996791b13b1a8
 
     public function getDebugInfo()
     {
-        return array (  269 => 131,  264 => 128,  249 => 112,  241 => 108,  235 => 105,  230 => 102,  227 => 101,  220 => 97,  214 => 94,  209 => 91,  206 => 90,  199 => 86,  193 => 83,  188 => 80,  185 => 79,  178 => 75,  172 => 72,  167 => 69,  164 => 68,  157 => 64,  151 => 61,  146 => 58,  143 => 57,  136 => 53,  130 => 50,  125 => 47,  122 => 46,  114 => 41,  108 => 38,  103 => 34,  96 => 30,  90 => 27,  85 => 24,  82 => 23,  75 => 19,  69 => 16,  64 => 13,  61 => 12,  54 => 8,  47 => 5,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  290 => 142,  285 => 139,  270 => 123,  262 => 119,  256 => 116,  251 => 113,  248 => 112,  241 => 108,  235 => 105,  230 => 102,  227 => 101,  220 => 97,  214 => 94,  209 => 91,  206 => 90,  199 => 86,  193 => 83,  188 => 80,  185 => 79,  178 => 75,  172 => 72,  167 => 69,  164 => 68,  157 => 64,  151 => 61,  146 => 58,  143 => 57,  136 => 53,  130 => 50,  125 => 47,  122 => 46,  114 => 41,  108 => 38,  103 => 34,  96 => 30,  90 => 27,  85 => 24,  82 => 23,  75 => 19,  69 => 16,  64 => 13,  61 => 12,  54 => 8,  47 => 5,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -402,6 +423,17 @@ class __TwigTemplate_3d9f74d16a336812e5bbcd3efa1fd1e0b39ae44ed8c918996791b13b1a8
                     {# Génération de l'input. #}
                     {{ form_widget(form.isChef) }}
                 </div></div>
+    <div class=\"form-group\">
+        {# Génération du label. #}
+        <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+            {{ form_label(form.image, \"image \") }}
+        </div>
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors(form.image ) }}
+        <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+            {# Génération de l'input. #}
+            {{ form_widget(form.image) }}
+        </div></div>
 
 
                 {{ form_rest(form) }}

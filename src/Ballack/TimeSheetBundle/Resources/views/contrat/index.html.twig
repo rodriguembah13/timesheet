@@ -7,6 +7,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Employe</th>
                 <th>Startdate</th>
                 <th>Enddate</th>
                 <th>Salairebrute</th>
@@ -18,6 +19,7 @@
         {% for contrat in contrats %}
             <tr>
                 <td><a href="{{ path('contrat_show', { 'id': contrat.id }) }}">{{ contrat.id }}</a></td>
+                <td>{{ contrat.employe.nom }} {{ contrat.employe.prenom }}</td>
                 <td>{% if contrat.startDate %}{{ contrat.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if contrat.endDate %}{{ contrat.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ contrat.salaireBrute }}</td>

@@ -41,6 +41,9 @@ class ContratController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            if($contrat->getEmploye()->getCompte()->isEnabled()==false){
+                $contrat->getEmploye()->getCompte()->setEnabled(true);
+            }
             $em->persist($contrat);
             $em->flush();
 

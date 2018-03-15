@@ -64,10 +64,10 @@ class Employe extends \Ballack\TimeSheetBundle\Entity\Employe implements \Doctri
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'id', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'nom', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'prenom', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'situation', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'dateNaissance', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'isChef', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'departement', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'compte'];
+            return ['__isInitialized__', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'id', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'nom', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'prenom', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'situation', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'dateNaissance', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'isChef', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'departement', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'compte', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'image'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'id', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'nom', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'prenom', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'situation', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'dateNaissance', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'isChef', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'departement', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'compte'];
+        return ['__isInitialized__', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'id', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'nom', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'prenom', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'situation', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'dateNaissance', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'isChef', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'departement', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'compte', '' . "\0" . 'Ballack\\TimeSheetBundle\\Entity\\Employe' . "\0" . 'image'];
     }
 
     /**
@@ -173,6 +173,28 @@ class Employe extends \Ballack\TimeSheetBundle\Entity\Employe implements \Doctri
     }
 
     
+    /**
+     * {@inheritDoc}
+     */
+    public function getImage()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImage', []);
+
+        return parent::getImage();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImage($image)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImage', [$image]);
+
+        return parent::setImage($image);
+    }
+
     /**
      * {@inheritDoc}
      */

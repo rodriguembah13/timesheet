@@ -1,0 +1,62 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+<div class="row">
+    <h3 style="margin:25px"><span class="fa fa-angle-double-right"></span>Mon Profil</h3>
+    <div class="col-lg-3">
+    <div class="row">
+     <div class="col-lg-5" >
+<img src="{{ asset('uploads/images/' ~ employe.image) }}" height="100px" width="100px">
+    </div>
+     <div class="col-lg-7">
+        <h3 style="marker-end: 2px">{{ employe.compte.username }}</h3>
+        <h5>{{ employe.compte.email }}</h5>
+
+    </div>
+    <div class="row" style="margin-left: 5px">
+     <dl >
+  <dt>
+  <p>Nom :{{ employe.nom }}</p>
+  <p>Penom :{{ employe.prenom }}</p>
+  <p>Date de Naissance :{% if employe.dateNaissance %}{{ employe.dateNaissance|date('Y-m-d') }}{% endif %}</p>
+  <p>Situation Matrimonial :{{ employe.situation }}</p>
+  </dt>
+</dl>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-lg-9"  style="border-left: solid">
+
+                <h4>Departement : {{ employe.departement.departement }}</h4>
+                <h4>CHEF DU DEPARTEMENT</h4>
+                 <div class="row" style="margin-bottom: 5px">
+                            <div class="col-lg-1">
+                                <img src="{{ asset('uploads/images/' ~ chef.image) }}" height="50px" width="50px">
+                            </div>
+                            <div class="col-lg-6">
+                            <h5>{{ chef.nom }} {{ chef.prenom }}</h5>
+                            </div>
+                        </div>
+
+        <div class="panel panel-default">
+                <div class="panel-body">
+                <h3>Mes Collegues</h3>
+                    {% for colegue in collegues %}
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <img src="{{ asset('uploads/images/' ~ colegue.image) }}" height="50px" width="50px">
+                            </div>
+                            <div class="col-lg-6">
+                            <p>{{ colegue.nom }} {{ colegue.prenom }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <div class="panel-footer">Panel Footer</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
