@@ -10,4 +10,14 @@ namespace Ballack\TimeSheetBundle\Repository;
  */
 class EmployeRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findChefDepartement($departement)
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.isChef = :chef')
+            ->setParameter('chef', true)
+            ->andWhere('a.departement = :depa')
+            ->setParameter('depa', $departement)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 }

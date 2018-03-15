@@ -88,17 +88,17 @@ class __TwigTemplate_53006d68c4bd9abcb8c7c7a3ef5d600fabd195b823ae3ac99f3a4d2f570
                 <td>";
             // line 25
             if (twig_get_attribute($this->env, $this->source, $context["absence"], "statutChef", array())) {
-                echo "Yes";
+                echo "<span class=\"label label-success\">accepte</span>";
             } else {
-                echo "No";
+                echo "<span class=\"label label-warning\">encours</span>";
             }
             echo "</td>
                 <td>";
             // line 26
             if (twig_get_attribute($this->env, $this->source, $context["absence"], "statut", array())) {
-                echo "Yes";
+                echo "<span class=\"label label-success\">accepte</span>";
             } else {
-                echo "No";
+                echo "<span class=\"label label-warning\">encours</span>";
             }
             echo "</td>
                 <td>";
@@ -188,8 +188,8 @@ class __TwigTemplate_53006d68c4bd9abcb8c7c7a3ef5d600fabd195b823ae3ac99f3a4d2f570
                 <td><a href=\"{{ path('absence_show', { 'id': absence.id }) }}\">{{ absence.id }}</a></td>
                 <td>{% if absence.startDate %}{{ absence.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if absence.endDate %}{{ absence.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if absence.statutChef %}Yes{% else %}No{% endif %}</td>
-                <td>{% if absence.statut %}Yes{% else %}No{% endif %}</td>
+                <td>{% if absence.statutChef %}<span class=\"label label-success\">accepte</span>{% else %}<span class=\"label label-warning\">encours</span>{% endif %}</td>
+                <td>{% if absence.statut %}<span class=\"label label-success\">accepte</span>{% else %}<span class=\"label label-warning\">encours</span>{% endif %}</td>
                 <td>{{ absence.remarque }}</td>
                 <td>{% if absence.date %}{{ absence.date|date('Y-m-d H:i:s') }}{% endif %}</td>
 

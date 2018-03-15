@@ -79,9 +79,9 @@ class __TwigTemplate_ea9bf67089fb131416190444de85a5c701ae3353978e6ea8dad3864fbf1
                 <div class=\"col-lg-2\">
                    ";
         // line 47
-        $this->loadTemplate("BallackTimeSheetBundle:Default:sibar.html.twig", "BallackTimeSheetBundle::layout.html.twig", 47)->display($context);
-        echo " 
-                </div>
+        $this->loadTemplate("BallackTimeSheetBundle:Default:menu.html.twig", "BallackTimeSheetBundle::layout.html.twig", 47)->display($context);
+        // line 48
+        echo "                </div>
                 <div class=\"col-lg-10\">
                 ";
         // line 50
@@ -218,7 +218,7 @@ class __TwigTemplate_ea9bf67089fb131416190444de85a5c701ae3353978e6ea8dad3864fbf1
 
     public function getDebugInfo()
     {
-        return array (  201 => 62,  197 => 61,  192 => 59,  188 => 58,  184 => 57,  180 => 56,  175 => 55,  169 => 54,  161 => 51,  155 => 50,  143 => 13,  134 => 12,  130 => 11,  126 => 10,  122 => 9,  118 => 8,  114 => 7,  111 => 6,  105 => 5,  96 => 64,  94 => 54,  90 => 52,  88 => 50,  82 => 47,  71 => 38,  69 => 37,  43 => 14,  38 => 13,  36 => 5,  30 => 1,);
+        return array (  201 => 62,  197 => 61,  192 => 59,  188 => 58,  184 => 57,  180 => 56,  175 => 55,  169 => 54,  161 => 51,  155 => 50,  143 => 13,  134 => 12,  130 => 11,  126 => 10,  122 => 9,  118 => 8,  114 => 7,  111 => 6,  105 => 5,  96 => 64,  94 => 54,  90 => 52,  88 => 50,  84 => 48,  82 => 47,  71 => 38,  69 => 37,  43 => 14,  38 => 13,  36 => 5,  30 => 1,);
     }
 
     public function getSourceContext()
@@ -269,7 +269,7 @@ class __TwigTemplate_ea9bf67089fb131416190444de85a5c701ae3353978e6ea8dad3864fbf1
         <div class=\"container-fluid\">
             <div class=\"row\">
                 <div class=\"col-lg-2\">
-                   {% include \"BallackTimeSheetBundle:Default:sibar.html.twig\" %} 
+                   {% include \"BallackTimeSheetBundle:Default:menu.html.twig\" %}
                 </div>
                 <div class=\"col-lg-10\">
                 {% block main %}

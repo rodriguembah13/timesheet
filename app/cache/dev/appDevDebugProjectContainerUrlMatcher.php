@@ -348,6 +348,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_employe_addRole:
 
+            // employe_profil
+            if ('/employe/profil' === $pathinfo) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_employe_profil;
+                }
+
+                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\EmployeController::profilAction',  '_route' => 'employe_profil',);
+            }
+            not_employe_profil:
+
         }
 
         if (0 === strpos($pathinfo, '/projet')) {

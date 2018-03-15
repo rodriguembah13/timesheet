@@ -22,8 +22,8 @@
                 <td><a href="{{ path('absence_show', { 'id': absence.id }) }}">{{ absence.id }}</a></td>
                 <td>{% if absence.startDate %}{{ absence.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if absence.endDate %}{{ absence.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if absence.statutChef %}Yes{% else %}No{% endif %}</td>
-                <td>{% if absence.statut %}Yes{% else %}No{% endif %}</td>
+                <td>{% if absence.statutChef %}<span class="label label-success">accepte</span>{% else %}<span class="label label-warning">encours</span>{% endif %}</td>
+                <td>{% if absence.statut %}<span class="label label-success">accepte</span>{% else %}<span class="label label-warning">encours</span>{% endif %}</td>
                 <td>{{ absence.remarque }}</td>
                 <td>{% if absence.date %}{{ absence.date|date('Y-m-d H:i:s') }}{% endif %}</td>
 

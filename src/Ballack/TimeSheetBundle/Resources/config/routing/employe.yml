@@ -37,3 +37,7 @@ employe_addRole:
   pattern: /{id}/{role}/add
   defaults: { _controller: BallackTimeSheetBundle:Employe:addRole}
   methods:  [GET, POST]
+employe_profil:
+    path:     /profil
+    defaults: { _controller: "BallackTimeSheetBundle:Employe:profil" }
+    methods:  [GET]

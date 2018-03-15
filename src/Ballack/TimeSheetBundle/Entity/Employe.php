@@ -3,14 +3,16 @@
 namespace Ballack\TimeSheetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Ballack\UserBundle\Entity\User as BaseUser;
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Employe
  *
  * @ORM\Table(name="employe")
  * @ORM\Entity(repositoryClass="Ballack\TimeSheetBundle\Repository\EmployeRepository")
  */
-class Employe {
+class Employe
+{
     /**
      * @var int
      *
@@ -47,7 +49,7 @@ class Employe {
      * @ORM\Column(name="dateNaissance", type="datetime")
      */
     private $dateNaissance;
-     /**
+    /**
      * @var bool
      *
      * @ORM\Column(name="isChef", type="boolean")
@@ -61,6 +63,25 @@ class Employe {
      * @ORM\OneToOne(targetEntity="Ballack\UserBundle\Entity\User")
      */
     private $compte;
+    /**
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Please, upload the product brochure as a image file.")
+     * @Assert\File(mimeTypes={ "image/jpeg" })
+     */
+    private $image;
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
     /**
      * Get id
      *
@@ -166,25 +187,34 @@ class Employe {
     {
         return $this->dateNaissance;
     }
-    function getIsChef() {
+
+    function getIsChef()
+    {
         return $this->isChef;
     }
 
-    function getDepartement() {
+    function getDepartement()
+    {
         return $this->departement;
     }
 
-    function setIsChef($isChef) {
+    function setIsChef($isChef)
+    {
         $this->isChef = $isChef;
     }
 
-    function setDepartement( $departement) {
+    function setDepartement($departement)
+    {
         $this->departement = $departement;
     }
-    function setCompte( $compte) {
+
+    function setCompte($compte)
+    {
         $this->compte = $compte;
     }
-    function getCompte() {
+
+    function getCompte()
+    {
         return $this->compte;
     }
 }

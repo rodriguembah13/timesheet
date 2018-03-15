@@ -10,3 +10,4 @@ parameters:
     mailer_user: monadresse@mail.fr
     mailer_password: null
     secret: 3cef68f31cb84f90df7062355e0c211a9c9edcd4
+    images_directory: '%kernel.root_dir%/../web/uploads/images'

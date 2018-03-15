@@ -13,6 +13,7 @@ use FOS\UserBundle\Form\Type\RegistrationFormType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 /**
  * Description of EmployeType
@@ -39,6 +40,7 @@ class EmployeType extends AbstractType {
                 ))
                 ->add('isChef')
                 ->add('compte',   new UserType())
+                ->add('image', FileType::class, array('label' => 'Image(JPG)'))
 
         ;
     }

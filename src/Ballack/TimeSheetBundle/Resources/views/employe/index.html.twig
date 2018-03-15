@@ -29,6 +29,7 @@
         <tr>
             {# sorting of properties based on query components #}
             <th>{{ knp_pagination_sortable(pagination, 'Id', 'id') }}</th>
+            <th>Photo</th>
             <th{% if pagination.isSorted('nom') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Nom', 'nom') }}</th>
 
             <th>Prenom</th>
@@ -44,6 +45,8 @@
 
             <tr>
                 <td><a href="{{ path('employe_show', { 'id': employe.id }) }}">{{ employe.id }}</a></td>
+                <td><img src="{{ asset('uploads/images/' ~ employe.image) }}" height="50px" width="50px"></td>
+
                 <td>{{ employe.nom }}</td>
                 <td>{{ employe.prenom }}</td>
                 <td>{{ employe.situation }}</td>
