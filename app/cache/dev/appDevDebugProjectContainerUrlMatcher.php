@@ -235,6 +235,25 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_activite_delete:
 
+            // activite_my
+            if ('/activite' === rtrim($pathinfo, '/')) {
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif (!in_array($this->context->getMethod(), array('HEAD', 'GET'))) {
+                    goto not_activite_my;
+                } else {
+                    return $this->redirect($rawPathinfo.'/', 'activite_my');
+                }
+
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_activite_my;
+                }
+
+                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\ActiviteController::mesActiviteAction',  '_route' => 'activite_my',);
+            }
+            not_activite_my:
+
         }
 
         if (0 === strpos($pathinfo, '/employe')) {
@@ -424,6 +443,39 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'projet_delete')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\ProjetController::deleteAction',));
             }
             not_projet_delete:
+
+            // projet_addEmp
+            if (preg_match('#^/projet/(?P<idE>[^/]++)/(?P<idP>[^/]++)/add$#sD', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_projet_addEmp;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projet_addEmp')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\ProjetController::addEmpToProjetAction',));
+            }
+            not_projet_addEmp:
+
+            // projet_affection
+            if (preg_match('#^/projet/(?P<id>[^/]++)/affection$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_projet_affection;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projet_affection')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\ProjetController::affectationAction',));
+            }
+            not_projet_affection:
+
+            // projet_my
+            if ('/projet/mesProjets' === $pathinfo) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_projet_my;
+                }
+
+                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\ProjetController::mesProjetAction',  '_route' => 'projet_my',);
+            }
+            not_projet_my:
 
         }
 

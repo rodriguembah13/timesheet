@@ -63,7 +63,7 @@ class __TwigTemplate_bcc0821e24c2b780f233616c26a5645378c507f5922d0ca19f8737087cf
                 <th>Client</th>
                 <td>";
         // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 18, $this->source); })()), "client", array()), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 18, $this->source); })()), "client", array()), "nomComplet", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
@@ -107,18 +107,9 @@ class __TwigTemplate_bcc0821e24c2b780f233616c26a5645378c507f5922d0ca19f8737087cf
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projet_edit", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 40, $this->source); })()), "id", array()))), "html", null, true);
         echo "\">Edit</a>
         </li>
-        <li>
-            ";
-        // line 43
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 43, $this->source); })()), 'form_start');
-        echo "
-                <input type=\"submit\" value=\"Delete\">
-            ";
-        // line 45
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 45, $this->source); })()), 'form_end');
-        echo "
-        </li>
-    </ul>
+        ";
+        // line 47
+        echo "    </ul>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -137,7 +128,7 @@ class __TwigTemplate_bcc0821e24c2b780f233616c26a5645378c507f5922d0ca19f8737087cf
 
     public function getDebugInfo()
     {
-        return array (  118 => 45,  113 => 43,  107 => 40,  101 => 37,  89 => 30,  80 => 26,  73 => 22,  66 => 18,  59 => 14,  52 => 10,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  112 => 47,  107 => 40,  101 => 37,  89 => 30,  80 => 26,  73 => 22,  66 => 18,  59 => 14,  52 => 10,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -159,7 +150,7 @@ class __TwigTemplate_bcc0821e24c2b780f233616c26a5645378c507f5922d0ca19f8737087cf
             </tr>
             <tr>
                 <th>Client</th>
-                <td>{{ projet.client }}</td>
+                <td>{{ projet.client.nomComplet }}</td>
             </tr>
             <tr>
                 <th>Description</th>
@@ -183,11 +174,11 @@ class __TwigTemplate_bcc0821e24c2b780f233616c26a5645378c507f5922d0ca19f8737087cf
         <li>
             <a href=\"{{ path('projet_edit', { 'id': projet.id }) }}\">Edit</a>
         </li>
-        <li>
+        {#<li>
             {{ form_start(delete_form) }}
                 <input type=\"submit\" value=\"Delete\">
             {{ form_end(delete_form) }}
-        </li>
+        </li>#}
     </ul>
 {% endblock %}
 ", "BallackTimeSheetBundle:projet:show.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/projet/show.html.twig");

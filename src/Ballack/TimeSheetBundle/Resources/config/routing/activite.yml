@@ -22,3 +22,7 @@ activite_delete:
     path:     /{id}/delete
     defaults: { _controller: "BallackTimeSheetBundle:Activite:delete" }
     methods:  DELETE
+activite_my:
+    path:     /
+    defaults: { _controller: "BallackTimeSheetBundle:Activite:mesActivite" }
+    methods:  GET

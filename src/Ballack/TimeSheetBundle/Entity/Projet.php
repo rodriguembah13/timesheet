@@ -3,7 +3,8 @@
 namespace Ballack\TimeSheetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Ballack\TimeSheetBundle\Entity\Employe;
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Projet
  *
@@ -54,7 +55,16 @@ class Projet
      */
     private $dateStop;
 
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="Ballack\TimeSheetBundle\Entity\Employe")
+     */
 
+    private $employes;
+
+    public function __construct(){
+        $this->employes=new \Doctrine\Common\Collections\ArrayCollection();
+    }
     /**
      * Get id
      *
@@ -183,6 +193,37 @@ class Projet
     public function getDateStop()
     {
         return $this->dateStop;
+    }
+/*    public function addEmploye($employe)
+    {
+        $this->employes[]=$employe;
+    }*/
+    public function addEmploye(Employe $employe)
+    {
+        // Si l'objet fait déjà partie de la collection on ne l'ajoute pas
+        if (!$this->employes->contains($employe)) {
+            $this->employes->add($employe);
+        }
+    }
+    public function setEmployes($items)
+    {
+        if ($items instanceof ArrayCollection || is_array($items)) {
+            foreach ($items as $item) {
+                $this->addEmploye($item);
+            }
+        } elseif ($items instanceof Employe) {
+            $this->addEmploye($items);
+        } else {
+            throw new Exception("$items must be an instance of Employe or ArrayCollection");
+        }
+    }
+    public function removeEmploye($employe)
+    {
+        $this->employes[]=$employe->removeElement($employe);
+    }
+    public function getEmployes()
+    {
+        return $this->employes;
     }
 }
 

@@ -217,5 +217,9 @@ class Employe
     {
         return $this->compte;
     }
+    public function getUniqueName()
+    {
+        return sprintf('%s - %s :: %s', $this->nom,$this->prenom,$this->departement->getDepartement());
+    }
 }
 

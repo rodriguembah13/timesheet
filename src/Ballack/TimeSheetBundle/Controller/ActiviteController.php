@@ -28,7 +28,20 @@ class ActiviteController extends Controller
             'activites' => $activites,
         ));
     }
+    /**
+     * Lists all My Activite entities.
+     *
+     */
+    public function mesActiviteAction()
+    {
+        $em = $this->getDoctrine()->getManager();
 
+        $activites = $em->getRepository('BallackTimeSheetBundle:Activite')->findAll();
+
+        return $this->render('BallackTimeSheetBundle:activite:mesActivites.html.twig', array(
+            'activites' => $activites,
+        ));
+    }
     /**
      * Creates a new Activite entity.
      *

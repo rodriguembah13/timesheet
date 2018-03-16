@@ -75,7 +75,7 @@ class __TwigTemplate_dc0e29b39d81698af6fe4be5a50778e6d367a81bf97472024f28223bff7
             echo "</td>
                 <td>";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["projet"], "client", array()), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["projet"], "client", array()), "nomComplet", array()), "html", null, true);
             echo "</td>
                 <td>";
             // line 24
@@ -113,6 +113,15 @@ class __TwigTemplate_dc0e29b39d81698af6fe4be5a50778e6d367a81bf97472024f28223bff7
                                 <span class=\"glyphicon glyphicon-pencil\"></span>
                                 <span class=\"hidden-sm-down\" data-translate=\"entity.action.edit\"></span>
                             </button>
+                                     <button type=\"submit\" class=\"btn btn-success btn-sm\"
+                                             onclick=\"location.href = '";
+            // line 42
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projet_affection", array("id" => twig_get_attribute($this->env, $this->source, $context["projet"], "id", array()))), "html", null, true);
+            echo "'\"
+                                             >
+                                         <span class=\"glyphicon glyphicon-filter\"></span>
+                                         <span class=\"hidden-sm-down\" data-translate=\"entity.action.edit\"></span>
+                                     </button>
                         </div></td>
             </tr>
         ";
@@ -120,14 +129,14 @@ class __TwigTemplate_dc0e29b39d81698af6fe4be5a50778e6d367a81bf97472024f28223bff7
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['projet'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
+        // line 50
         echo "        </tbody>
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 49
+        // line 55
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projet_new");
         echo "\">Create a new entry</a>
         </li>
@@ -150,7 +159,7 @@ class __TwigTemplate_dc0e29b39d81698af6fe4be5a50778e6d367a81bf97472024f28223bff7
 
     public function getDebugInfo()
     {
-        return array (  131 => 49,  124 => 44,  110 => 36,  101 => 30,  92 => 26,  86 => 25,  82 => 24,  78 => 23,  74 => 22,  68 => 21,  65 => 20,  61 => 19,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  140 => 55,  133 => 50,  119 => 42,  110 => 36,  101 => 30,  92 => 26,  86 => 25,  82 => 24,  78 => 23,  74 => 22,  68 => 21,  65 => 20,  61 => 19,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -177,7 +186,7 @@ class __TwigTemplate_dc0e29b39d81698af6fe4be5a50778e6d367a81bf97472024f28223bff7
             <tr>
                 <td><a href=\"{{ path('projet_show', { 'id': projet.id }) }}\">{{ projet.id }}</a></td>
                 <td>{{ projet.nomProjet }}</td>
-                <td>{{ projet.client }}</td>
+                <td>{{ projet.client.nomComplet }}</td>
                 <td>{{ projet.description }}</td>
                 <td>{% if projet.dateStart %}{{ projet.dateStart|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if projet.dateStop %}{{ projet.dateStop|date('Y-m-d H:i:s') }}{% endif %}</td>
@@ -195,6 +204,12 @@ class __TwigTemplate_dc0e29b39d81698af6fe4be5a50778e6d367a81bf97472024f28223bff7
                                 <span class=\"glyphicon glyphicon-pencil\"></span>
                                 <span class=\"hidden-sm-down\" data-translate=\"entity.action.edit\"></span>
                             </button>
+                                     <button type=\"submit\" class=\"btn btn-success btn-sm\"
+                                             onclick=\"location.href = '{{ path('projet_affection', { 'id': projet.id }) }}'\"
+                                             >
+                                         <span class=\"glyphicon glyphicon-filter\"></span>
+                                         <span class=\"hidden-sm-down\" data-translate=\"entity.action.edit\"></span>
+                                     </button>
                         </div></td>
             </tr>
         {% endfor %}

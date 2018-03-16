@@ -20,7 +20,7 @@
             <tr>
                 <td><a href="{{ path('projet_show', { 'id': projet.id }) }}">{{ projet.id }}</a></td>
                 <td>{{ projet.nomProjet }}</td>
-                <td>{{ projet.client }}</td>
+                <td>{{ projet.client.nomComplet }}</td>
                 <td>{{ projet.description }}</td>
                 <td>{% if projet.dateStart %}{{ projet.dateStart|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if projet.dateStop %}{{ projet.dateStop|date('Y-m-d H:i:s') }}{% endif %}</td>
@@ -38,6 +38,12 @@
                                 <span class="glyphicon glyphicon-pencil"></span>
                                 <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
                             </button>
+                                     <button type="submit" class="btn btn-success btn-sm"
+                                             onclick="location.href = '{{ path('projet_affection', { 'id': projet.id }) }}'"
+                                             >
+                                         <span class="glyphicon glyphicon-filter"></span>
+                                         <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                                     </button>
                         </div></td>
             </tr>
         {% endfor %}

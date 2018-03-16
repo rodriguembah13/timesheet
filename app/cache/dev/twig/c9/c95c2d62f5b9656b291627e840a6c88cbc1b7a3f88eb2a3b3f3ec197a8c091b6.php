@@ -50,10 +50,16 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
             echo "\">Mes Absences</a>
                         </li>
                         <li>
-                            <a href=\"#\">Mes Activites</a>
+                            <a href=\"";
+            // line 24
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_my");
+            echo "\">Mes Activites</a>
                         </li>
                         <li>
-                            <a href=\"#\">Mes Projets</a>
+                            <a href=\"";
+            // line 27
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projet_my");
+            echo "\">Mes Projets</a>
                         </li>
                         <li>
                             <a href=\"#\">Mes Heures Supp</a>
@@ -215,7 +221,7 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
 
     public function getDebugInfo()
     {
-        return array (  199 => 129,  193 => 125,  185 => 120,  179 => 117,  173 => 114,  167 => 111,  161 => 107,  159 => 106,  151 => 101,  145 => 98,  138 => 93,  136 => 77,  126 => 70,  120 => 67,  114 => 63,  112 => 62,  102 => 54,  98 => 52,  93 => 50,  89 => 49,  81 => 44,  74 => 40,  64 => 33,  49 => 21,  28 => 2,  26 => 1,);
+        return array (  205 => 129,  199 => 125,  191 => 120,  185 => 117,  179 => 114,  173 => 111,  167 => 107,  165 => 106,  157 => 101,  151 => 98,  144 => 93,  142 => 77,  132 => 70,  126 => 67,  120 => 63,  118 => 62,  108 => 54,  104 => 52,  99 => 50,  95 => 49,  87 => 44,  80 => 40,  70 => 33,  61 => 27,  55 => 24,  49 => 21,  28 => 2,  26 => 1,);
     }
 
     public function getSourceContext()
@@ -243,10 +249,10 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
                             <a href=\"{{ path('absence_my') }}\">Mes Absences</a>
                         </li>
                         <li>
-                            <a href=\"#\">Mes Activites</a>
+                            <a href=\"{{ path('activite_my') }}\">Mes Activites</a>
                         </li>
                         <li>
-                            <a href=\"#\">Mes Projets</a>
+                            <a href=\"{{ path('projet_my') }}\">Mes Projets</a>
                         </li>
                         <li>
                             <a href=\"#\">Mes Heures Supp</a>

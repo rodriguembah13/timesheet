@@ -55,7 +55,7 @@ class AbsenceController extends Controller
         $em = $this->getDoctrine()->getManager();
   /*      $user = $this->get('Security.context')->gettoken()->getuser();
         $emp = $em->getRepository('BallackTimeSheetBundle:Employe')->findOneByCompte($user);
-      */
+        */
             $absences = $em->getRepository('BallackTimeSheetBundle:Absence')->findAllAbsenceByDepartement();
         return $this->render('BallackTimeSheetBundle:Absence:validation_final.html.twig', array(
             'absences' => $absences,

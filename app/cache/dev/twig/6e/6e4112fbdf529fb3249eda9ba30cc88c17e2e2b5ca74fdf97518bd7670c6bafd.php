@@ -42,145 +42,172 @@ class __TwigTemplate_a9c4279b0c0959758728145de057f6029a420de03d7310db28bd66328ea
 
         // line 4
         echo "    <h1>Projet creation</h1>
-<form action=\"";
+    <form action=\"";
         // line 5
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("departement_new");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projet_new");
         echo "\" method=\"post\" ";
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 5, $this->source); })()), 'enctype');
-        echo " class=\"form-horizontal form-label-left\">
+        echo "
+          class=\"form-horizontal form-label-left\">
 
+        ";
+        // line 9
+        echo "        ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 9, $this->source); })()), 'errors');
+        echo "
+
+        <div class=\"form-group\">
             ";
-        // line 8
-        echo "            ";
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 8, $this->source); })()), 'errors');
-        echo "
-
-            <div class=\"form-group\">
-                ";
-        // line 12
-        echo "                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    ";
         // line 13
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 13, $this->source); })()), "nomProjet", array()), 'label', array("label" => "nomProjet "));
-        echo "
-                </div>
+        echo "            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
                 ";
-        // line 16
-        echo "                ";
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 16, $this->source); })()), "nomProjet", array()), 'errors');
+        // line 14
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 14, $this->source); })()), "nomProjet", array()), 'label', array("label" => "nomProjet "));
         echo "
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    ";
-        // line 19
-        echo "                    ";
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 19, $this->source); })()), "nomProjet", array()), 'widget');
-        echo "
-                </div></div>
-                <div class=\"form-group\">
-                ";
-        // line 23
-        echo "                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    ";
-        // line 24
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 24, $this->source); })()), "client", array()), 'label', array("label" => "client "));
-        echo "
-                </div>
-                ";
-        // line 27
-        echo "                ";
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 27, $this->source); })()), "client", array()), 'errors');
-        echo "
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    ";
-        // line 30
-        echo "                    ";
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 30, $this->source); })()), "client", array()), 'widget');
-        echo "
-                </div></div>
-                <div class=\"form-group\">
-                ";
-        // line 34
-        echo "                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    ";
-        // line 35
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 35, $this->source); })()), "description", array()), 'label', array("label" => "description "));
-        echo "
-                </div>
-                ";
-        // line 38
-        echo "                ";
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 38, $this->source); })()), "description", array()), 'errors');
-        echo "
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    ";
-        // line 41
-        echo "                    ";
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 41, $this->source); })()), "description", array()), 'widget');
-        echo "
-                </div></div>
-                <div class=\"form-group\">
-                ";
-        // line 45
-        echo "                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    ";
-        // line 46
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 46, $this->source); })()), "dateStart", array()), 'label', array("label" => "dateStart "));
-        echo "
-                </div>
-                ";
-        // line 49
-        echo "                ";
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 49, $this->source); })()), "dateStart", array()), 'errors');
-        echo "
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    ";
-        // line 52
-        echo "                    ";
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 52, $this->source); })()), "dateStart", array()), 'widget');
-        echo "
-                </div></div>
-                <div class=\"form-group\">
-                ";
-        // line 56
-        echo "                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    ";
-        // line 57
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 57, $this->source); })()), "dateStop", array()), 'label', array("label" => "dateStop "));
-        echo "
-                </div>
-                ";
-        // line 60
-        echo "                ";
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 60, $this->source); })()), "dateStop", array()), 'errors');
-        echo "
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    ";
-        // line 63
-        echo "                    ";
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 63, $this->source); })()), "dateStop", array()), 'widget');
-        echo "
-                </div></div>
-           
-            <div class=\"ln_solid\"></div>
-            <div class=\"form-group\">
-                <div class=\"col-md-6 col-sm-6 col-xs-12 col-md-offset-3\">
-                    <button class=\"btn btn-primary\" type=\"button\">Cancel</button>
-                    <button class=\"btn btn-primary\" type=\"reset\">Reset</button>
-                    <button type=\"submit\" class=\"btn btn-success\">Submit</button>
-                </div>
             </div>
             ";
+        // line 17
+        echo "            ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 17, $this->source); })()), "nomProjet", array()), 'errors');
+        echo "
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                ";
+        // line 20
+        echo "                ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 20, $this->source); })()), "nomProjet", array()), 'widget');
+        echo "
+            </div>
+        </div>
+        <div class=\"form-group\">
+            ";
+        // line 25
+        echo "            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                ";
+        // line 26
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 26, $this->source); })()), "client", array()), 'label', array("label" => "client "));
+        echo "
+            </div>
+            ";
+        // line 29
+        echo "            ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 29, $this->source); })()), "client", array()), 'errors');
+        echo "
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                ";
+        // line 32
+        echo "                ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 32, $this->source); })()), "client", array()), 'widget');
+        echo "
+            </div>
+        </div>
+        <div class=\"form-group\">
+            ";
+        // line 37
+        echo "            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                ";
+        // line 38
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 38, $this->source); })()), "description", array()), 'label', array("label" => "description "));
+        echo "
+            </div>
+            ";
+        // line 41
+        echo "            ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 41, $this->source); })()), "description", array()), 'errors');
+        echo "
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                ";
+        // line 44
+        echo "                ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 44, $this->source); })()), "description", array()), 'widget');
+        echo "
+            </div>
+        </div>
+        <div class=\"form-group\">
+            ";
+        // line 49
+        echo "            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                ";
+        // line 50
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 50, $this->source); })()), "dateStart", array()), 'label', array("label" => "dateStart "));
+        echo "
+            </div>
+            ";
+        // line 53
+        echo "            ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 53, $this->source); })()), "dateStart", array()), 'errors');
+        echo "
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                ";
+        // line 56
+        echo "                ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 56, $this->source); })()), "dateStart", array()), 'widget');
+        echo "
+            </div>
+        </div>
+        <div class=\"form-group\">
+            ";
+        // line 61
+        echo "            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                ";
+        // line 62
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 62, $this->source); })()), "dateStop", array()), 'label', array("label" => "dateStop "));
+        echo "
+            </div>
+            ";
+        // line 65
+        echo "            ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 65, $this->source); })()), "dateStop", array()), 'errors');
+        echo "
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                ";
+        // line 68
+        echo "                ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 68, $this->source); })()), "dateStop", array()), 'widget');
+        echo "
+            </div>
+        </div>
+        <div class=\"form-group\">
+            ";
+        // line 73
+        echo "            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                ";
         // line 74
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 74, $this->source); })()), 'rest');
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 74, $this->source); })()), "employes", array()), 'label', array("label" => "employes "));
+        echo "
+            </div>
+            ";
+        // line 77
+        echo "            ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 77, $this->source); })()), "employes", array()), 'errors');
+        echo "
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                ";
+        // line 80
+        echo "                ";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 80, $this->source); })()), "employes", array()), 'widget');
+        echo "
+            </div>
+        </div>
+        ";
+        // line 86
+        echo "        <div class=\"ln_solid\"></div>
+        <div class=\"form-group\">
+            <div class=\"col-md-6 col-sm-6 col-xs-12 col-md-offset-3\">
+                <button class=\"btn btn-primary\" type=\"button\">Cancel</button>
+                <button class=\"btn btn-primary\" type=\"reset\">Reset</button>
+                <button type=\"submit\" class=\"btn btn-success\">Submit</button>
+            </div>
+        </div>
+        ";
+        // line 94
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 94, $this->source); })()), 'rest');
         echo "
 
-        </form>
-";
-        // line 82
-        echo "    <ul>
+    </form>
+    <ul>
         <li>
             <a href=\"";
-        // line 84
+        // line 99
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projet_index");
         echo "\">Back to the list</a>
         </li>
@@ -203,7 +230,7 @@ class __TwigTemplate_a9c4279b0c0959758728145de057f6029a420de03d7310db28bd66328ea
 
     public function getDebugInfo()
     {
-        return array (  184 => 84,  180 => 82,  174 => 74,  159 => 63,  153 => 60,  148 => 57,  145 => 56,  138 => 52,  132 => 49,  127 => 46,  124 => 45,  117 => 41,  111 => 38,  106 => 35,  103 => 34,  96 => 30,  90 => 27,  85 => 24,  82 => 23,  75 => 19,  69 => 16,  64 => 13,  61 => 12,  54 => 8,  47 => 5,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  211 => 99,  203 => 94,  193 => 86,  186 => 80,  180 => 77,  175 => 74,  172 => 73,  164 => 68,  158 => 65,  153 => 62,  150 => 61,  142 => 56,  136 => 53,  131 => 50,  128 => 49,  120 => 44,  114 => 41,  109 => 38,  106 => 37,  98 => 32,  92 => 29,  87 => 26,  84 => 25,  76 => 20,  70 => 17,  65 => 14,  62 => 13,  55 => 9,  47 => 5,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -212,83 +239,98 @@ class __TwigTemplate_a9c4279b0c0959758728145de057f6029a420de03d7310db28bd66328ea
 
 {% block main %}
     <h1>Projet creation</h1>
-<form action=\"{{ path('departement_new') }}\" method=\"post\" {{ form_enctype(form) }} class=\"form-horizontal form-label-left\">
+    <form action=\"{{ path('projet_new') }}\" method=\"post\" {{ form_enctype(form) }}
+          class=\"form-horizontal form-label-left\">
 
-            {# Les erreurs générales du formulaire. #}
-            {{ form_errors(form) }}
+        {# Les erreurs générales du formulaire. #}
+        {{ form_errors(form) }}
 
-            <div class=\"form-group\">
-                {# Génération du label. #}
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    {{ form_label(form.nomProjet, \"nomProjet \") }}
-                </div>
-                {# Affichage des erreurs pour ce champ précis. #}
-                {{ form_errors(form.nomProjet) }}
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    {# Génération de l'input. #}
-                    {{ form_widget(form.nomProjet) }}
-                </div></div>
-                <div class=\"form-group\">
-                {# Génération du label. #}
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    {{ form_label(form.client, \"client \") }}
-                </div>
-                {# Affichage des erreurs pour ce champ précis. #}
-                {{ form_errors(form.client) }}
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    {# Génération de l'input. #}
-                    {{ form_widget(form.client) }}
-                </div></div>
-                <div class=\"form-group\">
-                {# Génération du label. #}
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    {{ form_label(form.description, \"description \") }}
-                </div>
-                {# Affichage des erreurs pour ce champ précis. #}
-                {{ form_errors(form.description) }}
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    {# Génération de l'input. #}
-                    {{ form_widget(form.description) }}
-                </div></div>
-                <div class=\"form-group\">
-                {# Génération du label. #}
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    {{ form_label(form.dateStart, \"dateStart \") }}
-                </div>
-                {# Affichage des erreurs pour ce champ précis. #}
-                {{ form_errors(form.dateStart) }}
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    {# Génération de l'input. #}
-                    {{ form_widget(form.dateStart) }}
-                </div></div>
-                <div class=\"form-group\">
-                {# Génération du label. #}
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    {{ form_label(form.dateStop, \"dateStop \") }}
-                </div>
-                {# Affichage des erreurs pour ce champ précis. #}
-                {{ form_errors(form.dateStop) }}
-                <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
-                    {# Génération de l'input. #}
-                    {{ form_widget(form.dateStop) }}
-                </div></div>
-           
-            <div class=\"ln_solid\"></div>
-            <div class=\"form-group\">
-                <div class=\"col-md-6 col-sm-6 col-xs-12 col-md-offset-3\">
-                    <button class=\"btn btn-primary\" type=\"button\">Cancel</button>
-                    <button class=\"btn btn-primary\" type=\"reset\">Reset</button>
-                    <button type=\"submit\" class=\"btn btn-success\">Submit</button>
-                </div>
+        <div class=\"form-group\">
+            {# Génération du label. #}
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                {{ form_label(form.nomProjet, \"nomProjet \") }}
             </div>
-            {{ form_rest(form) }}
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.nomProjet) }}
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                {# Génération de l'input. #}
+                {{ form_widget(form.nomProjet) }}
+            </div>
+        </div>
+        <div class=\"form-group\">
+            {# Génération du label. #}
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                {{ form_label(form.client, \"client \") }}
+            </div>
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.client) }}
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                {# Génération de l'input. #}
+                {{ form_widget(form.client) }}
+            </div>
+        </div>
+        <div class=\"form-group\">
+            {# Génération du label. #}
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                {{ form_label(form.description, \"description \") }}
+            </div>
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.description) }}
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                {# Génération de l'input. #}
+                {{ form_widget(form.description) }}
+            </div>
+        </div>
+        <div class=\"form-group\">
+            {# Génération du label. #}
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                {{ form_label(form.dateStart, \"dateStart \") }}
+            </div>
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.dateStart) }}
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                {# Génération de l'input. #}
+                {{ form_widget(form.dateStart) }}
+            </div>
+        </div>
+        <div class=\"form-group\">
+            {# Génération du label. #}
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                {{ form_label(form.dateStop, \"dateStop \") }}
+            </div>
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.dateStop) }}
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                {# Génération de l'input. #}
+                {{ form_widget(form.dateStop) }}
+            </div>
+        </div>
+        <div class=\"form-group\">
+            {# Génération du label. #}
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                {{ form_label(form.employes, \"employes \") }}
+            </div>
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.employes) }}
+            <div class=\"control-label col-md-3 col-sm-3 col-xs-12\">
+                {# Génération de l'input. #}
+                {{ form_widget(form.employes) }}
+            </div>
+        </div>
+        {#{% for tag in form.employes %}
+            <li>{{ form_row(tag.nom) }}</li>
+        {% endfor %}#}
+        <div class=\"ln_solid\"></div>
+        <div class=\"form-group\">
+            <div class=\"col-md-6 col-sm-6 col-xs-12 col-md-offset-3\">
+                <button class=\"btn btn-primary\" type=\"button\">Cancel</button>
+                <button class=\"btn btn-primary\" type=\"reset\">Reset</button>
+                <button type=\"submit\" class=\"btn btn-success\">Submit</button>
+            </div>
+        </div>
+        {{ form_rest(form) }}
 
-        </form>
-{#    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type=\"submit\" value=\"Create\" />
-    {{ form_end(form) }}
-#}
+    </form>
     <ul>
         <li>
             <a href=\"{{ path('projet_index') }}\">Back to the list</a>
