@@ -1,0 +1,44 @@
+absence_index:
+    path:     /
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:index" }
+    methods:  GET
+
+absence_show:
+    path:     /{id}/show
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:show" }
+    methods:  GET
+
+absence_new:
+    path:     /new
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:new" }
+    methods:  [GET, POST]
+
+absence_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:edit" }
+    methods:  [GET, POST]
+
+absence_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:delete" }
+    methods:  DELETE
+absence_my:
+    path:     /myAbsence
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:myAbsence" }
+    methods:  GET
+validation:
+    path:     /validation
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:validation" }
+    methods:  GET
+validation_final:
+    path:     /validation_final
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:validation_final" }
+    methods:  GET
+validation_ok:
+    path:     /{id}/ok
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:validation_ok" }
+    methods:  [GET, POST]
+validation_ok_final:
+    path:     /{id}/ok_final
+    defaults: { _controller: "BallackTimeSheetBundle:Absence:validation_ok_final" }
+    methods:  [GET, POST]

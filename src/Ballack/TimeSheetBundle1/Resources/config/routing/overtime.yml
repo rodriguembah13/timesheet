@@ -1,0 +1,24 @@
+overtime_index:
+    path:     /
+    defaults: { _controller: "BallackTimeSheetBundle:OverTime:index" }
+    methods:  GET
+
+overtime_show:
+    path:     /{id}/show
+    defaults: { _controller: "BallackTimeSheetBundle:OverTime:show" }
+    methods:  GET
+
+overtime_new:
+    path:     /new
+    defaults: { _controller: "BallackTimeSheetBundle:OverTime:new" }
+    methods:  [GET, POST]
+
+overtime_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BallackTimeSheetBundle:OverTime:edit" }
+    methods:  [GET, POST]
+
+overtime_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BallackTimeSheetBundle:OverTime:delete" }
+    methods:  DELETE

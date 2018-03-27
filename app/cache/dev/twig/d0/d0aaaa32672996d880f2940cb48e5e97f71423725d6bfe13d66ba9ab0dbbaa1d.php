@@ -41,36 +41,40 @@ class __TwigTemplate_557195599b0d4cc1e651d201061ceb96e911aec76981c7cec0830408ef2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "    <h1>TypeAbsence</h1>
+        echo "<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>TypeAbsence  <small>Show</small></h2>
 
+        <div class=\"clearfix\"></div>
+    </div>
     <table class=\"table table-hover\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 10, $this->source); })()), "id", array()), "html", null, true);
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 14, $this->source); })()), "id", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Libelle</th>
                 <td>";
-        // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 14, $this->source); })()), "libelle", array()), "html", null, true);
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 18, $this->source); })()), "libelle", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Dayoff</th>
                 <td>";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 18, $this->source); })()), "dayoff", array()), "html", null, true);
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 22, $this->source); })()), "dayoff", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Ispayant</th>
                 <td>";
-        // line 22
-        if (twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 22, $this->source); })()), "isPayant", array())) {
+        // line 26
+        if (twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 26, $this->source); })()), "isPayant", array())) {
             echo "Yes";
         } else {
             echo "No";
@@ -80,15 +84,15 @@ class __TwigTemplate_557195599b0d4cc1e651d201061ceb96e911aec76981c7cec0830408ef2
             <tr>
                 <th>Pourcentage</th>
                 <td>";
-        // line 26
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 26, $this->source); })()), "pourcentage", array()), "html", null, true);
+        // line 30
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 30, $this->source); })()), "pourcentage", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Decription</th>
                 <td>";
-        // line 30
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 30, $this->source); })()), "decription", array()), "html", null, true);
+        // line 34
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 34, $this->source); })()), "decription", array()), "html", null, true);
         echo "</td>
             </tr>
         </tbody>
@@ -97,28 +101,28 @@ class __TwigTemplate_557195599b0d4cc1e651d201061ceb96e911aec76981c7cec0830408ef2
     <ul>
         <li>
             <a href=\"";
-        // line 37
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("typeabsence_index");
         echo "\">Back to the list</a>
         </li>
         <li>
             <a href=\"";
-        // line 40
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("typeabsence_edit", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 40, $this->source); })()), "id", array()))), "html", null, true);
+        // line 44
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("typeabsence_edit", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["typeAbsence"]) || array_key_exists("typeAbsence", $context) ? $context["typeAbsence"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsence" does not exist.', 44, $this->source); })()), "id", array()))), "html", null, true);
         echo "\">Edit</a>
         </li>
         <li>
             ";
-        // line 43
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 43, $this->source); })()), 'form_start');
+        // line 47
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 47, $this->source); })()), 'form_start');
         echo "
                 <input type=\"submit\" value=\"Delete\">
             ";
-        // line 45
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 45, $this->source); })()), 'form_end');
+        // line 49
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 49, $this->source); })()), 'form_end');
         echo "
         </li>
-    </ul>
+    </ul></div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -137,7 +141,7 @@ class __TwigTemplate_557195599b0d4cc1e651d201061ceb96e911aec76981c7cec0830408ef2
 
     public function getDebugInfo()
     {
-        return array (  118 => 45,  113 => 43,  107 => 40,  101 => 37,  91 => 30,  84 => 26,  73 => 22,  66 => 18,  59 => 14,  52 => 10,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  122 => 49,  117 => 47,  111 => 44,  105 => 41,  95 => 34,  88 => 30,  77 => 26,  70 => 22,  63 => 18,  56 => 14,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -145,8 +149,12 @@ class __TwigTemplate_557195599b0d4cc1e651d201061ceb96e911aec76981c7cec0830408ef2
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
-    <h1>TypeAbsence</h1>
+<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>TypeAbsence  <small>Show</small></h2>
 
+        <div class=\"clearfix\"></div>
+    </div>
     <table class=\"table table-hover\">
         <tbody>
             <tr>
@@ -188,7 +196,7 @@ class __TwigTemplate_557195599b0d4cc1e651d201061ceb96e911aec76981c7cec0830408ef2
                 <input type=\"submit\" value=\"Delete\">
             {{ form_end(delete_form) }}
         </li>
-    </ul>
+    </ul></div>
 {% endblock %}
 ", "BallackTimeSheetBundle:typeabsence:show.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/typeabsence/show.html.twig");
     }

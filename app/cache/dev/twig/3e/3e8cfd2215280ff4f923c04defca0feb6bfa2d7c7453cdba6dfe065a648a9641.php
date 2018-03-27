@@ -41,52 +41,56 @@ class __TwigTemplate_6c2726c42028ec7d4c93692bdfddb5912a210108fb43f254d9bba706749
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "    <h1>Employe</h1>
-
-    <table class=\"table table-hover\">
+        echo "     <div class=\"x_panel\">
+                  <div class=\"x_title\">
+                    <h2>Employe <small>Detail</small></h2>
+                   
+                    <div class=\"clearfix\"></div>
+                  </div>
+     <table class=\"table table-hover\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 10, $this->source); })()), "id", array()), "html", null, true);
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 14, $this->source); })()), "id", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Nom</th>
                 <td>";
-        // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 14, $this->source); })()), "nom", array()), "html", null, true);
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 18, $this->source); })()), "nom", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Prenom</th>
                 <td>";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 18, $this->source); })()), "prenom", array()), "html", null, true);
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 22, $this->source); })()), "prenom", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Situation</th>
                 <td>";
-        // line 22
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 22, $this->source); })()), "situation", array()), "html", null, true);
+        // line 26
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 26, $this->source); })()), "situation", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Datenaissance</th>
                 <td>";
-        // line 26
-        if (twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 26, $this->source); })()), "dateNaissance", array())) {
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 26, $this->source); })()), "dateNaissance", array()), "Y-m-d H:i:s"), "html", null, true);
+        // line 30
+        if (twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 30, $this->source); })()), "dateNaissance", array())) {
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 30, $this->source); })()), "dateNaissance", array()), "Y-m-d H:i:s"), "html", null, true);
         }
         echo "</td>
             </tr>
             <tr>
                 <th>Ischef</th>
                 <td>";
-        // line 30
-        if (twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 30, $this->source); })()), "isChef", array())) {
+        // line 34
+        if (twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 34, $this->source); })()), "isChef", array())) {
             echo "Yes";
         } else {
             echo "No";
@@ -97,14 +101,17 @@ class __TwigTemplate_6c2726c42028ec7d4c93692bdfddb5912a210108fb43f254d9bba706749
     </table>
 <div class=\"btn-group\">
     <a class=\"btn bg-primary\" href=\"";
-        // line 35
+        // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_index");
         echo "\"><span class=\"fa fa-reply\"></span></a>
     <a class=\"btn bg-success\" href=\"";
-        // line 36
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_edit", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 36, $this->source); })()), "id", array()))), "html", null, true);
+        // line 40
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_edit", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new Twig_Error_Runtime('Variable "employe" does not exist.', 40, $this->source); })()), "id", array()))), "html", null, true);
         echo "\"><span class=\"fa fa-edit\"></span></a>
 </div>
+";
+        // line 54
+        echo "</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -123,7 +130,7 @@ class __TwigTemplate_6c2726c42028ec7d4c93692bdfddb5912a210108fb43f254d9bba706749
 
     public function getDebugInfo()
     {
-        return array (  105 => 36,  101 => 35,  89 => 30,  80 => 26,  73 => 22,  66 => 18,  59 => 14,  52 => 10,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  114 => 54,  109 => 40,  105 => 39,  93 => 34,  84 => 30,  77 => 26,  70 => 22,  63 => 18,  56 => 14,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -131,9 +138,13 @@ class __TwigTemplate_6c2726c42028ec7d4c93692bdfddb5912a210108fb43f254d9bba706749
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
-    <h1>Employe</h1>
-
-    <table class=\"table table-hover\">
+     <div class=\"x_panel\">
+                  <div class=\"x_title\">
+                    <h2>Employe <small>Detail</small></h2>
+                   
+                    <div class=\"clearfix\"></div>
+                  </div>
+     <table class=\"table table-hover\">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -177,7 +188,7 @@ class __TwigTemplate_6c2726c42028ec7d4c93692bdfddb5912a210108fb43f254d9bba706749
                 <input type=\"submit\" value=\"Delete\">
             {{ form_end(delete_form) }}
         </li>
-    </ul>#}
+</ul>#}</div>
 {% endblock %}
 ", "BallackTimeSheetBundle:employe:show.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/employe/show.html.twig");
     }

@@ -41,108 +41,106 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "    <h1>Employe list</h1>
-    <div class=\"row\">
-        <div class=\"col-lg-4\">
-            <div class=\"input-group custom-search-form\">
-                <input type=\"text\" class=\"form-control\" placeholder=\"Search...\" id=\"search\">
+        echo "    <div class=\"x_panel\">
+        <div class=\"x_title\">
+            <h2>Employe <small>List</small></h2>
 
-        <span class=\"input-group-btn\">
-            <button class=\"btn btn-default\" type=\"button\">
-                <i class=\"fa fa-search\"></i>
-            </button>
-        </span><img id=\"loader\" src=";
-        // line 14
+            <div class=\"clearfix\"></div>
+        </div>
+
+        <div class=\"row\">
+            <div class=\"col-lg-4\">
+                <div class=\"input-group custom-search-form\">
+                    <input type=\"text\" class=\"form-control\" placeholder=\"Search...\" id=\"search\">
+
+                    <span class=\"input-group-btn\">
+                        <button class=\"btn btn-default\" type=\"button\">
+                            <i class=\"fa fa-search\"></i>
+                        </button>
+                    </span><img id=\"loader\" src=";
+        // line 20
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/ballacktimesheet/images/loader.gif"), "html", null, true);
         echo " style=\"vertical-align:
-                    middle; display: none\" />
+                                middle; display: none\" />
 
+                </div>
             </div>
-        </div>
-        <div class=\"col-lg-4 col-lg-offset-4\">
-            <a class=\"btn btn-default\" href=\"";
-        // line 20
+            <div class=\"col-lg-4 col-lg-offset-4\">
+                <a class=\"btn btn-primary\" href=\"";
+        // line 26
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_new");
+        echo "\">Reinitialiser Conges</a>
+                <a class=\"btn btn-default\" href=\"";
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_new");
         echo "\">Create a new entry</a>
+            </div>
         </div>
-    </div>
-    ";
-        // line 24
-        echo "    <div class=\"count\">
         ";
-        // line 25
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 25, $this->source); })()), "getTotalItemCount", array()), "html", null, true);
-        echo "
-    </div>
-    <table class=\"table table-striped\" id=\"table\">
-        <thead>
-        <tr>
-            ";
         // line 31
-        echo "            <th>";
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->sortable($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 31, $this->source); })()), "Id", "id");
-        echo "</th>
-            <th>Photo</th>
-            <th";
-        // line 33
-        if (twig_get_attribute($this->env, $this->source, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 33, $this->source); })()), "isSorted", array(0 => "nom"), "method")) {
-            echo " class=\"sorted\"";
-        }
-        echo ">";
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->sortable($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 33, $this->source); })()), "Nom", "nom");
-        echo "</th>
-
-            <th>Prenom</th>
-            <th>Situation</th>
-            <th>";
-        // line 37
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->sortable($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 37, $this->source); })()), "Datenaissance", array(0 => "employe.dateNaissance", 1 => "a.time"));
-        echo "</th>
-
-            <th>Ischef</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 44
+        echo "        ";
+        // line 34
+        echo "        <table class=\"table table-striped\" id=\"table\">
+            <thead>
+                <tr><th>Id</th><th>photo</th>
+                        ";
+        // line 38
+        echo "                        ";
+        // line 41
+        echo "<th>nom</th>
+                    <th>Prenom</th>
+                    <th>Situation</th>
+                        ";
+        // line 45
+        echo "          <th>Datenaissance</th><th>Departement</th>
+                    <th>Ischef</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                ";
+        // line 51
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 44, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["employes"]) || array_key_exists("employes", $context) ? $context["employes"] : (function () { throw new Twig_Error_Runtime('Variable "employes" does not exist.', 51, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["employe"]) {
-            // line 45
+            // line 52
             echo "
-            <tr>
-                <td><a href=\"";
-            // line 47
+                    <tr>
+                        <td><a href=\"";
+            // line 54
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_show", array("id" => twig_get_attribute($this->env, $this->source, $context["employe"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["employe"], "id", array()), "html", null, true);
             echo "</a></td>
-                <td><img src=\"";
-            // line 48
+                        <td><img src=\"";
+            // line 55
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["employe"], "image", array()))), "html", null, true);
             echo "\" height=\"50px\" width=\"50px\"></td>
 
-                <td>";
-            // line 50
+                        <td>";
+            // line 57
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["employe"], "nom", array()), "html", null, true);
             echo "</td>
-                <td>";
-            // line 51
+                        <td>";
+            // line 58
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["employe"], "prenom", array()), "html", null, true);
             echo "</td>
-                <td>";
-            // line 52
+                        <td>";
+            // line 59
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["employe"], "situation", array()), "html", null, true);
             echo "</td>
-                <td>";
-            // line 53
+                        <td>";
+            // line 60
             if (twig_get_attribute($this->env, $this->source, $context["employe"], "dateNaissance", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["employe"], "dateNaissance", array()), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
-                <td>";
-            // line 54
+                        <td>";
+            // line 61
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["employe"], "departement", array()), "departement", array()), "html", null, true);
+            echo "</td>
+                        <td>";
+            // line 62
             if (twig_get_attribute($this->env, $this->source, $context["employe"], "isChef", array())) {
                 echo "Yes";
             } else {
@@ -150,53 +148,51 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
             }
             echo "</td>
 
-                <td>
-                    <div class=\"btn-group\">
-                        <button type=\"submit\"
-                                onclick=\"location.href = '";
-            // line 59
+                        <td>
+                            <div class=\"btn-group\">
+                                <button type=\"submit\"
+                                        onclick=\"location.href = '";
+            // line 67
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_show", array("id" => twig_get_attribute($this->env, $this->source, $context["employe"], "id", array()))), "html", null, true);
             echo "'\"
-                                class=\"btn btn-info btn-sm\">
-                            <span class=\"glyphicon glyphicon-eye-open\"></span>
-                            <span class=\"hidden-sm-down\" data-translate=\"entity.action.view\"></span>
-                        </button>
-                        <button type=\"submit\" class=\"btn btn-success btn-sm\"
-                                onclick=\"location.href = '";
-            // line 65
+                                        class=\"btn btn-info btn-sm\">
+                                    <span class=\"glyphicon glyphicon-eye-open\"></span>
+                                    <span class=\"hidden-sm-down\" data-translate=\"entity.action.view\"></span>
+                                </button>
+                                <button type=\"submit\" class=\"btn btn-success btn-sm\"
+                                        onclick=\"location.href = '";
+            // line 73
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["employe"], "id", array()))), "html", null, true);
             echo "'\"
-                                >
-                            <span class=\"glyphicon glyphicon-pencil\"></span>
-                            <span class=\"hidden-sm-down\" data-translate=\"entity.action.edit\"></span>
-                        </button>
-                        <button type=\"submit\" class=\"btn btn-success btn-sm\"
-                                onclick=\"location.href = '";
-            // line 71
+                                        >
+                                    <span class=\"glyphicon glyphicon-pencil\"></span>
+                                    <span class=\"hidden-sm-down\" data-translate=\"entity.action.edit\"></span>
+                                </button>
+                                <button type=\"submit\" class=\"btn btn-success btn-sm\"
+                                        onclick=\"location.href = '";
+            // line 79
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_role", array("id" => twig_get_attribute($this->env, $this->source, $context["employe"], "id", array()))), "html", null, true);
             echo "'\"
-                                >
-                            <span class=\"glyphicon glyphicon-user\"></span>
+                                        >
+                                    <span class=\"glyphicon glyphicon-user\"></span>
 
-                        </button>
-                    </div>
-                </td>
-            </tr>
-        ";
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['employe'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 80
-        echo "        </tbody>
-    </table>
-    <div class=\"navigation\">
-        ";
-        // line 83
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new Twig_Error_Runtime('Variable "pagination" does not exist.', 83, $this->source); })()));
-        echo "
-    </div>
-";
+        // line 88
+        echo "            </tbody>
+        </table>
+        <div class=\"navigation\">
+            ";
+        // line 92
+        echo "        </div></div>
+    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -214,7 +210,7 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
 
     public function getDebugInfo()
     {
-        return array (  196 => 83,  191 => 80,  176 => 71,  167 => 65,  158 => 59,  146 => 54,  140 => 53,  136 => 52,  132 => 51,  128 => 50,  123 => 48,  117 => 47,  113 => 45,  109 => 44,  99 => 37,  88 => 33,  82 => 31,  74 => 25,  71 => 24,  65 => 20,  56 => 14,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  194 => 92,  189 => 88,  174 => 79,  165 => 73,  156 => 67,  144 => 62,  140 => 61,  134 => 60,  130 => 59,  126 => 58,  122 => 57,  117 => 55,  111 => 54,  107 => 52,  103 => 51,  95 => 45,  90 => 41,  88 => 38,  83 => 34,  81 => 31,  75 => 27,  71 => 26,  62 => 20,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -222,88 +218,96 @@ class __TwigTemplate_b7d83f7f4ddd019e8b796544ae71e938a4b680f04ca96d3be21e8b73b9c
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
-    <h1>Employe list</h1>
-    <div class=\"row\">
-        <div class=\"col-lg-4\">
-            <div class=\"input-group custom-search-form\">
-                <input type=\"text\" class=\"form-control\" placeholder=\"Search...\" id=\"search\">
+    <div class=\"x_panel\">
+        <div class=\"x_title\">
+            <h2>Employe <small>List</small></h2>
 
-        <span class=\"input-group-btn\">
-            <button class=\"btn btn-default\" type=\"button\">
-                <i class=\"fa fa-search\"></i>
-            </button>
-        </span><img id=\"loader\" src={{ asset('bundles/ballacktimesheet/images/loader.gif') }} style=\"vertical-align:
-                    middle; display: none\" />
+            <div class=\"clearfix\"></div>
+        </div>
 
+        <div class=\"row\">
+            <div class=\"col-lg-4\">
+                <div class=\"input-group custom-search-form\">
+                    <input type=\"text\" class=\"form-control\" placeholder=\"Search...\" id=\"search\">
+
+                    <span class=\"input-group-btn\">
+                        <button class=\"btn btn-default\" type=\"button\">
+                            <i class=\"fa fa-search\"></i>
+                        </button>
+                    </span><img id=\"loader\" src={{ asset('bundles/ballacktimesheet/images/loader.gif') }} style=\"vertical-align:
+                                middle; display: none\" />
+
+                </div>
+            </div>
+            <div class=\"col-lg-4 col-lg-offset-4\">
+                <a class=\"btn btn-primary\" href=\"{{ path('employe_new') }}\">Reinitialiser Conges</a>
+                <a class=\"btn btn-default\" href=\"{{ path('employe_new') }}\">Create a new entry</a>
             </div>
         </div>
-        <div class=\"col-lg-4 col-lg-offset-4\">
-            <a class=\"btn btn-default\" href=\"{{ path('employe_new') }}\">Create a new entry</a>
-        </div>
-    </div>
-    {# total items count #}
-    <div class=\"count\">
-        {{ pagination.getTotalItemCount }}
-    </div>
-    <table class=\"table table-striped\" id=\"table\">
-        <thead>
-        <tr>
-            {# sorting of properties based on query components #}
-            <th>{{ knp_pagination_sortable(pagination, 'Id', 'id') }}</th>
-            <th>Photo</th>
-            <th{% if pagination.isSorted('nom') %} class=\"sorted\"{% endif %}>{{ knp_pagination_sortable(pagination, 'Nom', 'nom') }}</th>
+        {# total items count #}
+        {# <div class=\"count\">
+             {{ pagination.getTotalItemCount }}
+         </div>#}
+        <table class=\"table table-striped\" id=\"table\">
+            <thead>
+                <tr><th>Id</th><th>photo</th>
+                        {# sorting of properties based on query components #}
+                        {#      <th>{{ knp_pagination_sortable(pagination, 'Id', 'id') }}</th>
+                              <th>Photo</th>
+                              <th{% if pagination.isSorted('nom') %} class=\"sorted\"{% endif %}>{{ knp_pagination_sortable(pagination, 'Nom', 'nom') }}</th>
+                  #}<th>nom</th>
+                    <th>Prenom</th>
+                    <th>Situation</th>
+                        {#<th>{{ knp_pagination_sortable(pagination, 'Datenaissance', ['employe.dateNaissance', 'a.time']) }}</th>
+            #}          <th>Datenaissance</th><th>Departement</th>
+                    <th>Ischef</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employe in employes %}
 
-            <th>Prenom</th>
-            <th>Situation</th>
-            <th>{{ knp_pagination_sortable(pagination, 'Datenaissance', ['employe.dateNaissance', 'a.time']) }}</th>
+                    <tr>
+                        <td><a href=\"{{ path('employe_show', { 'id': employe.id }) }}\">{{ employe.id }}</a></td>
+                        <td><img src=\"{{ asset('uploads/images/' ~ employe.image) }}\" height=\"50px\" width=\"50px\"></td>
 
-            <th>Ischef</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for employe in pagination %}
+                        <td>{{ employe.nom }}</td>
+                        <td>{{ employe.prenom }}</td>
+                        <td>{{ employe.situation }}</td>
+                        <td>{% if employe.dateNaissance %}{{ employe.dateNaissance|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>{{ employe.departement.departement }}</td>
+                        <td>{% if employe.isChef %}Yes{% else %}No{% endif %}</td>
 
-            <tr>
-                <td><a href=\"{{ path('employe_show', { 'id': employe.id }) }}\">{{ employe.id }}</a></td>
-                <td><img src=\"{{ asset('uploads/images/' ~ employe.image) }}\" height=\"50px\" width=\"50px\"></td>
+                        <td>
+                            <div class=\"btn-group\">
+                                <button type=\"submit\"
+                                        onclick=\"location.href = '{{ path('employe_show', { 'id': employe.id }) }}'\"
+                                        class=\"btn btn-info btn-sm\">
+                                    <span class=\"glyphicon glyphicon-eye-open\"></span>
+                                    <span class=\"hidden-sm-down\" data-translate=\"entity.action.view\"></span>
+                                </button>
+                                <button type=\"submit\" class=\"btn btn-success btn-sm\"
+                                        onclick=\"location.href = '{{ path('employe_edit', { 'id': employe.id }) }}'\"
+                                        >
+                                    <span class=\"glyphicon glyphicon-pencil\"></span>
+                                    <span class=\"hidden-sm-down\" data-translate=\"entity.action.edit\"></span>
+                                </button>
+                                <button type=\"submit\" class=\"btn btn-success btn-sm\"
+                                        onclick=\"location.href = '{{ path('employe_role', { 'id': employe.id }) }}'\"
+                                        >
+                                    <span class=\"glyphicon glyphicon-user\"></span>
 
-                <td>{{ employe.nom }}</td>
-                <td>{{ employe.prenom }}</td>
-                <td>{{ employe.situation }}</td>
-                <td>{% if employe.dateNaissance %}{{ employe.dateNaissance|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if employe.isChef %}Yes{% else %}No{% endif %}</td>
-
-                <td>
-                    <div class=\"btn-group\">
-                        <button type=\"submit\"
-                                onclick=\"location.href = '{{ path('employe_show', { 'id': employe.id }) }}'\"
-                                class=\"btn btn-info btn-sm\">
-                            <span class=\"glyphicon glyphicon-eye-open\"></span>
-                            <span class=\"hidden-sm-down\" data-translate=\"entity.action.view\"></span>
-                        </button>
-                        <button type=\"submit\" class=\"btn btn-success btn-sm\"
-                                onclick=\"location.href = '{{ path('employe_edit', { 'id': employe.id }) }}'\"
-                                >
-                            <span class=\"glyphicon glyphicon-pencil\"></span>
-                            <span class=\"hidden-sm-down\" data-translate=\"entity.action.edit\"></span>
-                        </button>
-                        <button type=\"submit\" class=\"btn btn-success btn-sm\"
-                                onclick=\"location.href = '{{ path('employe_role', { 'id': employe.id }) }}'\"
-                                >
-                            <span class=\"glyphicon glyphicon-user\"></span>
-
-                        </button>
-                    </div>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <div class=\"navigation\">
-        {{ knp_pagination_render(pagination) }}
-    </div>
-{% endblock %}
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class=\"navigation\">
+            {# {{ knp_pagination_render(pagination) }}#}
+        </div></div>
+    {% endblock %}
 ", "BallackTimeSheetBundle:employe:index.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/employe/index.html.twig");
     }
 }

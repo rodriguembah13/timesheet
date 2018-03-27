@@ -1,0 +1,42 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Typecontrat <small>Show</small></h2>
+
+        <div class="clearfix"></div>
+    </div>
+    <h1>Typecontrat</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ typeContrat.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ typeContrat.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Vacances</th>
+                <td>{{ typeContrat.vacances }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('typecontrat_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('typecontrat_edit', { 'id': typeContrat.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul></div>
+{% endblock %}

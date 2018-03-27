@@ -1,0 +1,40 @@
+ballack_time_sheet_departement:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/departement.yml"
+    prefix:   /departement
+ballack_time_sheet_dayFerie:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/dayferiee.yml"
+    prefix:   /dayferiee
+ballack_time_sheet_activite:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/activite.yml"
+    prefix:   /activite
+ballack_time_sheet_employe:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/employe.yml"
+    prefix:   /employe
+ballack_time_sheet_projet:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/projet.yml"
+    prefix:   /projet
+ballack_time_sheet_absence:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/absence.yml"
+    prefix:   /absence
+ballack_time_sheet_type_absence:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/typeabsence.yml"
+    prefix:   /typeabsence
+ballack_time_sheet_client:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/client.yml"
+    prefix:   /client
+ballack_time_sheet_conctrat:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/contrat.yml"
+    prefix:   /contrat
+ballack_time_sheet_type_conctrat:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/typecontrat.yml"
+    prefix:   /typecontrat
+ballack_time_sheet_homepage:
+    path:     /
+    defaults: { _controller: BallackTimeSheetBundle:Default:index }
+#setlocale:
+#    path:     /{language}
+#    defaults: { _controller: BallackTimeSheetBundle:Default:setLocale }
+#ballack_time_sheet_type_absence_rest:
+#    resource: "@BallackTimeSheetBundle/Resources/config/routing/typeabsence_rest.yml"
+#    type: rest
+#    prefix:   /Apitypeabsence

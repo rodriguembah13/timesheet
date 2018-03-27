@@ -1,0 +1,9 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+    {% trans %}hello{% endtrans %}
+    {{ 'hello'| trans }}
+   {# {% set referer = app.request.server.get('http-referer')|default('/') %}
+
+    <input type="text" name="_target_path" value="{{ referer }}" />#}
+    {% endblock %}

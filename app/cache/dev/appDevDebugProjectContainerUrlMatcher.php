@@ -105,69 +105,138 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        if (0 === strpos($pathinfo, '/departement')) {
-            // departement_index
-            if ('/departement' === rtrim($pathinfo, '/')) {
-                if ('/' === substr($pathinfo, -1)) {
-                    // no-op
-                } elseif (!in_array($this->context->getMethod(), array('HEAD', 'GET'))) {
-                    goto not_departement_index;
-                } else {
-                    return $this->redirect($rawPathinfo.'/', 'departement_index');
-                }
+        if (0 === strpos($pathinfo, '/d')) {
+            if (0 === strpos($pathinfo, '/departement')) {
+                // departement_index
+                if ('/departement' === rtrim($pathinfo, '/')) {
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif (!in_array($this->context->getMethod(), array('HEAD', 'GET'))) {
+                        goto not_departement_index;
+                    } else {
+                        return $this->redirect($rawPathinfo.'/', 'departement_index');
+                    }
 
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_departement_index;
-                }
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_departement_index;
+                    }
 
-                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DepartementController::indexAction',  '_route' => 'departement_index',);
+                    return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DepartementController::indexAction',  '_route' => 'departement_index',);
+                }
+                not_departement_index:
+
+                // departement_show
+                if (preg_match('#^/departement/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_departement_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'departement_show')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DepartementController::showAction',));
+                }
+                not_departement_show:
+
+                // departement_new
+                if ('/departement/new' === $pathinfo) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_departement_new;
+                    }
+
+                    return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DepartementController::newAction',  '_route' => 'departement_new',);
+                }
+                not_departement_new:
+
+                // departement_edit
+                if (preg_match('#^/departement/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_departement_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'departement_edit')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DepartementController::editAction',));
+                }
+                not_departement_edit:
+
+                // departement_delete
+                if (preg_match('#^/departement/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_departement_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'departement_delete')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DepartementController::deleteAction',));
+                }
+                not_departement_delete:
+
             }
-            not_departement_index:
 
-            // departement_show
-            if (preg_match('#^/departement/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_departement_show;
+            if (0 === strpos($pathinfo, '/dayferiee')) {
+                // dayferiee_index
+                if ('/dayferiee' === rtrim($pathinfo, '/')) {
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif (!in_array($this->context->getMethod(), array('HEAD', 'GET'))) {
+                        goto not_dayferiee_index;
+                    } else {
+                        return $this->redirect($rawPathinfo.'/', 'dayferiee_index');
+                    }
+
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_dayferiee_index;
+                    }
+
+                    return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DayFerieeController::indexAction',  '_route' => 'dayferiee_index',);
                 }
+                not_dayferiee_index:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'departement_show')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DepartementController::showAction',));
-            }
-            not_departement_show:
+                // dayferiee_show
+                if (preg_match('#^/dayferiee/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_dayferiee_show;
+                    }
 
-            // departement_new
-            if ('/departement/new' === $pathinfo) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_departement_new;
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'dayferiee_show')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DayFerieeController::showAction',));
                 }
+                not_dayferiee_show:
 
-                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DepartementController::newAction',  '_route' => 'departement_new',);
-            }
-            not_departement_new:
+                // dayferiee_new
+                if ('/dayferiee/new' === $pathinfo) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_dayferiee_new;
+                    }
 
-            // departement_edit
-            if (preg_match('#^/departement/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_departement_edit;
+                    return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DayFerieeController::newAction',  '_route' => 'dayferiee_new',);
                 }
+                not_dayferiee_new:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'departement_edit')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DepartementController::editAction',));
-            }
-            not_departement_edit:
+                // dayferiee_edit
+                if (preg_match('#^/dayferiee/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_dayferiee_edit;
+                    }
 
-            // departement_delete
-            if (preg_match('#^/departement/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
-                    goto not_departement_delete;
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'dayferiee_edit')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DayFerieeController::editAction',));
                 }
+                not_dayferiee_edit:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'departement_delete')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DepartementController::deleteAction',));
+                // dayferiee_delete
+                if (preg_match('#^/dayferiee/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_dayferiee_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'dayferiee_delete')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DayFerieeController::deleteAction',));
+                }
+                not_dayferiee_delete:
+
             }
-            not_departement_delete:
 
         }
 
@@ -190,6 +259,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\ActiviteController::indexAction',  '_route' => 'activite_index',);
             }
             not_activite_index:
+
+            // activite_index_by_departement
+            if ('/activite/departement' === $pathinfo) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_activite_index_by_departement;
+                }
+
+                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\ActiviteController::getActiviteByDepartementAction',  '_route' => 'activite_index_by_departement',);
+            }
+            not_activite_index_by_departement:
 
             // activite_show
             if (preg_match('#^/activite/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
@@ -236,23 +316,26 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             not_activite_delete:
 
             // activite_my
-            if ('/activite' === rtrim($pathinfo, '/')) {
-                if ('/' === substr($pathinfo, -1)) {
-                    // no-op
-                } elseif (!in_array($this->context->getMethod(), array('HEAD', 'GET'))) {
-                    goto not_activite_my;
-                } else {
-                    return $this->redirect($rawPathinfo.'/', 'activite_my');
-                }
-
+            if (preg_match('#^/activite/(?P<id>[^/]++)/mesActivites$#sD', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_activite_my;
                 }
 
-                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\ActiviteController::mesActiviteAction',  '_route' => 'activite_my',);
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'activite_my')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\ActiviteController::mesActiviteAction',));
             }
             not_activite_my:
+
+            // activite_my_detail
+            if (preg_match('#^/activite/(?P<id>[^/]++)/cat$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_activite_my_detail;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'activite_my_detail')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\ActiviteController::myDetailActiviteAction',));
+            }
+            not_activite_my_detail:
 
         }
 
@@ -590,6 +673,28 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_validation_ok:
 
+            // validation_non_ok
+            if (preg_match('#^/absence/(?P<id>[^/]++)/nonok$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_validation_non_ok;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'validation_non_ok')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\AbsenceController::validation_non_okAction',));
+            }
+            not_validation_non_ok:
+
+            // validation_attente
+            if (preg_match('#^/absence/(?P<id>[^/]++)/attente$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_validation_attente;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'validation_attente')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\AbsenceController::validation_attenteAction',));
+            }
+            not_validation_attente:
+
             // validation_ok_final
             if (preg_match('#^/absence/(?P<id>[^/]++)/ok_final$#sD', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
@@ -597,9 +702,31 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     goto not_validation_ok_final;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'validation_ok_final')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\AbsenceController::validation_ok_finalAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'validation_ok_final')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\AbsenceController::validation_final_okAction',));
             }
             not_validation_ok_final:
+
+            // validation_attente_final
+            if (preg_match('#^/absence/(?P<id>[^/]++)/attente_final$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_validation_attente_final;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'validation_attente_final')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\AbsenceController::validation_final_AttenteAction',));
+            }
+            not_validation_attente_final:
+
+            // validation_nonOk_final
+            if (preg_match('#^/absence/(?P<id>[^/]++)/nok_final$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_validation_nonOk_final;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'validation_nonOk_final')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\AbsenceController::validation_final_NonokAction',));
+            }
+            not_validation_nonOk_final:
 
         }
 
@@ -801,6 +928,193 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 not_contrat_delete:
 
             }
+
+        }
+
+        if (0 === strpos($pathinfo, '/typecontrat')) {
+            // typecontrat_index
+            if ('/typecontrat' === rtrim($pathinfo, '/')) {
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif (!in_array($this->context->getMethod(), array('HEAD', 'GET'))) {
+                    goto not_typecontrat_index;
+                } else {
+                    return $this->redirect($rawPathinfo.'/', 'typecontrat_index');
+                }
+
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_typecontrat_index;
+                }
+
+                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeContratController::indexAction',  '_route' => 'typecontrat_index',);
+            }
+            not_typecontrat_index:
+
+            // typecontrat_show
+            if (preg_match('#^/typecontrat/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_typecontrat_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'typecontrat_show')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeContratController::showAction',));
+            }
+            not_typecontrat_show:
+
+            // typecontrat_new
+            if ('/typecontrat/new' === $pathinfo) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_typecontrat_new;
+                }
+
+                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeContratController::newAction',  '_route' => 'typecontrat_new',);
+            }
+            not_typecontrat_new:
+
+            // typecontrat_edit
+            if (preg_match('#^/typecontrat/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_typecontrat_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'typecontrat_edit')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeContratController::editAction',));
+            }
+            not_typecontrat_edit:
+
+            // typecontrat_delete
+            if (preg_match('#^/typecontrat/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_typecontrat_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'typecontrat_delete')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeContratController::deleteAction',));
+            }
+            not_typecontrat_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/overtime')) {
+            // overtime_index
+            if ('/overtime' === rtrim($pathinfo, '/')) {
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif (!in_array($this->context->getMethod(), array('HEAD', 'GET'))) {
+                    goto not_overtime_index;
+                } else {
+                    return $this->redirect($rawPathinfo.'/', 'overtime_index');
+                }
+
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_overtime_index;
+                }
+
+                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\OverTimeController::indexAction',  '_route' => 'overtime_index',);
+            }
+            not_overtime_index:
+
+            // overtime_show
+            if (preg_match('#^/overtime/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_overtime_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'overtime_show')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\OverTimeController::showAction',));
+            }
+            not_overtime_show:
+
+            // overtime_new
+            if ('/overtime/new' === $pathinfo) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_overtime_new;
+                }
+
+                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\OverTimeController::newAction',  '_route' => 'overtime_new',);
+            }
+            not_overtime_new:
+
+            // overtime_edit
+            if (preg_match('#^/overtime/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_overtime_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'overtime_edit')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\OverTimeController::editAction',));
+            }
+            not_overtime_edit:
+
+            // overtime_delete
+            if (preg_match('#^/overtime/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_overtime_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'overtime_delete')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\OverTimeController::deleteAction',));
+            }
+            not_overtime_delete:
+
+            // overtime_my
+            if ('/overtime/mesovertime' === $pathinfo) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_overtime_my;
+                }
+
+                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\OverTimeController::mesOvertimeAction',  '_route' => 'overtime_my',);
+            }
+            not_overtime_my:
+
+            // overtime_validation
+            if ('/overtime/validation' === $pathinfo) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_overtime_validation;
+                }
+
+                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\OverTimeController::validation_overtimeAction',  '_route' => 'overtime_validation',);
+            }
+            not_overtime_validation:
+
+            // overtime_ok
+            if (preg_match('#^/overtime/(?P<id>[^/]++)/ok$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_overtime_ok;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'overtime_ok')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\OverTimeController::validation_OkAction',));
+            }
+            not_overtime_ok:
+
+            // overtime_nonOk
+            if (preg_match('#^/overtime/(?P<id>[^/]++)/nonOk$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_overtime_nonOk;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'overtime_nonOk')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\OverTimeController::validation_NonOkAction',));
+            }
+            not_overtime_nonOk:
+
+            // overtime_attente
+            if (preg_match('#^/overtime/(?P<id>[^/]++)/attente$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_overtime_attente;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'overtime_attente')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\OverTimeController::validation_AttenteAction',));
+            }
+            not_overtime_attente:
 
         }
 

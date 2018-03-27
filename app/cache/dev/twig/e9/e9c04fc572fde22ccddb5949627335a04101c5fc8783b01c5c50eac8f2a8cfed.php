@@ -41,10 +41,15 @@ class __TwigTemplate_c16ac27d3288b3aece6bb393c782e673e4d97dad35e7bce65569e928364
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "    <h1>Client list</h1>
+        echo "<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>Client <small>List</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
     <div class=\"row container\" style=\"margin-bottom: 5px\">
-<div class=\"btn btn-primary\" style=\" float: right\" onclick=\"location.href = '";
-        // line 6
+<div class=\"btn btn-primary\" onclick=\"location.href = '";
+        // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_new");
         echo "'\">Create a new entry</div>
     </div>
@@ -62,53 +67,38 @@ class __TwigTemplate_c16ac27d3288b3aece6bb393c782e673e4d97dad35e7bce65569e928364
         </thead>
         <tbody>
         ";
-        // line 21
+        // line 26
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["clients"]) || array_key_exists("clients", $context) ? $context["clients"] : (function () { throw new Twig_Error_Runtime('Variable "clients" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["clients"]) || array_key_exists("clients", $context) ? $context["clients"] : (function () { throw new Twig_Error_Runtime('Variable "clients" does not exist.', 26, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["client"]) {
-            // line 22
+            // line 27
             echo "            <tr>
                 <td><a href=\"";
-            // line 23
+            // line 28
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_show", array("id" => twig_get_attribute($this->env, $this->source, $context["client"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "id", array()), "html", null, true);
             echo "</a></td>
                 <td>";
-            // line 24
+            // line 29
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "nomComplet", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 25
+            // line 30
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "email", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 26
+            // line 31
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "telephone", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 27
+            // line 32
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "adresse", array()), "html", null, true);
             echo "</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href=\"";
-            // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_show", array("id" => twig_get_attribute($this->env, $this->source, $context["client"], "id", array()))), "html", null, true);
-            echo "\">show</a>
-                        </li>
-                        <li>
-                            <a href=\"";
-            // line 34
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["client"], "id", array()))), "html", null, true);
-            echo "\">edit</a>
-                        </li>
-                    </ul>
-                </td>       <td><div class=\"btn-group\">
+      <td><div class=\"btn-group\">
                             <button type=\"submit\"
                                     onclick=\"location.href = '";
-            // line 39
+            // line 35
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_show", array("id" => twig_get_attribute($this->env, $this->source, $context["client"], "id", array()))), "html", null, true);
             echo "'\"
                                     class=\"btn btn-info btn-sm\">
@@ -117,7 +107,7 @@ class __TwigTemplate_c16ac27d3288b3aece6bb393c782e673e4d97dad35e7bce65569e928364
                             </button>
                             <button type=\"submit\" class=\"btn btn-success btn-sm\"
                                     onclick=\"location.href = '";
-            // line 45
+            // line 41
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["client"], "id", array()))), "html", null, true);
             echo "'\"
                                     >
@@ -131,9 +121,9 @@ class __TwigTemplate_c16ac27d3288b3aece6bb393c782e673e4d97dad35e7bce65569e928364
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 49
         echo "        </tbody>
-    </table>
+    </table></div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -152,7 +142,7 @@ class __TwigTemplate_c16ac27d3288b3aece6bb393c782e673e4d97dad35e7bce65569e928364
 
     public function getDebugInfo()
     {
-        return array (  135 => 53,  121 => 45,  112 => 39,  104 => 34,  98 => 31,  91 => 27,  87 => 26,  83 => 25,  79 => 24,  73 => 23,  70 => 22,  66 => 21,  48 => 6,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  125 => 49,  111 => 41,  102 => 35,  96 => 32,  92 => 31,  88 => 30,  84 => 29,  78 => 28,  75 => 27,  71 => 26,  53 => 11,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -160,9 +150,14 @@ class __TwigTemplate_c16ac27d3288b3aece6bb393c782e673e4d97dad35e7bce65569e928364
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
-    <h1>Client list</h1>
+<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>Client <small>List</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
     <div class=\"row container\" style=\"margin-bottom: 5px\">
-<div class=\"btn btn-primary\" style=\" float: right\" onclick=\"location.href = '{{ path('client_new') }}'\">Create a new entry</div>
+<div class=\"btn btn-primary\" onclick=\"location.href = '{{ path('client_new') }}'\">Create a new entry</div>
     </div>
    
     <table class=\"table table-striped table-bordered\">
@@ -184,16 +179,7 @@ class __TwigTemplate_c16ac27d3288b3aece6bb393c782e673e4d97dad35e7bce65569e928364
                 <td>{{ client.email }}</td>
                 <td>{{ client.telephone }}</td>
                 <td>{{ client.adresse }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href=\"{{ path('client_show', { 'id': client.id }) }}\">show</a>
-                        </li>
-                        <li>
-                            <a href=\"{{ path('client_edit', { 'id': client.id }) }}\">edit</a>
-                        </li>
-                    </ul>
-                </td>       <td><div class=\"btn-group\">
+      <td><div class=\"btn-group\">
                             <button type=\"submit\"
                                     onclick=\"location.href = '{{ path('client_show', { 'id': client.id }) }}'\"
                                     class=\"btn btn-info btn-sm\">
@@ -210,7 +196,7 @@ class __TwigTemplate_c16ac27d3288b3aece6bb393c782e673e4d97dad35e7bce65569e928364
             </tr>
         {% endfor %}
         </tbody>
-    </table>
+    </table></div>
 {% endblock %}
 ", "BallackTimeSheetBundle:client:index.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/client/index.html.twig");
     }

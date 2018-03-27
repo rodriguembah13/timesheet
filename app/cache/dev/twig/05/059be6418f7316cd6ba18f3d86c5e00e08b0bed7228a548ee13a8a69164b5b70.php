@@ -41,7 +41,12 @@ class __TwigTemplate_594b5551d9ff5fb49a69bc73ffa8db5e9539905c6559850f1e02131e467
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "    <h1>TypeAbsence list</h1>
+        echo "<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>TypeAbsence  <small>List</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
 
     <table class=\"table table-striped\">
         <thead>
@@ -57,28 +62,28 @@ class __TwigTemplate_594b5551d9ff5fb49a69bc73ffa8db5e9539905c6559850f1e02131e467
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["typeAbsences"]) || array_key_exists("typeAbsences", $context) ? $context["typeAbsences"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsences" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["typeAbsences"]) || array_key_exists("typeAbsences", $context) ? $context["typeAbsences"] : (function () { throw new Twig_Error_Runtime('Variable "typeAbsences" does not exist.', 24, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["typeAbsence"]) {
-            // line 20
+            // line 25
             echo "            <tr>
                 <td><a href=\"";
-            // line 21
+            // line 26
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("typeabsence_show", array("id" => twig_get_attribute($this->env, $this->source, $context["typeAbsence"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["typeAbsence"], "id", array()), "html", null, true);
             echo "</a></td>
                 <td>";
-            // line 22
+            // line 27
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["typeAbsence"], "libelle", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 23
+            // line 28
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["typeAbsence"], "dayoff", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 24
+            // line 29
             if (twig_get_attribute($this->env, $this->source, $context["typeAbsence"], "isPayant", array())) {
                 echo "Yes";
             } else {
@@ -86,17 +91,17 @@ class __TwigTemplate_594b5551d9ff5fb49a69bc73ffa8db5e9539905c6559850f1e02131e467
             }
             echo "</td>
                 <td>";
-            // line 25
+            // line 30
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["typeAbsence"], "pourcentage", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 26
+            // line 31
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["typeAbsence"], "decription", array()), "html", null, true);
             echo "</td>
                              <td><div class=\"btn-group\">
                             <button type=\"submit\"
                                     onclick=\"location.href = '";
-            // line 29
+            // line 34
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("typeabsence_show", array("id" => twig_get_attribute($this->env, $this->source, $context["typeAbsence"], "id", array()))), "html", null, true);
             echo "'\"
                                     class=\"btn btn-info btn-sm\">
@@ -105,7 +110,7 @@ class __TwigTemplate_594b5551d9ff5fb49a69bc73ffa8db5e9539905c6559850f1e02131e467
                             </button>
                             <button type=\"submit\" class=\"btn btn-success btn-sm\"
                                     onclick=\"location.href = '";
-            // line 35
+            // line 40
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("typeabsence_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["typeAbsence"], "id", array()))), "html", null, true);
             echo "'\"
                                     >
@@ -119,18 +124,18 @@ class __TwigTemplate_594b5551d9ff5fb49a69bc73ffa8db5e9539905c6559850f1e02131e467
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['typeAbsence'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 48
         echo "        </tbody>
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 48
+        // line 53
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("typeabsence_new");
         echo "\">Create a new entry</a>
         </li>
-    </ul>
+    </ul></div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -149,7 +154,7 @@ class __TwigTemplate_594b5551d9ff5fb49a69bc73ffa8db5e9539905c6559850f1e02131e467
 
     public function getDebugInfo()
     {
-        return array (  130 => 48,  123 => 43,  109 => 35,  100 => 29,  94 => 26,  90 => 25,  82 => 24,  78 => 23,  74 => 22,  68 => 21,  65 => 20,  61 => 19,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  135 => 53,  128 => 48,  114 => 40,  105 => 34,  99 => 31,  95 => 30,  87 => 29,  83 => 28,  79 => 27,  73 => 26,  70 => 25,  66 => 24,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -157,7 +162,12 @@ class __TwigTemplate_594b5551d9ff5fb49a69bc73ffa8db5e9539905c6559850f1e02131e467
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
-    <h1>TypeAbsence list</h1>
+<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>TypeAbsence  <small>List</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
 
     <table class=\"table table-striped\">
         <thead>
@@ -203,7 +213,7 @@ class __TwigTemplate_594b5551d9ff5fb49a69bc73ffa8db5e9539905c6559850f1e02131e467
         <li>
             <a href=\"{{ path('typeabsence_new') }}\">Create a new entry</a>
         </li>
-    </ul>
+    </ul></div>
 {% endblock %}
 ", "BallackTimeSheetBundle:typeabsence:index.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/typeabsence/index.html.twig");
     }

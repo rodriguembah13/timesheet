@@ -41,26 +41,31 @@ class __TwigTemplate_414b3738ae9f1d8d11c7dd6ed976703383a5b7e6ed39c6e6a2788609085
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "    <h1>Welcome to the Admin:edit page</h1>
+        echo "    <div class=\"x_panel\">
+        <div class=\"x_title\">
+            <h2>Permission <small>Gestion</small></h2>
+
+            <div class=\"clearfix\"></div>
+        </div>
     <dl class=\"dl-horizontal\">
 
         <dt><span data-translate=\"userManagement.firstName\">UserName</span></dt>
         <dd>";
-        // line 8
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 8, $this->source); })()), "username", array()), "html", null, true);
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 13, $this->source); })()), "username", array()), "html", null, true);
         echo "</dd>
         <dt><span data-translate=\"userManagement.firstName\">Email</span></dt>
         <dd>";
-        // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 10, $this->source); })()), "email", array()), "html", null, true);
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 15, $this->source); })()), "email", array()), "html", null, true);
         echo "</dd>
         <dt><span data-translate=\"userManagement.firstName\">Roles</span></dt>
         <dd>";
-        // line 12
+        // line 17
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 12, $this->source); })()), "roles", array()));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 17, $this->source); })()), "roles", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["r"]) {
-            // line 13
+            // line 18
             echo "            <span class=\"label label-info\">";
             echo twig_escape_filter($this->env, $context["r"], "html", null, true);
             echo "</span>
@@ -69,19 +74,19 @@ class __TwigTemplate_414b3738ae9f1d8d11c7dd6ed976703383a5b7e6ed39c6e6a2788609085
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['r'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
+        // line 19
         echo "</dd>
         </dl>
         <label> Supprimer Un Role</label>
         <dl class=\"dl-horizontal\">
             <dd>";
-        // line 18
+        // line 23
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 18, $this->source); })()), "roles", array()));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 23, $this->source); })()), "roles", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["r"]) {
-            // line 19
+            // line 24
             echo "                <span class=\"label label-info\"><a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_deleteRole", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 19, $this->source); })()), "id", array()), "role" => $context["r"])), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_deleteRole", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 24, $this->source); })()), "id", array()), "role" => $context["r"])), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $context["r"], "html", null, true);
             echo "</a></span>
@@ -90,18 +95,18 @@ class __TwigTemplate_414b3738ae9f1d8d11c7dd6ed976703383a5b7e6ed39c6e6a2788609085
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['r'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
+        // line 25
         echo "</dd></dl>
             <label> Ajouter Un Role</label>
             <dl class=\"dl-horizontal\">
                 <dd>";
-        // line 23
+        // line 28
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["ras"]) || array_key_exists("ras", $context) ? $context["ras"] : (function () { throw new Twig_Error_Runtime('Variable "ras" does not exist.', 23, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["ras"]) || array_key_exists("ras", $context) ? $context["ras"] : (function () { throw new Twig_Error_Runtime('Variable "ras" does not exist.', 28, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["r"]) {
-            // line 24
+            // line 29
             echo "                    <span class=\"label label-info\"><a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_addRole", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 24, $this->source); })()), "id", array()), "role" => $context["r"])), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_addRole", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 29, $this->source); })()), "id", array()), "role" => $context["r"])), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $context["r"], "html", null, true);
             echo "</a></span>
@@ -110,14 +115,14 @@ class __TwigTemplate_414b3738ae9f1d8d11c7dd6ed976703383a5b7e6ed39c6e6a2788609085
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['r'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 30
         echo "</dd></dl>
 
 
                 <p><a href=\"";
-        // line 28
+        // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_index");
-        echo "\">Liste des Produits</a>
+        echo "\">Liste des Employes</a>
                 </div>
                 ";
         
@@ -137,7 +142,7 @@ class __TwigTemplate_414b3738ae9f1d8d11c7dd6ed976703383a5b7e6ed39c6e6a2788609085
 
     public function getDebugInfo()
     {
-        return array (  119 => 28,  114 => 25,  103 => 24,  99 => 23,  94 => 20,  83 => 19,  79 => 18,  73 => 14,  64 => 13,  60 => 12,  55 => 10,  50 => 8,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  124 => 33,  119 => 30,  108 => 29,  104 => 28,  99 => 25,  88 => 24,  84 => 23,  78 => 19,  69 => 18,  65 => 17,  60 => 15,  55 => 13,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -145,7 +150,12 @@ class __TwigTemplate_414b3738ae9f1d8d11c7dd6ed976703383a5b7e6ed39c6e6a2788609085
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
-    <h1>Welcome to the Admin:edit page</h1>
+    <div class=\"x_panel\">
+        <div class=\"x_title\">
+            <h2>Permission <small>Gestion</small></h2>
+
+            <div class=\"clearfix\"></div>
+        </div>
     <dl class=\"dl-horizontal\">
 
         <dt><span data-translate=\"userManagement.firstName\">UserName</span></dt>
@@ -169,7 +179,7 @@ class __TwigTemplate_414b3738ae9f1d8d11c7dd6ed976703383a5b7e6ed39c6e6a2788609085
                     {% endfor %}</dd></dl>
 
 
-                <p><a href=\"{{ path('employe_index') }}\">Liste des Produits</a>
+                <p><a href=\"{{ path('employe_index') }}\">Liste des Employes</a>
                 </div>
                 {% endblock %}", "BallackTimeSheetBundle:Default:role.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/Default/role.html.twig");
     }

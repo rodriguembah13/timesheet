@@ -2,7 +2,10 @@ activite_index:
     path:     /
     defaults: { _controller: "BallackTimeSheetBundle:Activite:index" }
     methods:  GET
-
+activite_index_by_departement:
+    path:     /departement
+    defaults: { _controller: "BallackTimeSheetBundle:Activite:getActiviteByDepartement" }
+    methods:  GET
 activite_show:
     path:     /{id}/show
     defaults: { _controller: "BallackTimeSheetBundle:Activite:show" }
@@ -23,6 +26,10 @@ activite_delete:
     defaults: { _controller: "BallackTimeSheetBundle:Activite:delete" }
     methods:  DELETE
 activite_my:
-    path:     /
+    path:     /{id}/mesActivites
     defaults: { _controller: "BallackTimeSheetBundle:Activite:mesActivite" }
+    methods:  GET
+activite_my_detail:
+    path:     /{id}/cat
+    defaults: { _controller: "BallackTimeSheetBundle:Activite:myDetailActivite" }
     methods:  GET

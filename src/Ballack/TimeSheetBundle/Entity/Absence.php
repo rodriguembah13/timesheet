@@ -36,16 +36,16 @@ class Absence {
     private $endDate;
 
     /**
-     * @var bool
+     * @var string
      *
-     * @ORM\Column(name="statutChef", type="boolean")
+     * @ORM\Column(name="statutChef", type="string")
      */
     private $statutChef;
 
     /**
-     * @var bool
+     * @var string
      *
-     * @ORM\Column(name="statut", type="boolean")
+     * @ORM\Column(name="statut", type="string")
      */
     private $statut;
 
@@ -73,8 +73,8 @@ class Absence {
     private $typeAbsence;
     function __construct() {
         $this->date = new \Datetime();
-        $this->statut=false;
-        $this->statutChef=false;
+        $this->statut="attente";
+        $this->statutChef="attente";
     }
 
     /**

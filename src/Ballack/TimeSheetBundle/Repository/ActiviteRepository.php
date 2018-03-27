@@ -10,4 +10,33 @@ namespace Ballack\TimeSheetBundle\Repository;
  */
 class ActiviteRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllActivitebyEmployeByProjet($emp,$projet)
+    {
+        return $this->createQueryBuilder('a')
+             ->andWhere('a.employe = :employe')
+            ->setParameter('employe', $emp)
+            ->andWhere('a.projet = :projet')
+            ->setParameter('projet', $projet)
+            ->getQuery()
+            ->execute();
+    }
+    public function findAllActiviteByProjet($projet)
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.projet = :projet')
+            ->setParameter('projet', $projet)
+            ->getQuery()
+            ->execute();
+    }
+    public function findAllActiviteByDepartement($departement)
+    {
+        return $this->createQueryBuilder('a')
+            ->leftJoin('a.employe', 'e')
+            ->addSelect('e')
+            ->andWhere('e.departement = :depa')
+            ->setParameter('depa', $departement)
+            ->addOrderBy('a.dateCreation','desc')
+            ->getQuery()
+            ->execute();
+    }
 }

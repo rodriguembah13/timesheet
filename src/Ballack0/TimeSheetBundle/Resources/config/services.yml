@@ -1,4 +1,0 @@
-services:
-#    ballack_time_sheet.example:
-#        class: Ballack\TimeSheetBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]

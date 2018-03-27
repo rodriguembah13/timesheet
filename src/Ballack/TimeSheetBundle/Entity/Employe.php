@@ -69,12 +69,36 @@ class Employe
      * @Assert\File(mimeTypes={ "image/jpeg" })
      */
     private $image;
+    /**
+     * @ORM\ManyToMany(targetEntity="Ballack\TimeSheetBundle\Entity\Projet", mappedBy="employes")
+     */
+    private $projets;
+          /**
+     *
+     * @ORM\OneToMany(targetEntity="Ballack\TimeSheetBundle\Entity\Activite", mappedBy="employe")
+     */
 
+    private $activites;
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="soldeVacances", type="integer")
+     */
+    private $soldeVacances;
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="overtime", type="float")
+     */
+    private $overtime;
     public function getImage()
     {
         return $this->image;
     }
-
+    public function getProjets()
+    {
+        return $this->projets;
+    }
     public function setImage($image)
     {
         $this->image = $image;
@@ -221,5 +245,25 @@ class Employe
     {
         return sprintf('%s - %s :: %s', $this->nom,$this->prenom,$this->departement->getDepartement());
     }
+    function getActivites() {
+        return $this->activites;
+    }
+    function getSoldeVacances() {
+        return $this->soldeVacances;
+    }
+
+    function setSoldeVacances($soldeVacances) {
+        $this->soldeVacances = $soldeVacances;
+    }
+    function getOvertime() {
+        return $this->overtime;
+    }
+
+    function setOvertime($overtime) {
+        $this->overtime = $overtime;
+    }
+
+
+  
 }
 

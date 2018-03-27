@@ -41,47 +41,52 @@ class __TwigTemplate_faf1542ea21a667d7510161aa07bcf1759b3f5f0642098876e10121d3a7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "    <h1>Contrat</h1>
+        echo "<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>Contrat <small>Show</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
 
     <table class=\"table table-hover\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 10, $this->source); })()), "id", array()), "html", null, true);
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 15, $this->source); })()), "id", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Startdate</th>
                 <td>";
-        // line 14
-        if (twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 14, $this->source); })()), "startDate", array())) {
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 14, $this->source); })()), "startDate", array()), "Y-m-d H:i:s"), "html", null, true);
+        // line 19
+        if (twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 19, $this->source); })()), "startDate", array())) {
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 19, $this->source); })()), "startDate", array()), "Y-m-d H:i:s"), "html", null, true);
         }
         echo "</td>
             </tr>
             <tr>
                 <th>Enddate</th>
                 <td>";
-        // line 18
-        if (twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 18, $this->source); })()), "endDate", array())) {
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 18, $this->source); })()), "endDate", array()), "Y-m-d H:i:s"), "html", null, true);
+        // line 23
+        if (twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 23, $this->source); })()), "endDate", array())) {
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 23, $this->source); })()), "endDate", array()), "Y-m-d H:i:s"), "html", null, true);
         }
         echo "</td>
             </tr>
             <tr>
                 <th>Salairebrute</th>
                 <td>";
-        // line 22
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 22, $this->source); })()), "salaireBrute", array()), "html", null, true);
+        // line 27
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 27, $this->source); })()), "salaireBrute", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Typecontrat</th>
                 <td>";
-        // line 26
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 26, $this->source); })()), "typeContrat", array()), "html", null, true);
+        // line 31
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 31, $this->source); })()), "typeContrat", array()), "libelle", array()), "html", null, true);
         echo "</td>
             </tr>
         </tbody>
@@ -90,28 +95,28 @@ class __TwigTemplate_faf1542ea21a667d7510161aa07bcf1759b3f5f0642098876e10121d3a7
     <ul>
         <li>
             <a href=\"";
-        // line 33
+        // line 38
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contrat_index");
         echo "\">Back to the list</a>
         </li>
         <li>
             <a href=\"";
-        // line 36
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contrat_edit", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 36, $this->source); })()), "id", array()))), "html", null, true);
+        // line 41
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contrat_edit", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["contrat"]) || array_key_exists("contrat", $context) ? $context["contrat"] : (function () { throw new Twig_Error_Runtime('Variable "contrat" does not exist.', 41, $this->source); })()), "id", array()))), "html", null, true);
         echo "\">Edit</a>
         </li>
         <li>
             ";
-        // line 39
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 39, $this->source); })()), 'form_start');
+        // line 44
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 44, $this->source); })()), 'form_start');
         echo "
                 <input type=\"submit\" value=\"Delete\">
             ";
-        // line 41
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 41, $this->source); })()), 'form_end');
+        // line 46
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 46, $this->source); })()), 'form_end');
         echo "
         </li>
-    </ul>
+    </ul></div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -130,7 +135,7 @@ class __TwigTemplate_faf1542ea21a667d7510161aa07bcf1759b3f5f0642098876e10121d3a7
 
     public function getDebugInfo()
     {
-        return array (  111 => 41,  106 => 39,  100 => 36,  94 => 33,  84 => 26,  77 => 22,  68 => 18,  59 => 14,  52 => 10,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  116 => 46,  111 => 44,  105 => 41,  99 => 38,  89 => 31,  82 => 27,  73 => 23,  64 => 19,  57 => 15,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -138,7 +143,12 @@ class __TwigTemplate_faf1542ea21a667d7510161aa07bcf1759b3f5f0642098876e10121d3a7
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
-    <h1>Contrat</h1>
+<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>Contrat <small>Show</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
 
     <table class=\"table table-hover\">
         <tbody>
@@ -160,7 +170,7 @@ class __TwigTemplate_faf1542ea21a667d7510161aa07bcf1759b3f5f0642098876e10121d3a7
             </tr>
             <tr>
                 <th>Typecontrat</th>
-                <td>{{ contrat.typeContrat }}</td>
+                <td>{{ contrat.typeContrat.libelle }}</td>
             </tr>
         </tbody>
     </table>
@@ -177,7 +187,7 @@ class __TwigTemplate_faf1542ea21a667d7510161aa07bcf1759b3f5f0642098876e10121d3a7
                 <input type=\"submit\" value=\"Delete\">
             {{ form_end(delete_form) }}
         </li>
-    </ul>
+    </ul></div>
 {% endblock %}
 ", "BallackTimeSheetBundle:contrat:show.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/contrat/show.html.twig");
     }

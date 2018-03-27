@@ -50,11 +50,9 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
             echo "\">Mes Absences</a>
                         </li>
                         <li>
-                            <a href=\"";
-            // line 24
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_my");
-            echo "\">Mes Activites</a>
-                        </li>
+                            ";
+            // line 25
+            echo "                        </li>
                         <li>
                             <a href=\"";
             // line 27
@@ -62,7 +60,10 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
             echo "\">Mes Projets</a>
                         </li>
                         <li>
-                            <a href=\"#\">Mes Heures Supp</a>
+                            <a href=\"";
+            // line 30
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("overtime_my");
+            echo "\">Mes Heures Supp</a>
                         </li>
                         <li>
                             <a href=\"";
@@ -88,7 +89,10 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
                 echo "\">Absence & Conge</a>
                                 </li>
                                 <li>
-                                    <a href=\"#\">Heures Supp</a>
+                                    <a href=\"";
+                // line 47
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("overtime_validation");
+                echo "\">Heures Supp</a>
                                 </li>
                                 ";
                 // line 49
@@ -97,7 +101,7 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
                               <a href=\"";
                     // line 50
                     echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validation_final");
-                    echo "\">Validation Admin</a>
+                    echo "\">Absence & Conge par Admin</a>
                           </li>";
                 }
                 // line 52
@@ -109,7 +113,10 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
                             <a href=\"#\">Affectation Projet</a>
                         </li>
                         <li>
-                            <a href=\"#\">Suivi Activite</a>
+                            <a href=\"";
+            // line 58
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_index_by_departement");
+            echo "\">Suivi Activite</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
@@ -133,7 +140,10 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
                 echo "\">Liste Clients</a>
                         </li>
                         <li>
-                            <a href=\"#\">Suivi Projets</a>
+                            <a href=\"";
+                // line 73
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_index_by_departement");
+                echo "\">Suivi Projets</a>
                         </li>
                     </ul>
                 </li> ";
@@ -189,19 +199,31 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
                         <a href=\"";
                 // line 120
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("typeabsence_index");
-                echo "\">Liste Type</a>
+                echo "\">Liste Type D'absence</a>
+                    </li>
+                    <li>
+                        <a href=\"";
+                // line 123
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("typecontrat_index");
+                echo "\">Liste Type De Contrat</a>
+                    </li>
+                     <li>
+                        <a href=\"";
+                // line 126
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dayferiee_index");
+                echo "\">Liste Jours Feries</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>";
             }
-            // line 125
+            // line 131
             echo "        </ul>
     </div>
     <!-- /.sidebar-collapse -->
 </div>";
         }
-        // line 129
+        // line 135
         echo "<!-- /.navbar-static-side -->
 ";
         
@@ -221,7 +243,7 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
 
     public function getDebugInfo()
     {
-        return array (  205 => 129,  199 => 125,  191 => 120,  185 => 117,  179 => 114,  173 => 111,  167 => 107,  165 => 106,  157 => 101,  151 => 98,  144 => 93,  142 => 77,  132 => 70,  126 => 67,  120 => 63,  118 => 62,  108 => 54,  104 => 52,  99 => 50,  95 => 49,  87 => 44,  80 => 40,  70 => 33,  61 => 27,  55 => 24,  49 => 21,  28 => 2,  26 => 1,);
+        return array (  227 => 135,  221 => 131,  213 => 126,  207 => 123,  201 => 120,  195 => 117,  189 => 114,  183 => 111,  177 => 107,  175 => 106,  167 => 101,  161 => 98,  154 => 93,  152 => 77,  145 => 73,  139 => 70,  133 => 67,  127 => 63,  125 => 62,  118 => 58,  112 => 54,  108 => 52,  103 => 50,  99 => 49,  94 => 47,  88 => 44,  81 => 40,  71 => 33,  65 => 30,  59 => 27,  55 => 25,  49 => 21,  28 => 2,  26 => 1,);
     }
 
     public function getSourceContext()
@@ -249,13 +271,13 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
                             <a href=\"{{ path('absence_my') }}\">Mes Absences</a>
                         </li>
                         <li>
-                            <a href=\"{{ path('activite_my') }}\">Mes Activites</a>
+                            {#<a href=\"{{ path('activite_my',{}) }}\">Mes Activites</a>#}
                         </li>
                         <li>
                             <a href=\"{{ path('projet_my') }}\">Mes Projets</a>
                         </li>
                         <li>
-                            <a href=\"#\">Mes Heures Supp</a>
+                            <a href=\"{{ path('overtime_my') }}\">Mes Heures Supp</a>
                         </li>
                         <li>
                             <a href=\"{{ path('employe_profil') }}\">Mon Compte</a>
@@ -272,10 +294,10 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
                                     <a href=\"{{ path('validation') }}\">Absence & Conge</a>
                                 </li>
                                 <li>
-                                    <a href=\"#\">Heures Supp</a>
+                                    <a href=\"{{ path('overtime_validation') }}\">Heures Supp</a>
                                 </li>
                                 {% if is_granted('ROLE_ADMIN') %}     <li>
-                              <a href=\"{{ path('validation_final') }}\">Validation Admin</a>
+                              <a href=\"{{ path('validation_final') }}\">Absence & Conge par Admin</a>
                           </li>{% endif %}
                             </ul>
                         </li>{% endif %}
@@ -283,7 +305,7 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
                             <a href=\"#\">Affectation Projet</a>
                         </li>
                         <li>
-                            <a href=\"#\">Suivi Activite</a>
+                            <a href=\"{{ path('activite_index_by_departement') }}\">Suivi Activite</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
@@ -298,7 +320,7 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
                             <a href=\"{{ path('client_index') }}\">Liste Clients</a>
                         </li>
                         <li>
-                            <a href=\"#\">Suivi Projets</a>
+                            <a href=\"{{ path('activite_index_by_departement') }}\">Suivi Projets</a>
                         </li>
                     </ul>
                 </li> {% endif%}
@@ -345,7 +367,13 @@ class __TwigTemplate_0152864a03559563ffbf38949acb8dfb425b897d429d509d248a988aab3
                         <a href=\"{{ path('contrat_index') }}\">Liste Contrats</a>
                     </li>
                     <li>
-                        <a href=\"{{ path('typeabsence_index') }}\">Liste Type</a>
+                        <a href=\"{{ path('typeabsence_index') }}\">Liste Type D'absence</a>
+                    </li>
+                    <li>
+                        <a href=\"{{ path('typecontrat_index') }}\">Liste Type De Contrat</a>
+                    </li>
+                     <li>
+                        <a href=\"{{ path('dayferiee_index') }}\">Liste Jours Feries</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

@@ -41,49 +41,54 @@ class __TwigTemplate_733a1d83953cc2f7a53ff8ca2e42bc3b8f2de9d52452f6385e422b89724
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "    <h1>Activite</h1>
+        echo "<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>Activite <small>Show</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
 
     <table class=\"table table-hover\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 10, $this->source); })()), "id", array()), "html", null, true);
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 15, $this->source); })()), "id", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Datecreation</th>
                 <td>";
-        // line 14
-        if (twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 14, $this->source); })()), "dateCreation", array())) {
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 14, $this->source); })()), "dateCreation", array()), "Y-m-d H:i:s"), "html", null, true);
+        // line 19
+        if (twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 19, $this->source); })()), "dateCreation", array())) {
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 19, $this->source); })()), "dateCreation", array()), "Y-m-d H:i:s"), "html", null, true);
         }
         echo "</td>
             </tr>
             <tr>
                 <th>Timestart</th>
                 <td>";
-        // line 18
-        if (twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 18, $this->source); })()), "timeStart", array())) {
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 18, $this->source); })()), "timeStart", array()), "Y-m-d H:i:s"), "html", null, true);
+        // line 23
+        if (twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 23, $this->source); })()), "timeStart", array())) {
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 23, $this->source); })()), "timeStart", array()), "Y-m-d H:i:s"), "html", null, true);
         }
         echo "</td>
             </tr>
             <tr>
                 <th>Timestop</th>
                 <td>";
-        // line 22
-        if (twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 22, $this->source); })()), "timestop", array())) {
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 22, $this->source); })()), "timestop", array()), "Y-m-d H:i:s"), "html", null, true);
+        // line 27
+        if (twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 27, $this->source); })()), "timestop", array())) {
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 27, $this->source); })()), "timestop", array()), "Y-m-d H:i:s"), "html", null, true);
         }
         echo "</td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>";
-        // line 26
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 26, $this->source); })()), "description", array()), "html", null, true);
+        // line 31
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 31, $this->source); })()), "description", array()), "html", null, true);
         echo "</td>
             </tr>
         </tbody>
@@ -91,7 +96,7 @@ class __TwigTemplate_733a1d83953cc2f7a53ff8ca2e42bc3b8f2de9d52452f6385e422b89724
     <div class=\"btn-group\">
         <button type=\"submit\"
                 onclick=\"location.href = '";
-        // line 32
+        // line 37
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_index");
         echo "'\"
                 class=\"btn btn-info btn-sm\">
@@ -100,48 +105,48 @@ class __TwigTemplate_733a1d83953cc2f7a53ff8ca2e42bc3b8f2de9d52452f6385e422b89724
         </button>
         <button type=\"submit\"
                 onclick=\"location.href = '";
-        // line 38
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_edit", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 38, $this->source); })()), "id", array()))), "html", null, true);
+        // line 43
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_edit", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 43, $this->source); })()), "id", array()))), "html", null, true);
         echo "'\"
                 class=\"btn btn-primary btn-sm\">
             <span class=\"fa fa-edit\"></span>
             <span class=\"hidden-sm-down\" data-translate=\"entity.action.view\"></span>
         </button>";
-        // line 42
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 42, $this->source); })()), 'form_start');
+        // line 47
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 47, $this->source); })()), 'form_start');
         echo "
         <button type=\"submit\"  class=\"btn btn-danger btn-sm\"> 
             <span class=\"fa fa-remove\"></span>
         </button>";
-        // line 45
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 45, $this->source); })()), 'form_end');
+        // line 50
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 50, $this->source); })()), 'form_end');
         echo "
     </div>
     <ul>
         <li>
             <a href=\"";
-        // line 49
+        // line 54
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_index");
         echo "\">Back to the list</a>
         </li>
         <li>
             <a href=\"";
-        // line 52
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_edit", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 52, $this->source); })()), "id", array()))), "html", null, true);
+        // line 57
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_edit", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["activite"]) || array_key_exists("activite", $context) ? $context["activite"] : (function () { throw new Twig_Error_Runtime('Variable "activite" does not exist.', 57, $this->source); })()), "id", array()))), "html", null, true);
         echo "\">Edit</a>
         </li>
         <li>
             ";
-        // line 55
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 55, $this->source); })()), 'form_start');
+        // line 60
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 60, $this->source); })()), 'form_start');
         echo "
             <input type=\"submit\" value=\"Delete\">
             ";
-        // line 57
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 57, $this->source); })()), 'form_end');
+        // line 62
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 62, $this->source); })()), 'form_end');
         echo "
         </li>
-    </ul>
+    </ul></div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -160,7 +165,7 @@ class __TwigTemplate_733a1d83953cc2f7a53ff8ca2e42bc3b8f2de9d52452f6385e422b89724
 
     public function getDebugInfo()
     {
-        return array (  141 => 57,  136 => 55,  130 => 52,  124 => 49,  117 => 45,  111 => 42,  104 => 38,  95 => 32,  86 => 26,  77 => 22,  68 => 18,  59 => 14,  52 => 10,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  146 => 62,  141 => 60,  135 => 57,  129 => 54,  122 => 50,  116 => 47,  109 => 43,  100 => 37,  91 => 31,  82 => 27,  73 => 23,  64 => 19,  57 => 15,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -168,7 +173,12 @@ class __TwigTemplate_733a1d83953cc2f7a53ff8ca2e42bc3b8f2de9d52452f6385e422b89724
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
-    <h1>Activite</h1>
+<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>Activite <small>Show</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
 
     <table class=\"table table-hover\">
         <tbody>
@@ -223,7 +233,7 @@ class __TwigTemplate_733a1d83953cc2f7a53ff8ca2e42bc3b8f2de9d52452f6385e422b89724
             <input type=\"submit\" value=\"Delete\">
             {{ form_end(delete_form) }}
         </li>
-    </ul>
+    </ul></div>
 {% endblock %}
 ", "BallackTimeSheetBundle:activite:show.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/activite/show.html.twig");
     }

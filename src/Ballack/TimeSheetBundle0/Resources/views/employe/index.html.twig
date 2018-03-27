@@ -1,0 +1,85 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+    <h1>Employe list</h1>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control" placeholder="Search..." id="search">
+
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+                <i class="fa fa-search"></i>
+            </button>
+        </span><img id="loader" src={{ asset('bundles/ballacktimesheet/images/loader.gif') }} style="vertical-align:
+                    middle; display: none" />
+
+            </div>
+        </div>
+        <div class="col-lg-4 col-lg-offset-4">
+            <a class="btn btn-default" href="{{ path('employe_new') }}">Create a new entry</a>
+        </div>
+    </div>
+    {# total items count #}
+    <div class="count">
+        {{ pagination.getTotalItemCount }}
+    </div>
+    <table class="table table-striped" id="table">
+        <thead>
+        <tr>
+            {# sorting of properties based on query components #}
+            <th>{{ knp_pagination_sortable(pagination, 'Id', 'id') }}</th>
+            <th>Photo</th>
+            <th{% if pagination.isSorted('nom') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Nom', 'nom') }}</th>
+
+            <th>Prenom</th>
+            <th>Situation</th>
+            <th>{{ knp_pagination_sortable(pagination, 'Datenaissance', ['employe.dateNaissance', 'a.time']) }}</th>
+
+            <th>Ischef</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for employe in pagination %}
+
+            <tr>
+                <td><a href="{{ path('employe_show', { 'id': employe.id }) }}">{{ employe.id }}</a></td>
+                <td><img src="{{ asset('uploads/images/' ~ employe.image) }}" height="50px" width="50px"></td>
+
+                <td>{{ employe.nom }}</td>
+                <td>{{ employe.prenom }}</td>
+                <td>{{ employe.situation }}</td>
+                <td>{% if employe.dateNaissance %}{{ employe.dateNaissance|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if employe.isChef %}Yes{% else %}No{% endif %}</td>
+
+                <td>
+                    <div class="btn-group">
+                        <button type="submit"
+                                onclick="location.href = '{{ path('employe_show', { 'id': employe.id }) }}'"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm"
+                                onclick="location.href = '{{ path('employe_edit', { 'id': employe.id }) }}'"
+                                >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm"
+                                onclick="location.href = '{{ path('employe_role', { 'id': employe.id }) }}'"
+                                >
+                            <span class="glyphicon glyphicon-user"></span>
+
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}

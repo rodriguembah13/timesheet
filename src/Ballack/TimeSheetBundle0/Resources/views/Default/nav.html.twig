@@ -1,0 +1,22 @@
+<ul class="nav navbar-nav navbar-right">
+    <li> 
+        <div class="dropdown" style="margin-top:5px">
+            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown"><i class='glyphicon glyphicon-flag'></i>{{ 'menu.choisir_langue'|trans }}<span class="caret"></span></button>
+            {#<ul class="dropdown-menu">
+                <li><a href="{{ path('setlocale',{'language':'en'}) }}"><img src="{{ asset('images/en.gif') }}" alt="" /> English</a></li>
+                <li><a href="{{ path('setlocale',{'language':'fr'}) }}"><img src="{{ asset('images/fr.gif') }}" alt="" /> French</a></li>
+            </ul>#}
+        </div>
+    </li>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <li><a href="{{ path('fos_user_profile_show', {'username': app.user.username}) }}">
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+            </a></li>
+        <li><a href="{{ path('fos_user_security_logout') }}">
+                <span class="glyphicon glyphicon-log-out"></span> {{ 'layout.logout'|trans([], 'FOSUserBundle') }}
+            </a> </li>{% else %}
+        <li><a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-user"></span> {{ 'layout.login'|trans([], 'FOSUserBundle') }}</a>
+        </li><li><a href="{{ path('fos_user_registration_register') }}"><span class="glyphicon glyphicon-log-in"></span> {{ 'layout.register'|trans([], 'FOSUserBundle') }}</a>
+        </li> {% endif %}
+
+    </ul>

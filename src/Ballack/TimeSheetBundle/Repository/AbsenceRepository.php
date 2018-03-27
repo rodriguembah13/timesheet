@@ -15,10 +15,10 @@ class AbsenceRepository extends \Doctrine\ORM\EntityRepository
         return $this->createQueryBuilder('a')
             ->leftJoin('a.employe', 'e')
             ->addSelect('e')
-            ->andWhere('a.statutChef = :statutChef')
-            ->setParameter('statutChef', false)
+/*            ->andWhere('a.statutChef = :statutChef')
+            ->setParameter('statutChef', "attente")
             ->orWhere('a.statut = :statut')
-            ->setParameter('statut', false)
+            ->setParameter('statut', "attente")*/
             ->andWhere('e.departement = :depa')
             ->setParameter('depa', $departement)
             ->getQuery()
@@ -29,8 +29,8 @@ class AbsenceRepository extends \Doctrine\ORM\EntityRepository
         return $this->createQueryBuilder('a')
             ->leftJoin('a.employe', 'e')
             ->addSelect('e')
-            ->andWhere('a.statutChef = :statutChef')
-            ->setParameter('statutChef', true)
+           /* ->andWhere('a.statutChef = :statutChef')
+            ->setParameter('statutChef',"accepte")*/
             ->addOrderBy('a.statutChef')
             ->getQuery()
             ->execute();

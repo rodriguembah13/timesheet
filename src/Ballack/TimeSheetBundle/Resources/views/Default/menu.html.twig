@@ -21,13 +21,13 @@
                             <a href="{{ path('absence_my') }}">Mes Absences</a>
                         </li>
                         <li>
-                            <a href="{{ path('activite_my') }}">Mes Activites</a>
+                            {#<a href="{{ path('activite_my',{}) }}">Mes Activites</a>#}
                         </li>
                         <li>
                             <a href="{{ path('projet_my') }}">Mes Projets</a>
                         </li>
                         <li>
-                            <a href="#">Mes Heures Supp</a>
+                            <a href="{{ path('overtime_my') }}">Mes Heures Supp</a>
                         </li>
                         <li>
                             <a href="{{ path('employe_profil') }}">Mon Compte</a>
@@ -44,10 +44,10 @@
                                     <a href="{{ path('validation') }}">Absence & Conge</a>
                                 </li>
                                 <li>
-                                    <a href="#">Heures Supp</a>
+                                    <a href="{{ path('overtime_validation') }}">Heures Supp</a>
                                 </li>
                                 {% if is_granted('ROLE_ADMIN') %}     <li>
-                              <a href="{{ path('validation_final') }}">Validation Admin</a>
+                              <a href="{{ path('validation_final') }}">Absence & Conge par Admin</a>
                           </li>{% endif %}
                             </ul>
                         </li>{% endif %}
@@ -55,7 +55,7 @@
                             <a href="#">Affectation Projet</a>
                         </li>
                         <li>
-                            <a href="#">Suivi Activite</a>
+                            <a href="{{ path('activite_index_by_departement') }}">Suivi Activite</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
@@ -70,7 +70,7 @@
                             <a href="{{ path('client_index') }}">Liste Clients</a>
                         </li>
                         <li>
-                            <a href="#">Suivi Projets</a>
+                            <a href="{{ path('activite_index_by_departement') }}">Suivi Projets</a>
                         </li>
                     </ul>
                 </li> {% endif%}
@@ -117,7 +117,13 @@
                         <a href="{{ path('contrat_index') }}">Liste Contrats</a>
                     </li>
                     <li>
-                        <a href="{{ path('typeabsence_index') }}">Liste Type</a>
+                        <a href="{{ path('typeabsence_index') }}">Liste Type D'absence</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('typecontrat_index') }}">Liste Type De Contrat</a>
+                    </li>
+                     <li>
+                        <a href="{{ path('dayferiee_index') }}">Liste Jours Feries</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

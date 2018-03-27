@@ -7,6 +7,82 @@ and open the template in the editor.
     Created on : 14 févr. 2018, 20:47:24
     Author     : ballack
 */
+ul.stats-overview {
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 10px;
+    margin-bottom: 10px
+}
+ul.stats-overview li {
+    display: inline-block;
+    text-align: center;
+    padding: 0 15px;
+    width: 30%;
+    font-size: 14px;
+    border-right: 1px solid #e8e8e8
+}
+ul.stats-overview li:last-child {
+    border-right: 0
+}
+ul.stats-overview li .name {
+    font-size: 12px
+}
+ul.stats-overview li .value {
+    font-size: 14px;
+    font-weight: bold;
+    display: block
+}
+ul.stats-overview li:first-child {
+    padding-left: 0
+}
+.x_panel {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 17px;
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #E6E9ED;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    opacity: 1;
+    transition: all .2s ease
+}
+.x_title {
+    border-bottom: 2px solid #E6E9ED;
+    padding: 1px 5px 6px;
+    margin-bottom: 10px
+}
+ul.messages li .message_date {
+    float: right;
+    text-align: right
+}
+img.avatar {
+    height: 32px;
+    width: 32px;
+    float: left;
+    display: inline-block;
+    border-radius: 2px;
+    padding: 2px;
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6
+}
+ul.messages {
+    padding: 0;
+    list-style: none
+}
+ul.messages li,
+.tasks li {
+    border-bottom: 1px dotted #e6e6e6;
+    padding: 8px 0
+}
+.project_detail p {
+    margin-bottom: 10px
+}
+.project_detail p.title {
+    font-weight: bold;
+    margin-bottom: 0
+}
 .ln_solid {
     border-top: 1px solid #e5e5e5;
     color: #ffffff;

@@ -1,6 +1,9 @@
 ballack_time_sheet_departement:
     resource: "@BallackTimeSheetBundle/Resources/config/routing/departement.yml"
     prefix:   /departement
+ballack_time_sheet_dayFerie:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/dayferiee.yml"
+    prefix:   /dayferiee
 ballack_time_sheet_activite:
     resource: "@BallackTimeSheetBundle/Resources/config/routing/activite.yml"
     prefix:   /activite
@@ -22,6 +25,12 @@ ballack_time_sheet_client:
 ballack_time_sheet_conctrat:
     resource: "@BallackTimeSheetBundle/Resources/config/routing/contrat.yml"
     prefix:   /contrat
+ballack_time_sheet_type_conctrat:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/typecontrat.yml"
+    prefix:   /typecontrat
+ballack_time_sheet_over_time:
+    resource: "@BallackTimeSheetBundle/Resources/config/routing/overtime.yml"
+    prefix:   /overtime
 ballack_time_sheet_homepage:
     path:     /
     defaults: { _controller: BallackTimeSheetBundle:Default:index }

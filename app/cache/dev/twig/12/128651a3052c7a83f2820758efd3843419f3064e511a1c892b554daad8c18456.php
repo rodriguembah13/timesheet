@@ -41,7 +41,12 @@ class __TwigTemplate_2f456b49d044bed3159c44d211769a32cfd93d24f5fd650215e2edca439
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "    <h1>Activite list</h1>
+        echo "<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>Activite <small>List</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
 
     <table width=\"100%\" class=\"table table-striped table-bordered table-hover\">
         <thead>
@@ -56,45 +61,45 @@ class __TwigTemplate_2f456b49d044bed3159c44d211769a32cfd93d24f5fd650215e2edca439
         </thead>
         <tbody>
         ";
-        // line 18
+        // line 23
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["activites"]) || array_key_exists("activites", $context) ? $context["activites"] : (function () { throw new Twig_Error_Runtime('Variable "activites" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["activites"]) || array_key_exists("activites", $context) ? $context["activites"] : (function () { throw new Twig_Error_Runtime('Variable "activites" does not exist.', 23, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["activite"]) {
-            // line 19
+            // line 24
             echo "            <tr>
                 <td><a href=\"";
-            // line 20
+            // line 25
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_show", array("id" => twig_get_attribute($this->env, $this->source, $context["activite"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["activite"], "id", array()), "html", null, true);
             echo "</a></td>
                 <td>";
-            // line 21
+            // line 26
             if (twig_get_attribute($this->env, $this->source, $context["activite"], "dateCreation", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["activite"], "dateCreation", array()), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
                 <td>";
-            // line 22
+            // line 27
             if (twig_get_attribute($this->env, $this->source, $context["activite"], "timeStart", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["activite"], "timeStart", array()), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
                 <td>";
-            // line 23
+            // line 28
             if (twig_get_attribute($this->env, $this->source, $context["activite"], "timestop", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["activite"], "timestop", array()), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
                 <td>";
-            // line 24
+            // line 29
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["activite"], "description", array()), "html", null, true);
             echo "</td>
                 
                              <td><div class=\"btn-group\">
                             <button type=\"submit\"
                                     onclick=\"location.href = '";
-            // line 28
+            // line 33
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_show", array("id" => twig_get_attribute($this->env, $this->source, $context["activite"], "id", array()))), "html", null, true);
             echo "'\"
                                     class=\"btn btn-info btn-sm\">
@@ -103,7 +108,7 @@ class __TwigTemplate_2f456b49d044bed3159c44d211769a32cfd93d24f5fd650215e2edca439
                             </button>
                             <button type=\"submit\" class=\"btn btn-success btn-sm\"
                                     onclick=\"location.href = '";
-            // line 34
+            // line 39
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["activite"], "id", array()))), "html", null, true);
             echo "'\"
                                     >
@@ -117,18 +122,11 @@ class __TwigTemplate_2f456b49d044bed3159c44d211769a32cfd93d24f5fd650215e2edca439
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['activite'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
+        // line 47
         echo "        </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href=\"";
-        // line 47
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("activite_new");
-        echo "\">Create a new entry</a>
-        </li>
-    </ul>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -147,7 +145,7 @@ class __TwigTemplate_2f456b49d044bed3159c44d211769a32cfd93d24f5fd650215e2edca439
 
     public function getDebugInfo()
     {
-        return array (  128 => 47,  121 => 42,  107 => 34,  98 => 28,  91 => 24,  85 => 23,  79 => 22,  73 => 21,  67 => 20,  64 => 19,  60 => 18,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  126 => 47,  112 => 39,  103 => 33,  96 => 29,  90 => 28,  84 => 27,  78 => 26,  72 => 25,  69 => 24,  65 => 23,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -155,7 +153,12 @@ class __TwigTemplate_2f456b49d044bed3159c44d211769a32cfd93d24f5fd650215e2edca439
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
-    <h1>Activite list</h1>
+<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>Activite <small>List</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
 
     <table width=\"100%\" class=\"table table-striped table-bordered table-hover\">
         <thead>
@@ -196,11 +199,7 @@ class __TwigTemplate_2f456b49d044bed3159c44d211769a32cfd93d24f5fd650215e2edca439
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href=\"{{ path('activite_new') }}\">Create a new entry</a>
-        </li>
-    </ul>
+    </div>
 {% endblock %}
 ", "BallackTimeSheetBundle:activite:index.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/activite/index.html.twig");
     }

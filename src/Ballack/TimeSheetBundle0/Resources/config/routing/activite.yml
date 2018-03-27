@@ -1,0 +1,28 @@
+activite_index:
+    path:     /
+    defaults: { _controller: "BallackTimeSheetBundle:Activite:index" }
+    methods:  GET
+
+activite_show:
+    path:     /{id}/show
+    defaults: { _controller: "BallackTimeSheetBundle:Activite:show" }
+    methods:  GET
+
+activite_new:
+    path:     /new
+    defaults: { _controller: "BallackTimeSheetBundle:Activite:new" }
+    methods:  [GET, POST]
+
+activite_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BallackTimeSheetBundle:Activite:edit" }
+    methods:  [GET, POST]
+
+activite_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BallackTimeSheetBundle:Activite:delete" }
+    methods:  DELETE
+activite_my:
+    path:     /
+    defaults: { _controller: "BallackTimeSheetBundle:Activite:mesActivite" }
+    methods:  GET

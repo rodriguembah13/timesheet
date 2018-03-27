@@ -1,0 +1,24 @@
+typecontrat_index:
+    path:     /
+    defaults: { _controller: "BallackTimeSheetBundle:TypeContrat:index" }
+    methods:  GET
+
+typecontrat_show:
+    path:     /{id}/show
+    defaults: { _controller: "BallackTimeSheetBundle:TypeContrat:show" }
+    methods:  GET
+
+typecontrat_new:
+    path:     /new
+    defaults: { _controller: "BallackTimeSheetBundle:TypeContrat:new" }
+    methods:  [GET, POST]
+
+typecontrat_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BallackTimeSheetBundle:TypeContrat:edit" }
+    methods:  [GET, POST]
+
+typecontrat_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BallackTimeSheetBundle:TypeContrat:delete" }
+    methods:  DELETE

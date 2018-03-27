@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Ballack\TimeSheetBundle\Entity\Absence;
 use Ballack\TimeSheetBundle\Form\AbsenceType;
-
+use Ballack\TimeSheetBundle\Util\Util;
 /**
  * Absence controller.
  *
@@ -80,10 +80,8 @@ class AbsenceController extends Controller
     public function validation_okAction(Absence $absence)
     {
         $em = $this->getDoctrine()->getManager();
-        if ($absence->getStatutChef() == false) {
-            $absence->setStatutChef(true);
-        } else {
-            $absence->setStatutChef(false);
+        if ($absence->getStatutChef() != "accepte") {
+            $absence->setStatutChef("accepte");
         }
         $em->persist($absence);
         $em->flush();
@@ -96,15 +94,82 @@ class AbsenceController extends Controller
         ));*/
         return $this->redirectToRoute('validation', array('absences' => $absences));
     }
-    public function validation_ok_finalAction(Absence $absence)
+    public function validation_non_okAction(Absence $absence)
     {
         $em = $this->getDoctrine()->getManager();
-        if ($absence->getStatut() == false) {
-            $absence->setStatut(true);
-        } else {
-            $absence->setStatut(false);
+        if ($absence->getStatutChef() == "accepte"||$absence->getStatutChef() == "attente") {
+            $absence->setStatutChef("rejete");
         }
         $em->persist($absence);
+        $em->flush();
+        $user = $this->get('Security.context')->gettoken()->getuser();
+        $emp = $em->getRepository('BallackTimeSheetBundle:Employe')->findOneByCompte($user);
+        $absences = $em->getRepository('BallackTimeSheetBundle:Absence')->findAllAbsencebyNotValidByDepartement($emp->getDepartement());
+
+        /*  return $this->render('BallackTimeSheetBundle:Absence:validation.html.twig', array(
+              'absences' => $absences,
+          ));*/
+        return $this->redirectToRoute('validation', array('absences' => $absences));
+    }
+    public function validation_attenteAction(Absence $absence)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if ($absence->getStatutChef() == "accepte"||$absence->getStatutChef() == "rejete"||$absence->getStatutChef() == "attente") {
+            $absence->setStatutChef("attente");
+        }
+        $em->persist($absence);
+        $em->flush();
+        $user = $this->get('Security.context')->gettoken()->getuser();
+        $emp = $em->getRepository('BallackTimeSheetBundle:Employe')->findOneByCompte($user);
+        $absences = $em->getRepository('BallackTimeSheetBundle:Absence')->findAllAbsencebyNotValidByDepartement($emp->getDepartement());
+
+        /*  return $this->render('BallackTimeSheetBundle:Absence:validation.html.twig', array(
+              'absences' => $absences,
+          ));*/
+        return $this->redirectToRoute('validation', array('absences' => $absences));
+    }
+    public function validation_final_okAction(Absence $absence)
+    {
+
+        $util = new Util();
+        $em = $this->getDoctrine()->getManager();
+        $temp= $util->to_seconds($absence->getEndDate()->diff($absence->getStartDate()));
+        $nbre=$temp/(3600*24);
+        $nbrejoursNonOuvrable=$util->NbJoursNonOuvrable($absence->getEndDate(),$absence->getStartDate());
+        $employe=$absence->getEmploye();
+        if($employe->getSoldeVacances() >= ($nbre-$nbrejoursNonOuvrable)) {
+            if ($absence->getStatutChef() == "accepte" && ($absence->getStatut() == "attente" || $absence->getStatut() == "rejete")) {
+
+                $employe->setSoldeVacances($employe->getSoldeVacances() - ($nbre - $nbrejoursNonOuvrable));
+                $absence->setStatut("accepte");
+                $this->get('session')->getFlashBag()
+                    ->add('notice', array('type' => 'success', 'title' => 'Done!', 'message' => 'OK! It is done!'));
+            } elseif ($absence->getStatutChef() == "accepte" && ($absence->getStatut() == "accepte")) {
+                $absence->setStatut("accepte");
+                /*$absence->getEmploye()->setSoldeVacances($absence->getEmploye()->getSoldeVacances()-($nbre-$nbrejoursNonOuvrable));*/
+                $this->get('session')->getFlashBag()
+                    ->add('notice', array('type' => 'success', 'title' => 'Done!', 'message' => 'OK! It is done!rejete'));
+                /*} else {
+                    $absence->setStatut("accepte");
+
+                    $this->get('session')->getFlashBag()
+                        ->add('notice', array('type' => 'danger', 'title' => 'Echec!', 'message' => 'Operation a echoue!'));
+                }*/
+            }else{
+                $this->get('session')->getFlashBag()
+                    ->add('notice', array('type' => 'danger', 'title' => 'Echec!', 'message' => 'Operation a echoue! validation chef requise'));
+            }
+        }else{
+                $absence->setStatut("rejete");
+                /*$absence->getEmploye()->setSoldeVacances($absence->getEmploye()->getSoldeVacances()-($nbre-$nbrejoursNonOuvrable));*/
+                $this->get('session')->getFlashBag()
+                    ->add('notice', array('type' => 'success', 'title' => 'Done!', 'message' => 'OK! It is done!rejete'));
+
+
+        }
+
+        $em->persist($absence);
+        $em->persist($employe);
         $em->flush();
 
         $absences = $em->getRepository('BallackTimeSheetBundle:Absence')->findAllAbsenceByDepartement();
@@ -113,6 +178,103 @@ class AbsenceController extends Controller
             'absences' => $absences,
         ));*/
         return $this->redirectToRoute('validation_final', array('absences' => $absences));
+    }
+    public function validation_final_NonokAction(Absence $absence)
+    {
+
+        $util = new Util();
+        $em = $this->getDoctrine()->getManager();
+        $temp= $util->to_seconds($absence->getEndDate()->diff($absence->getStartDate()));
+        $nbre=$temp/(3600*24);
+        $nbrejoursNonOuvrable=$util->NbJoursNonOuvrable($absence->getEndDate(),$absence->getStartDate());
+        $employe=$absence->getEmploye();
+        if($employe->getSoldeVacances() >= ($nbre-$nbrejoursNonOuvrable)){
+            if ($absence->getStatutChef() == "accepte" && $absence->getStatut() == "rejete") {
+
+                // $absence->getEmploye()->setSoldeVacances($absence->getEmploye()->getSoldeVacances()-($nbre-$nbrejoursNonOuvrable));
+                $absence->setStatut("rejete");
+                $this->get('session')->getFlashBag()
+                    ->add('notice', array('type' => 'success', 'title' => 'Done!', 'message' => 'OK! It is done!'));
+            }elseif($absence->getStatutChef() == "accepte" && $absence->getStatut() == "attente"){
+                $absence->setStatut("rejete");
+                $this->get('session')->getFlashBag()
+                    ->add('notice', array('type' => 'success', 'title' => 'Done!', 'message' => 'OK! It is done!rejete'));
+            } elseif($absence->getStatutChef() == "accepte" && $absence->getStatut() == "accepte") {
+                $absence->setStatut("rejete");
+                $employe->setSoldeVacances($employe->getSoldeVacances()+($nbre-$nbrejoursNonOuvrable));
+                $this->get('session')->getFlashBag()
+                    ->add('notice', array('type' => 'danger', 'title' => 'Echec!', 'message' => 'Operation a echoue!'));
+            }else{
+                $this->get('session')->getFlashBag()
+                    ->add('notice', array('type' => 'danger', 'title' => 'Echec!', 'message' => 'Operation a echoue! validation chef requise'));
+            }
+        }else{
+            $absence->setStatut("rejete");
+            $this->get('session')->getFlashBag()
+                ->add('notice', array('type' => 'success', 'title' => 'Done!', 'message' => 'OK! It is done!rejete'));
+        }
+
+        $em->persist($absence);$em->persist($employe);
+        $em->flush();
+
+        $absences = $em->getRepository('BallackTimeSheetBundle:Absence')->findAllAbsenceByDepartement();
+
+        /* return $this->render('BallackTimeSheetBundle:Absence:validation.html.twig', array(
+             'absences' => $absences,
+         ));*/
+        return $this->redirectToRoute('validation_final', array('absences' => $absences));
+    }
+    public function validation_final_AttenteAction(Absence $absence)
+    {
+
+        $util = new Util();
+        $em = $this->getDoctrine()->getManager();
+        $temp= $util->to_seconds($absence->getEndDate()->diff($absence->getStartDate()));
+        $nbre=$temp/(3600*24);
+        $nbrejoursNonOuvrable=$util->NbJoursNonOuvrable($absence->getEndDate(),$absence->getStartDate());
+        $employe=$absence->getEmploye();
+
+        if($employe->getSoldeVacances() >= ($nbre-$nbrejoursNonOuvrable)){
+            if ($absence->getStatutChef() == "accepte" && $absence->getStatut() == "attente") {
+
+                // $absence->getEmploye()->setSoldeVacances($absence->getEmploye()->getSoldeVacances()-($nbre-$nbrejoursNonOuvrable));
+                $absence->setStatut("attente");
+                $this->get('session')->getFlashBag()
+                    ->add('notice', array('type' => 'success', 'title' => 'Done!', 'message' => 'OK! It is done!'));
+            }elseif($absence->getStatutChef() == "accepte" && $absence->getStatut() == "rejete"){
+                $absence->setStatut("attente");
+                $this->get('session')->getFlashBag()
+                    ->add('notice', array('type' => 'success', 'title' => 'Done!', 'message' => 'OK! It is done!rejete'));
+            } elseif($absence->getStatutChef() == "accepte" && $absence->getStatut() == "accepte"){
+                $absence->setStatut("attente");
+                $absence->getEmploye()->setSoldeVacances($employe->getSoldeVacances()+($nbre-$nbrejoursNonOuvrable));
+                $this->get('session')->getFlashBag()
+                    ->add('notice', array('type' => 'danger', 'title' => 'Echec!', 'message' => 'Operation a echoue!'));
+            }else{
+                $this->get('session')->getFlashBag()
+                    ->add('notice', array('type' => 'danger', 'title' => 'Echec!', 'message' => 'Operation a echoue! validation chef requise'));
+            }
+        }else{
+            $this->get('session')->getFlashBag()
+                ->add('notice', array('type' => 'danger', 'title' => 'Echec!', 'message' => 'Operation a echoue!soldes vacances insufissant'));
+        }
+
+        $em->persist($absence);$em->persist($employe);
+        $em->flush();
+
+        $absences = $em->getRepository('BallackTimeSheetBundle:Absence')->findAllAbsenceByDepartement();
+
+        /* return $this->render('BallackTimeSheetBundle:Absence:validation.html.twig', array(
+             'absences' => $absences,
+         ));*/
+        return $this->redirectToRoute('validation_final', array('absences' => $absences));
+    }
+    function to_seconds($diff) {
+        return  ($diff->y * 365 * 24 * 60 * 60) +
+        ($diff->m * 30 * 24 * 60 * 60) +
+        ($diff->d * 24 * 60 * 60) +
+        ($diff->h * 60 * 60) +
+        $diff->s;
     }
     /**
      * Creates a new Absence entity.
@@ -220,5 +382,9 @@ class AbsenceController extends Controller
             ->setAction($this->generateUrl('absence_delete', array('id' => $absence->getId())))
             ->setMethod('DELETE')
             ->getForm();
+    }
+
+    private function reinitialiserConges(){
+
     }
 }

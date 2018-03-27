@@ -2,12 +2,14 @@
 
 namespace Ballack\TimeSheetBundle\Controller;
 
+use Ballack\TimeSheetBundle\Util\DictionaryProjet;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ballack\TimeSheetBundle\Entity\Employe;
 use Ballack\TimeSheetBundle\Form\EmployeType;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
+use DateInterval;
+use Ballack\TimeSheetBundle\Util\Util;
 /**
  * Employe controller.
  *
@@ -24,13 +26,13 @@ class EmployeController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $employes = $em->getRepository('BallackTimeSheetBundle:Employe')->findAll();
-        $paginator = $this->get('knp_paginator');
-        $pagination = $paginator->paginate($employes, /* query NOT result */
-            $request->query->getInt('page', 1)/*page number*/, 3/*limit per page*/);
+//        $paginator = $this->get('knp_paginator');
+//        $pagination = $paginator->paginate($employes, /* query NOT result */
+//            $request->query->getInt('page', 1)/*page number*/, 3/*limit per page*/);
 
         return $this->render('BallackTimeSheetBundle:employe:index.html.twig', array(
-            'employes' => $employes, 'pagination' => $pagination,
-        ));
+//            'employes' => $employes, 'pagination' => $pagination,
+     'employes' => $employes   ));
     }
 
     public function searchAction(Request $request)
@@ -67,7 +69,7 @@ class EmployeController extends Controller
             // updates the 'brochure' property to store the PDF file name
             // instead of its contents
             $employe->setImage($fileName);
-
+            $employe->setOvertime(0.0);
             $em->persist($employe->getCompte());
             $em->persist($employe);
             $em->flush();
@@ -231,13 +233,30 @@ class EmployeController extends Controller
     public function profilAction()
     {
         $em = $this->getDoctrine()->getManager();
-
+        $util = new Util();
+        $dictionary=new DictionaryProjet();
         $user = $this->get('Security.context')->gettoken()->getuser();
         $employe= $em->getRepository('BallackTimeSheetBundle:Employe')->findOneByCompte($user);
         $chef= $em->getRepository('BallackTimeSheetBundle:Employe')->findChefDepartement($employe->getDepartement());
         $collegues=$em->getRepository('BallackTimeSheetBundle:Employe')->findByDepartement($employe->getDepartement());
+        $Contrat=$em->getRepository('BallackTimeSheetBundle:Contrat')->findOneBy(array('employe' => $employe,'etat'=>true));
+       /* $Contrat=$em->getRepository('BallackTimeSheetBundle:Contrat')->findBy(array('employe' => $employe));*/
+        $test=date('D',$employe->getDateNaissance()->getTimestamp());
+      // $test1= date_add($test, date_interval_create_from_date_string('10 days'));
+        $format=date_format($employe->getDateNaissance(),'Y-m-d H:i:s');
+        $interval = new DateInterval('P2D');
+        $times=0;
+            foreach($employe->getProjets() as $monProjet){
+                $mesActivites=$em->getRepository('BallackTimeSheetBundle:Activite')->findByProjet($monProjet);
+                foreach($mesActivites as $monActivite){
+                $times+=$util->to_seconds($monActivite->getTimeStart()->diff($monActivite->getTimeStop()))/(3600);
+                }
+            }
+        $dictionary->setProjet($employe->getProjets());
         return $this->render('BallackTimeSheetBundle:employe:profil.html.twig', array(
-            'employe' => $employe,'chef'=>$chef,'collegues'=>$collegues,
+            'employe' => $employe,'chef'=>$chef,'collegues'=>$collegues,'contrat'=>$Contrat,
+            'essai'=>$util->to_seconds($Contrat->getStartDate()->diff($Contrat->getEndDate()))/(3600*24),
+            'test'=>$util->NbJoursNonOuvrable($Contrat->getStartDate(),$Contrat->getEndDate()),'dictionary'=>$dictionary,
 
         ));
     }

@@ -1,0 +1,51 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+    <h1>Absence list</h1>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Startdate</th>
+            <th>Enddate</th>
+            <th>Statutchef</th>
+            <th>Statut</th>
+            <th>Remarque</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for absence in absences %}
+            <tr>
+                <td><a href="{{ path('absence_show', { 'id': absence.id }) }}">{{ absence.id }}</a></td>
+                <td>{% if absence.startDate %}{{ absence.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if absence.endDate %}{{ absence.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if absence.statutChef %}<span class="fa fa-check fa-2x bg-success success"></span></a>{% else %} <span class="fa fa-close bg-danger fa-2x"></span></a>{% endif %}</td>
+                <td>{% if absence.statut %}<a href="{{ path('validation_ok_final', { 'id': absence.id }) }}"><span class="fa fa-check fa-2x bg-success success"></span></a>{% else %}<a href="{{ path('validation_ok_final', { 'id': absence.id }) }}">
+                            <span class="fa fa-close bg-danger fa-2x"></span></a>{% endif %}</td>
+                <td>{{ absence.remarque }}</td>
+                <td>{% if absence.date %}{{ absence.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">actions
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="{{ path('validation_ok_final', { 'id': absence.id }) }}">valide</a></li>
+
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('absence_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

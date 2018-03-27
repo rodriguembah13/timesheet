@@ -1,0 +1,21 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Typecontrat <small>New</small></h2>
+
+        <div class="clearfix"></div>
+    </div>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('typecontrat_index') }}">Back to the list</a>
+        </li>
+    </ul></div>
+{% endblock %}

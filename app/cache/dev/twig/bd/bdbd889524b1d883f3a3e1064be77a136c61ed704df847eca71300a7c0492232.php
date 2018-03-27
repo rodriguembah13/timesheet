@@ -41,41 +41,46 @@ class __TwigTemplate_a3b6ec3d8cd16b5902183b7716914bbeb497f6d26a706d01d338593897e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "    <h1>Projet edit</h1>
+        echo "<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>Projet  <small>Edit</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
 
     ";
-        // line 6
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["edit_form"]) || array_key_exists("edit_form", $context) ? $context["edit_form"] : (function () { throw new Twig_Error_Runtime('Variable "edit_form" does not exist.', 6, $this->source); })()), 'form_start');
+        // line 11
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["edit_form"]) || array_key_exists("edit_form", $context) ? $context["edit_form"] : (function () { throw new Twig_Error_Runtime('Variable "edit_form" does not exist.', 11, $this->source); })()), 'form_start');
         echo "
         ";
-        // line 7
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock((isset($context["edit_form"]) || array_key_exists("edit_form", $context) ? $context["edit_form"] : (function () { throw new Twig_Error_Runtime('Variable "edit_form" does not exist.', 7, $this->source); })()), 'widget');
+        // line 12
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock((isset($context["edit_form"]) || array_key_exists("edit_form", $context) ? $context["edit_form"] : (function () { throw new Twig_Error_Runtime('Variable "edit_form" does not exist.', 12, $this->source); })()), 'widget');
         echo "
         <input type=\"submit\" value=\"Edit\" />
     ";
-        // line 9
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["edit_form"]) || array_key_exists("edit_form", $context) ? $context["edit_form"] : (function () { throw new Twig_Error_Runtime('Variable "edit_form" does not exist.', 9, $this->source); })()), 'form_end');
+        // line 14
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["edit_form"]) || array_key_exists("edit_form", $context) ? $context["edit_form"] : (function () { throw new Twig_Error_Runtime('Variable "edit_form" does not exist.', 14, $this->source); })()), 'form_end');
         echo "
 
     <ul>
         <li>
             <a href=\"";
-        // line 13
+        // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projet_index");
         echo "\">Back to the list</a>
         </li>
         <li>
             ";
-        // line 16
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 16, $this->source); })()), 'form_start');
+        // line 21
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 21, $this->source); })()), 'form_start');
         echo "
                 <input type=\"submit\" value=\"Delete\">
             ";
-        // line 18
-        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 18, $this->source); })()), 'form_end');
+        // line 23
+        echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 23, $this->source); })()), 'form_end');
         echo "
         </li>
-    </ul>
+    </ul></div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -94,7 +99,7 @@ class __TwigTemplate_a3b6ec3d8cd16b5902183b7716914bbeb497f6d26a706d01d338593897e
 
     public function getDebugInfo()
     {
-        return array (  75 => 18,  70 => 16,  64 => 13,  57 => 9,  52 => 7,  48 => 6,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  80 => 23,  75 => 21,  69 => 18,  62 => 14,  57 => 12,  53 => 11,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -102,7 +107,12 @@ class __TwigTemplate_a3b6ec3d8cd16b5902183b7716914bbeb497f6d26a706d01d338593897e
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
-    <h1>Projet edit</h1>
+<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>Projet  <small>Edit</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
@@ -118,7 +128,7 @@ class __TwigTemplate_a3b6ec3d8cd16b5902183b7716914bbeb497f6d26a706d01d338593897e
                 <input type=\"submit\" value=\"Delete\">
             {{ form_end(delete_form) }}
         </li>
-    </ul>
+    </ul></div>
 {% endblock %}
 ", "BallackTimeSheetBundle:projet:edit.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/projet/edit.html.twig");
     }

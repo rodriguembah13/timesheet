@@ -41,9 +41,14 @@ class __TwigTemplate_b98d55785f1760b1b0ef6bde207f9f3a64d92787cfc266ce3c8bde7cb6b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "    <h1>Departement list</h1>
+        echo "<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>Departement <small>List</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
     <div class=\"btn btn-primary right\"onclick=\"location.href = '";
-        // line 5
+        // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("departement_new");
         echo "'\">Create a new entry</div>
     <table class=\"table table-striped\">
@@ -55,26 +60,26 @@ class __TwigTemplate_b98d55785f1760b1b0ef6bde207f9f3a64d92787cfc266ce3c8bde7cb6b
         </thead>
         <tbody>
             ";
-        // line 14
+        // line 19
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["departements"]) || array_key_exists("departements", $context) ? $context["departements"] : (function () { throw new Twig_Error_Runtime('Variable "departements" does not exist.', 14, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["departements"]) || array_key_exists("departements", $context) ? $context["departements"] : (function () { throw new Twig_Error_Runtime('Variable "departements" does not exist.', 19, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["departement"]) {
-            // line 15
+            // line 20
             echo "                <tr>
                     <td><a href=\"";
-            // line 16
+            // line 21
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("departement_show", array("id" => twig_get_attribute($this->env, $this->source, $context["departement"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "id", array()), "html", null, true);
             echo "</a></td>
                     <td>";
-            // line 17
+            // line 22
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "departement", array()), "html", null, true);
             echo "</td>
                              <td><div class=\"btn-group\">
                             <button type=\"submit\"
                                     onclick=\"location.href = '";
-            // line 20
+            // line 25
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("departement_show", array("id" => twig_get_attribute($this->env, $this->source, $context["departement"], "id", array()))), "html", null, true);
             echo "'\"
                                     class=\"btn btn-info btn-sm\">
@@ -83,7 +88,7 @@ class __TwigTemplate_b98d55785f1760b1b0ef6bde207f9f3a64d92787cfc266ce3c8bde7cb6b
                             </button>
                             <button type=\"submit\" class=\"btn btn-success btn-sm\"
                                     onclick=\"location.href = '";
-            // line 26
+            // line 31
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("departement_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["departement"], "id", array()))), "html", null, true);
             echo "'\"
                                     >
@@ -97,9 +102,9 @@ class __TwigTemplate_b98d55785f1760b1b0ef6bde207f9f3a64d92787cfc266ce3c8bde7cb6b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['departement'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 39
         echo "        </tbody>
-    </table>
+    </table></div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -118,7 +123,7 @@ class __TwigTemplate_b98d55785f1760b1b0ef6bde207f9f3a64d92787cfc266ce3c8bde7cb6b
 
     public function getDebugInfo()
     {
-        return array (  101 => 34,  87 => 26,  78 => 20,  72 => 17,  66 => 16,  63 => 15,  59 => 14,  47 => 5,  44 => 4,  38 => 3,  15 => 1,);
+        return array (  106 => 39,  92 => 31,  83 => 25,  77 => 22,  71 => 21,  68 => 20,  64 => 19,  52 => 10,  44 => 4,  38 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -126,7 +131,12 @@ class __TwigTemplate_b98d55785f1760b1b0ef6bde207f9f3a64d92787cfc266ce3c8bde7cb6b
         return new Twig_Source("{% extends \"BallackTimeSheetBundle::layout.html.twig\" %}
 
 {% block main %}
-    <h1>Departement list</h1>
+<div class=\"x_panel\">
+    <div class=\"x_title\">
+        <h2>Departement <small>List</small></h2>
+
+        <div class=\"clearfix\"></div>
+    </div>
     <div class=\"btn btn-primary right\"onclick=\"location.href = '{{ path('departement_new') }}'\">Create a new entry</div>
     <table class=\"table table-striped\">
         <thead>
@@ -157,7 +167,7 @@ class __TwigTemplate_b98d55785f1760b1b0ef6bde207f9f3a64d92787cfc266ce3c8bde7cb6b
                 </tr>
             {% endfor %}
         </tbody>
-    </table>
+    </table></div>
 {% endblock %}
 ", "BallackTimeSheetBundle:Departement:index.html.twig", "/opt/lampp/htdocs/timesheet/Symfony/src/Ballack/TimeSheetBundle/Resources/views/Departement/index.html.twig");
     }
