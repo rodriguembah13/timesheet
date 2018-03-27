@@ -1,5 +1,0 @@
-typeabsence_index_rest:
-    path:     /
-    defaults: { _controller: "BallackTimeSheetBundle:TypeAbsenceRest:index" }
-    methods:  GET
-    type: rest
