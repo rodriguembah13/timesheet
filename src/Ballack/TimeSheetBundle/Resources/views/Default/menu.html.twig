@@ -33,11 +33,26 @@
                             <a href="{{ path('employe_profil') }}">Mon Compte</a>
                         </li>
                     </ul>
-                </li>
+                    </li>
                 <li>
-                    <a href="#"><i class="fa fa-stack-overflow fa-fw"></i>Suivi Du Personnel<span class="fa plus-minus"></span></a>
+                    <a href="#"><i class="fa fa-calendar fa-fw"></i> Calandrier<span class="fa plus-minus"></span></a>
                     <ul class="nav nav-second-level">
-                      {% if is_granted('ROLE_CHEF') %}  <li>
+                        {% if is_granted('ROLE_CHEF') %}
+                        <li>
+                            <a href="{{ path('ballack_time_sheet_calendar') }}">Demandes Conges</a>
+                        </li>{% endif %}
+                        <li>
+                            <a href="{{ path('ballack_time_sheet_calendar_collegue') }}">Demande Conges:Mes Collegues</a>
+                        </li>
+
+
+                    </ul>
+                </li>
+                {% if is_granted('ROLE_CHEF') %}
+                <li>
+                      <a href="#"><i class="fa fa-stack-overflow fa-fw"></i>Suivi Du Personnel<span class="fa plus-minus"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
                             <a href="#"><i class="fa fa-check fa-fw"></i>Validation <span class="fa plus-minus"></span></a>
                             <ul class="nav nav-third-level">
                                 <li>
@@ -48,7 +63,7 @@
                                 </li>
                                 {% if is_granted('ROLE_ADMIN') %}     <li>
                               <a href="{{ path('validation_final') }}">Absence & Conge par Admin</a>
-                          </li>{% endif %}
+                          </li>
                             </ul>
                         </li>{% endif %}
                         <li>
@@ -59,7 +74,7 @@
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
-                </li>{% if is_granted('ROLE_CHEF') %}
+                </li>
                 <li>
                     <a href="#"><i class="fa fa-table fa-fw"></i> Administration Projet<span class="fa plus-minus"></span></a>
                     <ul class="nav nav-second-level">
@@ -90,8 +105,8 @@
                       </ul>
                       <!-- /.nav-second-level -->
                   </li>#}
-           
-            <li>
+
+                {% if is_granted('ROLE_ADMIN') %}       <li>
                 <a href="#"><i class="fa fa-sitemap fa-fw"></i>Gestion Salaire<span class="fa plus-minus"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -103,7 +118,9 @@
 
                 </ul>
                 <!-- /.nav-second-level -->
-            </li>{% if is_granted('ROLE_ADMIN') %}
+            </li>{% endif %}
+
+                {% if is_granted('ROLE_ADMIN') %}
             <li>
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Administration<span class="fa plus-minus"></span></a>
                 <ul class="nav nav-second-level">

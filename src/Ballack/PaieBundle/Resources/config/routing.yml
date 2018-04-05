@@ -1,0 +1,3 @@
+ballack_paie_homepage:
+    path:     /
+    defaults: { _controller: BallackPaieBundle:Default:index }

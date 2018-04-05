@@ -1,0 +1,24 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Calendrier <small>Des demandes de conges Collegues</small></h2>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="alert alert-primary" role="alert">
+            LEGENDE
+        </div>
+        <div class="block-calandar text-center">
+            <span class="label label-default col-lg-1">en attente</span>
+
+            <span class="label label-success col-lg-1 col-lg-offset-4">accepte</span>
+
+
+            <span class="label label-danger col-lg-1 col-lg-offset-4">rejete</span>
+
+        </div><div class="clearfix"></div>
+        <div id='calendar_collegue'></div>
+    </div>
+{% endblock %}

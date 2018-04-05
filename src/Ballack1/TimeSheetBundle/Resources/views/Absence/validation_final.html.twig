@@ -1,0 +1,67 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Demandes de conges  <small>A valider</small></h2>
+
+        <div class="clearfix"></div>
+    </div>
+    {% for msg in app.session.flashbag.get('notice') %}
+        <div class="alert alert-{{ msg.type }} fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>{{ msg.title }}</strong><br/>{{ msg.message }}
+        </div>
+    {% endfor %}
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Employe</th>
+            <th>Startdate</th>
+            <th>Enddate</th>
+            <th>Statutchef</th>
+            <th>Statut</th>
+            <th>Remarque</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for absence in absences %}
+            <tr>
+                <td><a href="{{ path('absence_show', { 'id': absence.id }) }}">{{ absence.id }}</a></td>
+                <td>{{ absence.employe.nom }}</td>
+                <td>{% if absence.startDate %}{{ absence.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if absence.endDate %}{{ absence.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if absence.statutChef=="attente" %}<span class="label label-warning">attente</span>
+                    {% elseif absence.statutChef=="accepte" %}<span class="label label-success">accepte</span>
+                    {% elseif absence.statutChef=="rejete" %}<span class="label label-danger">rejete</span>{% endif %}
+                </td>
+
+                <td>{% if absence.statut=="attente" %}<span class="label label-warning">attente</span>
+                    {% elseif absence.statut=="accepte" %}<span class="label label-success">accepte</span>
+                    {% elseif absence.statut=="rejete" %}<span class="label label-danger">rejete</span>{% endif %}
+                </td>
+                <td>{{ absence.remarque }}</td>
+                <td>{% if absence.date %}{{ absence.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+
+                <td>
+                    <div class="dropdown">
+                        <a class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">actions
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li class=""><a href="{{ path('validation_ok_final', { 'id': absence.id }) }}">accepte</a></li>
+                            <li class=""><a href="{{ path('validation_nonOk_final', { 'id': absence.id }) }}">rejete</a></li>
+                            <li class=""><a href="{{ path('validation_attente_final', { 'id': absence.id }) }}">attente</a></li>
+
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

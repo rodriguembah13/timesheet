@@ -1,0 +1,51 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Client <small>List</small></h2>
+
+        <div class="clearfix"></div>
+    </div>
+    <div class="row container" style="margin-bottom: 5px">
+<div class="btn btn-primary" onclick="location.href = '{{ path('client_new') }}'">Create a new entry</div>
+    </div>
+   
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomcomplet</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Adresse</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+            <tr>
+                <td><a href="{{ path('client_show', { 'id': client.id }) }}">{{ client.id }}</a></td>
+                <td>{{ client.nomComplet }}</td>
+                <td>{{ client.email }}</td>
+                <td>{{ client.telephone }}</td>
+                <td>{{ client.adresse }}</td>
+      <td><div class="btn-group">
+                            <button type="submit"
+                                    onclick="location.href = '{{ path('client_show', { 'id': client.id }) }}'"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit" class="btn btn-success btn-sm"
+                                    onclick="location.href = '{{ path('client_edit', { 'id': client.id }) }}'"
+                                    >
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                        </div></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table></div>
+{% endblock %}

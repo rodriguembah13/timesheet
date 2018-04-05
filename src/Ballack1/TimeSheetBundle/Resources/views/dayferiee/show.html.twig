@@ -1,0 +1,41 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Jours Feriee <small>Detail</small></h2>
+
+            <div class="clearfix"></div>
+        </div>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ dayFeriee.id }}</td>
+            </tr>
+            <tr>
+                <th>Occasion</th>
+                <td>{{ dayFeriee.occasion }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if dayFeriee.date %}{{ dayFeriee.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('dayferiee_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('dayferiee_edit', { 'id': dayFeriee.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul></div>
+{% endblock %}

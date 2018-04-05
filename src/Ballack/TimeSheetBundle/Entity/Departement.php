@@ -27,8 +27,10 @@ class Departement
      * @ORM\Column(name="departement", type="string", length=255)
      */
     private $departement;
-
-
+    /**
+     * @ORM\OneToMany(targetEntity="Ballack\TimeSheetBundle\Entity\Employe",mappedBy="departement")
+     */
+    private $employes;
     /**
      * Get id
      *
@@ -62,5 +64,12 @@ class Departement
     {
         return $this->departement;
     }
+    function getEmployes() {
+        return $this->employes;
+    }
+    public function __toString() {
+        return 'departement';
+    }
+
 }
 

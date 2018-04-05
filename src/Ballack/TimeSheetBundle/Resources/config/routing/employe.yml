@@ -17,7 +17,14 @@ employe_edit:
     path:     /{id}/edit
     defaults: { _controller: "BallackTimeSheetBundle:Employe:edit" }
     methods:  [GET, POST]
-
+employe_upload:
+    path:     /{id}/upload
+    defaults: { _controller: "BallackTimeSheetBundle:Employe:upload" }
+    methods:  [GET, POST]
+employe_addImage:
+    path:     /{id}/image
+    defaults: { _controller: "BallackTimeSheetBundle:Employe:addImage" }
+    methods:  [GET, POST]
 employe_delete:
     path:     /{id}/delete
     defaults: { _controller: "BallackTimeSheetBundle:Employe:delete" }

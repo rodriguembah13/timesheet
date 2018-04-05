@@ -1,0 +1,58 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Mes Heures Supp <small>List</small></h2>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-1">
+                <a class="btn btn-default" href="{{ path('overtime_new') }}">Create a new entry</a>
+            </div>
+        </div>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Duree</th>
+                <th>Cause</th>
+                <th>Statut</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for overTime in overTimes %}
+            <tr>
+                <td><a href="{{ path('overtime_show', { 'id': overTime.id }) }}">{{ overTime.id }}</a></td>
+                <td>{% if overTime.date %}{{ overTime.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ overTime.duree }}</td>
+                <td>{{ overTime.cause }}</td>
+                <td>{% if overTime.statut=="attente" %}<span class='label label-default'>en attente</span>{% elseif overTime.statut=="accepte" %}<span class='label label-success'>accepte</span>
+                    {% elseif overTime.statut=="rejete" %}<span class='label label-danger'>refuse</span>{% endif %}</td>
+                <td>
+                    <div class="btn-group">
+                        <button type="submit"
+                                onclick="location.href = '{{ path('overtime_show', { 'id': overTime.id }) }}'"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm"
+                                onclick="location.href = '{{ path('overtime_edit', { 'id': overTime.id }) }}'"
+                                >
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                        </button>
+
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}
+

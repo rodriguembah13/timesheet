@@ -9,11 +9,13 @@
 namespace Ballack\TimeSheetBundle\Form;
 
 use Ballack\UserBundle\Form\UserType;
+use Doctrine\DBAL\Types\BooleanType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /**
  * Description of EmployeType
@@ -28,14 +30,14 @@ class EmployeType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-                ->add('nom')
-                ->add('prenom')
-                ->add('situation')
+                ->add('nom', TextType::class,['description' => "Nom de employe"])
+                ->add('prenom', TextType::class,['description' => "Prenom de employe"])
+                ->add('situation', TextType::class,['description' => "Situation matrimoniale de employe"])
                 ->add('dateNaissance', DateTimeType::class, array(
-            'widget' => 'single_text',
-            'html5' => false,
-            'attr' => ['class' => 'form_datetime'],
-        ))
+                    'widget' => 'single_text',
+                    'html5' => false,
+                    'attr' => ['class' => 'form_datetime'],
+                ))
                 ->add('departement', 'entity', array(
                     'class' => 'Ballack\TimeSheetBundle\Entity\Departement',
                     'property' => 'departement',
@@ -43,8 +45,8 @@ class EmployeType extends AbstractType {
                     'required' => TRUE
                 ))
                 ->add('isChef')
-                ->add('compte',   new UserType())
-                ->add('image', FileType::class, array('label' => 'Image(JPG)','data_class' => null))
+                ->add('compte', new UserType())
+        //->add('image', FileType::class, array('label' => 'Image(JPG)','data_class' => null))
 
         ;
     }

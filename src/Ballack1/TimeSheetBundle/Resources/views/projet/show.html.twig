@@ -1,0 +1,182 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Information Projet</h2>
+                    {#         <ul class="nav navbar-right panel_toolbox">
+                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                 </li>
+                                 <li class="dropdown">
+                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                     <ul class="dropdown-menu" role="menu">
+                                         <li><a href="#">Settings 1</a>
+                                         </li>
+                                         <li><a href="#">Settings 2</a>
+                                         </li>
+                                     </ul>
+                                 </li>
+                                 <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                 </li>
+                             </ul>#}
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="x_content">
+
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+
+                        <ul class="stats-overview">
+                            <li>
+                                <span class="name"> Total d'heure consacre pour le projet </span>
+                                <span class="value text-success"> 2300 </span>
+                            </li>
+                            <li>
+                                <span class="name"> Total heures travailles sur le projet </span>
+                                <span class="value text-success"> {{nbre}} </span>
+                            </li>
+                            <li class="hidden-phone">
+                                <span class="name"> Total heures personnel sur le projet </span>
+                                <span class="value text-success"> {{allTimes}} </span>
+                            </li>
+                        </ul>
+                        <br />
+
+                        <div id="mainb" style="height:350px;"></div>
+
+                        <div>
+
+                            <h4>Recent Activity</h4>
+
+                            <!-- end of user messages -->
+                            <ul class="messages">
+                                {% for item in projet.employes %}
+                                    <li>
+                                        <img src="{{ asset('uploads/images/' ~ item.image) }}" class="avatar">
+
+                                        {#{{render(controller('ballackTimeSheetBundle:Activite:myDetailActivite?',{'id':item}))}}#}
+                                      {% for act in item.activites %}
+                                        <div class="message_date">
+                                            <h3 class="date text-info">{{act.dateCreation|date('d-m-y')}}</h3>
+                                            <p class="month">{{act.dateCreation|date('H:i:s')}}</p>
+                                        </div>
+                                        <div class="message_wrapper">
+                                            <h4 class="heading">{{item.nom}} {{item.prenom}} <span class="label label-info">{{item.departement.departement}}</span></h4>
+                                            <blockquote class="message">{{act.description}}.</blockquote>
+                                            <br />
+                                            <p class="url">
+                                                <span class="fs1 text-info" aria-hidden="true" data-icon=""></span>
+                                                <a href="#"><i class="fa fa-paperclip"></i> User Acceptance Test.doc </a>
+                                            </p>
+                                        </div> {%endfor%}
+                                    </li>
+                                {%endfor%}
+                            </ul>
+                            <!-- end of user messages -->
+
+
+                        </div>
+
+
+                    </div>
+
+                    <!-- start project-detail sidebar -->
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+
+                        <section class="panel">
+
+                            <div class="x_title">
+                                <h2>Project Description</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-body">
+                                <h3 class="green"><i class="fa fa-paint-brush"></i>{{projet.nomProjet}}</h3>
+
+                                <p>{{projet.description}}.</p>
+                                <br />
+
+                                <div class="project_detail">
+
+                                    <p class="title">Client <span class="small"></span></p>
+                                    <p>{{projet.client.nomComplet}}</p>
+                                    <p class="title">Project Leader</p>
+                                    <p>Tony Chicken</p>
+                                </div>
+                                <br />
+                                <h5>Project files</h5>
+                                <ul class="list-unstyled project_files">
+                                    <li><a href=""><i class="fa fa-file-word-o"></i> Functional-requirements.docx</a>
+                                    </li>
+                                    <li><a href=""><i class="fa fa-file-pdf-o"></i> UAT.pdf</a>
+                                    </li>
+                                    <li><a href=""><i class="fa fa-mail-forward"></i> Email-from-flatbal.mln</a>
+                                    </li>
+                                    <li><a href=""><i class="fa fa-picture-o"></i> Logo.png</a>
+                                    </li>
+                                    <li><a href=""><i class="fa fa-file-word-o"></i> Contract-10_12_2014.docx</a>
+                                    </li>
+                                </ul>
+                                <br />
+
+                                <div class="text-center mtop20">
+                                    <a href="#" class="btn btn-sm btn-primary">Add files</a>
+                                    <a href="#" class="btn btn-sm btn-warning">Report contact</a>
+                                </div>
+                            </div>
+
+                        </section>
+
+                    </div>
+                    <!-- end project-detail sidebar -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{#<table class="table table-hover">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ projet.id }}</td>
+        </tr>
+        <tr>
+            <th>Nomprojet</th>
+            <td>{{ projet.nomProjet }}</td>
+        </tr>
+        <tr>
+            <th>Client</th>
+            <td>{{ projet.client.nomComplet }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ projet.description }}</td>
+        </tr>
+        <tr>
+            <th>Datestart</th>
+            <td>{% if projet.dateStart %}{{ projet.dateStart|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Datestop</th>
+            <td>{% if projet.dateStop %}{{ projet.dateStop|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('projet_index') }}">Back to the list</a>
+    </li>
+    <li>
+        <a href="{{ path('projet_edit', { 'id': projet.id }) }}">Edit</a>
+    </li>
+    {#<li>
+        {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+        {{ form_end(delete_form) }}
+    </li>
+</ul>#}
+
+{% endblock %}

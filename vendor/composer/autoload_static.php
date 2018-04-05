@@ -57,11 +57,13 @@ class ComposerStaticInit57d1d8c2b18307e05a8a1ecf5a850ca0
         ),
         'N' => 
         array (
+            'Nelmio\\CorsBundle\\' => 18,
             'Negotiation\\' => 12,
         ),
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Michelf\\' => 8,
         ),
         'K' => 
         array (
@@ -195,6 +197,10 @@ class ComposerStaticInit57d1d8c2b18307e05a8a1ecf5a850ca0
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'Nelmio\\CorsBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nelmio/cors-bundle',
+        ),
         'Negotiation\\' => 
         array (
             0 => __DIR__ . '/..' . '/willdurand/negotiation/src/Negotiation',
@@ -202,6 +208,10 @@ class ComposerStaticInit57d1d8c2b18307e05a8a1ecf5a850ca0
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Michelf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/michelf/php-markdown/Michelf',
         ),
         'Knp\\Snappy\\' => 
         array (
@@ -293,6 +303,13 @@ class ComposerStaticInit57d1d8c2b18307e05a8a1ecf5a850ca0
             'PhpCollection' => 
             array (
                 0 => __DIR__ . '/..' . '/phpcollection/phpcollection/src',
+            ),
+        ),
+        'N' => 
+        array (
+            'Nelmio\\ApiDocBundle' => 
+            array (
+                0 => __DIR__ . '/..' . '/nelmio/api-doc-bundle',
             ),
         ),
         'M' => 

@@ -392,6 +392,28 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_employe_edit:
 
+            // employe_upload
+            if (preg_match('#^/employe/(?P<id>[^/]++)/upload$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_employe_upload;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'employe_upload')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\EmployeController::uploadAction',));
+            }
+            not_employe_upload:
+
+            // employe_addImage
+            if (preg_match('#^/employe/(?P<id>[^/]++)/image$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_employe_addImage;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'employe_addImage')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\EmployeController::addImageAction',));
+            }
+            not_employe_addImage:
+
             // employe_delete
             if (preg_match('#^/employe/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'DELETE') {
@@ -1132,6 +1154,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_ballack_time_sheet_homepage:
 
+        if (0 === strpos($pathinfo, '/calendar')) {
+            // ballack_time_sheet_calendar
+            if ('/calendar' === $pathinfo) {
+                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DefaultController::calendarAction',  '_route' => 'ballack_time_sheet_calendar',);
+            }
+
+            // ballack_time_sheet_calendar_collegue
+            if ('/calendar_collegue' === $pathinfo) {
+                return array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\DefaultController::calendarCollegueAction',  '_route' => 'ballack_time_sheet_calendar_collegue',);
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login
@@ -1326,16 +1361,107 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_fos_user_change_password:
 
-        // typeabsence_index_rest
-        if (0 === strpos($pathinfo, '/api/') && preg_match('#^/api/(?:\\.(?P<_format>xml|json|html))?$#sD', $pathinfo, $matches)) {
-            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'HEAD'));
-                goto not_typeabsence_index_rest;
-            }
+        if (0 === strpos($pathinfo, '/api')) {
+            // indexapp_article_list
+            if (0 === strpos($pathinfo, '/api/typeabsence_index_rest') && preg_match('#^/api/typeabsence_index_rest(?:\\.(?P<_format>json))?$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_indexapp_article_list;
+                }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'typeabsence_index_rest')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeAbsenceRestController::indexAction',  '_format' => 'json',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'indexapp_article_list')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeAbsenceRestController::indexAction',  '_format' => 'json',));
+            }
+            not_indexapp_article_list:
+
+            // index2absence_rest_list
+            if (0 === strpos($pathinfo, '/api/absence_rest') && preg_match('#^/api/absence_rest(?:\\.(?P<_format>json))?$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_index2absence_rest_list;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'index2absence_rest_list')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeAbsenceRestController::index2Action',  '_format' => 'json',));
+            }
+            not_index2absence_rest_list:
+
+            // new
+            if (0 === strpos($pathinfo, '/api/new') && preg_match('#^/api/new(?:\\.(?P<_format>json))?$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_new;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'new')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeAbsenceRestController::newAction',  '_format' => 'json',));
+            }
+            not_new:
+
+            // show
+            if (preg_match('#^/api/(?P<typeAbsence>[^/]++)/show(?:\\.(?P<_format>json))?$#sD', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'PATCH') {
+                    $allow[] = 'PATCH';
+                    goto not_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'show')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeAbsenceRestController::showAction',  '_format' => 'json',));
+            }
+            not_show:
+
+            // edit
+            if (preg_match('#^/api/(?P<typeAbsence>[^/]++)/edit(?:\\.(?P<_format>json))?$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'edit')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeAbsenceRestController::editAction',  '_format' => 'json',));
+            }
+            not_edit:
+
+            // delete
+            if (preg_match('#^/api/(?P<typeAbsence>[^/\\.]++)(?:\\.(?P<_format>json))?$#sD', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeAbsenceRestController::deleteAction',  '_format' => 'json',));
+            }
+            not_delete:
+
+            // get_absence_by_departementabsence_collegue_rest_list
+            if (0 === strpos($pathinfo, '/api/absence_collegue_rest') && preg_match('#^/api/absence_collegue_rest(?:\\.(?P<_format>json))?$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_get_absence_by_departementabsence_collegue_rest_list;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_absence_by_departementabsence_collegue_rest_list')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\TypeAbsenceRestController::getAbsenceByDepartementAction',  '_format' => 'json',));
+            }
+            not_get_absence_by_departementabsence_collegue_rest_list:
+
+            // indexemploye_list
+            if (0 === strpos($pathinfo, '/api/employe_index_rest') && preg_match('#^/api/employe_index_rest(?:\\.(?P<_format>json))?$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_indexemploye_list;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'indexemploye_list')), array (  '_controller' => 'Ballack\\TimeSheetBundle\\Controller\\EmployeRestController::indexAction',  '_format' => 'json',));
+            }
+            not_indexemploye_list:
+
+            // nelmio_api_doc_index
+            if (0 === strpos($pathinfo, '/api/doc') && preg_match('#^/api/doc(?:/(?P<view>[^/]++))?$#sD', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_nelmio_api_doc_index;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'nelmio_api_doc_index')), array (  '_controller' => 'Nelmio\\ApiDocBundle\\Controller\\ApiDocController::indexAction',  'view' => 'default',));
+            }
+            not_nelmio_api_doc_index:
+
         }
-        not_typeabsence_index_rest:
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

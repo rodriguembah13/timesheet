@@ -1,0 +1,88 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Projet <small>List</small></h2>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="input-group custom-search-form">
+                    <input type="text" class="form-control" placeholder="Search..." id="search">
+
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span><img id="loader" src={{ asset('bundles/ballacktimesheet/images/loader.gif') }} style="vertical-align:
+                                middle; display: none" />
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-lg-offset-4">
+                {% if is_granted('ROLE_ADMIN') %}    <a class="btn btn-primary" href="{{ path('projet_new') }}">Create a new entry</a>
+                {%endif%} </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nomprojet</th>
+                    <th>Team Members</th>
+                    <th>Client</th>
+                    <th>Description</th>
+                    <th>Statut</th>
+
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for projet in projets %}
+                    <tr>
+                        <td><a href="{{ path('projet_show', { 'id': projet.id }) }}">{{ projet.id }}</a></td>
+                        <td>{{ projet.nomProjet }}
+                            <br/>
+                            <small>Created {% if projet.dateStart %}{{ projet.dateStart|date('Y-m-d H:i:s') }}{% endif %}</small>
+                            <br/> <small>Finish {% if projet.dateStop %}{{ projet.dateStop|date('Y-m-d H:i:s') }}{% endif %}</small>
+
+                        </td>
+                        <td>
+                            <ul class="list-inline">
+                                {% for user in projet.employes %}
+                                    <li>
+                                        <img src="{{ asset('uploads/images/' ~ user.image) }}" class="avatar">
+                                    </li>
+                                {% endfor%}
+                            </ul>
+                        </td>
+                        <td>{{ projet.client.nomComplet }}</td>
+                        <td>{{ projet.description }}</td>
+                        <td>{{ projet.statut }}</td>
+
+                        <td><div class="btn-group">
+                                <button type="submit"
+                                        onclick="location.href = '{{ path('projet_show', { 'id': projet.id }) }}'"
+                                        class="btn btn-info btn-sm">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                    <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                                </button>
+                                <button type="submit" class="btn btn-success btn-sm"
+                                        onclick="location.href = '{{ path('projet_edit', { 'id': projet.id }) }}'"
+                                        >
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                                </button>
+                                <button type="submit" class="btn btn-success btn-sm"
+                                        onclick="location.href = '{{ path('projet_affection', { 'id': projet.id }) }}'"
+                                        >
+                                    <span class="glyphicon glyphicon-filter"></span>
+                                    <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                                </button>
+                            </div></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table></div>
+    {% endblock %}

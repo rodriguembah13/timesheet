@@ -5,6 +5,8 @@
  */
 $(function () {
     $('#side-menu').metisMenu();
+
+               //Dropzone.autoDiscover=false;
 //    $('#search').keyup(function(key)
 //    {
 //        if(this.value.length >= 3 || this.value == '') {
@@ -15,6 +17,7 @@ $(function () {
 
 $(document).ready(function ()
 {
+
     $(".form_datetime").datetimepicker({
         format: "YYYY-MM-DD  HH:mm"
     });

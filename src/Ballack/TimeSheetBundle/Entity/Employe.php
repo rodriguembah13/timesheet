@@ -65,7 +65,6 @@ class Employe
     private $compte;
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank(message="Please, upload the product brochure as a image file.")
      * @Assert\File(mimeTypes={ "image/jpeg" })
      */
     private $image;

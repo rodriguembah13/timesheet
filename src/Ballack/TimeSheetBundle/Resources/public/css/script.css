@@ -7,6 +7,13 @@ and open the template in the editor.
     Created on : 14 févr. 2018, 20:47:24
     Author     : ballack
 */
+.block-calandar{
+    width: auto;
+    height: 45px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+border-bottom: solid;
+}
 ul.stats-overview {
     border-bottom: 1px solid #e8e8e8;
     padding-bottom: 10px;

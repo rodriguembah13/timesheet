@@ -1,0 +1,56 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>TypeAbsence  <small>List</small></h2>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Dayoff</th>
+                <th>Ispayant</th>
+                <th>Pourcentage</th>
+                <th>Decription</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for typeAbsence in typeAbsences %}
+            <tr>
+                <td><a href="{{ path('typeabsence_show', { 'id': typeAbsence.id }) }}">{{ typeAbsence.id }}</a></td>
+                <td>{{ typeAbsence.libelle }}</td>
+                <td>{{ typeAbsence.dayoff }}</td>
+                <td>{% if typeAbsence.isPayant %}Yes{% else %}No{% endif %}</td>
+                <td>{{ typeAbsence.pourcentage }}</td>
+                <td>{{ typeAbsence.decription }}</td>
+                             <td><div class="btn-group">
+                            <button type="submit"
+                                    onclick="location.href = '{{ path('typeabsence_show', { 'id': typeAbsence.id }) }}'"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit" class="btn btn-success btn-sm"
+                                    onclick="location.href = '{{ path('typeabsence_edit', { 'id': typeAbsence.id }) }}'"
+                                    >
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                        </div></td>
+                            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('typeabsence_new') }}">Create a new entry</a>
+        </li>
+    </ul></div>
+{% endblock %}

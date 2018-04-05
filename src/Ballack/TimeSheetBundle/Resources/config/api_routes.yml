@@ -1,5 +1,16 @@
-typeabsence_index_rest:
-    path:     /
-    defaults: { _controller: "BallackTimeSheetBundle:TypeAbsenceRest:index" }
-    methods:  GET
+#typeabsence_index_rest:
+#    path:     /
+#    defaults: { _controller: "BallackTimeSheetBundle:TypeAbsenceRest:index" }
+#    methods:  GET
+#    type: rest
+
+#absence_index_rest:
+#    defaults: { _controller: "BallackTimeSheetBundle:TypeAbsenceRest:index2" }
+#    methods:  GET
+#    type: rest
+organisation:
     type: rest
+    resource: Ballack\TimeSheetBundle\Controller\TypeAbsenceRestController
+employe:
+    type: rest
+    resource: Ballack\TimeSheetBundle\Controller\EmployeRestController

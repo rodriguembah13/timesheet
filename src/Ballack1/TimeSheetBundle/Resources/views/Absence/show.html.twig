@@ -1,0 +1,57 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Demandes de conges <small>Show</small></h2>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ absence.id }}</td>
+            </tr>
+            <tr>
+                <th>Startdate</th>
+                <td>{% if absence.startDate %}{{ absence.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Enddate</th>
+                <td>{% if absence.endDate %}{{ absence.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Statutchef</th>
+                <td>{% if absence.statutChef %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{% if absence.statut %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Remarque</th>
+                <td>{{ absence.remarque }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if absence.date %}{{ absence.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('absence_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('absence_edit', { 'id': absence.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul></div>
+{% endblock %}

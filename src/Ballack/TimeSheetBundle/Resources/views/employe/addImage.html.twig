@@ -1,0 +1,18 @@
+{% extends "BallackTimeSheetBundle::layout.html.twig" %}
+
+{% block main %}
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Employe <small>AddImage</small></h2>
+        </div>
+            <div class='row'>
+                <form action="{{ path('employe_upload', { 'id': employe.id }) }}" method="post" class="dropzone col-lg-2"
+                      id='image'></form>
+            </div>
+            <ul>
+                <li>
+                    <a href="{{ path('employe_index') }}">Back to the list</a>
+                </li>
+            </ul>
+        </div>
+    {% endblock %}

@@ -3,55 +3,77 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(function () {
-//    $('#search').keyup(function(key)
-//    {
-//        if(this.value.length >= 3 || this.value == '') {
-//            $('#loader').show();
-//          }
-//    });
-});
 
 $(document).ready(function ()
 {
-   /* jQuery('.datepicker').datetimepicker({
-        format: "Y-m-d",
-        timepicker: false,
-        datepicker: true,
-    });*/
-    $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-    /*$(".datepicker").datetimepicker({
-        format: "dd MM yyyy - hh:ii",
-        autoclose: true,
-        todayBtn: true,
-        startDate: "2013-02-14 10:00",
-        minuteStep: 10
-    });*/
+    $('#calendar').fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay,listMonth'
+        },
+        defaultDate: '2018-03-12',
+        navLinks: true, // can click day/week names to navigate views
+        businessHours: true, // display business hours
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events
+        eventSources: [
+            {
+                //url: 'http://localhost/timesheet/Symfony/web/app_dev.php/api/absence_rest',
+                //url: "/api/absence_rest"
+                url: 'http://192.168.1.163:8080/api/absence_rest'
+            }
+            // your event source
+//          $.ajax({ type:'GET',
+//                //url: 'http://127.0.0.1:88/TimeSheet/web/app_dev.php/api/absence_rest',
+//                url: 'http://127.0.0.1:8000/api/absence_rest'
+//            })  
 
-    $('input[data-click-target]').focus();
-    $('span[data-click-target]').click();
-  /*  $('.form_datetime').datepicker({
-        locale: 'fr'
-    });*/
-    $('#side-menu').metisMenu();
-    $('.search input[type="submit"]').hide();
-
-    $('#search').keyup(function (key)
-    {
-        if (this.value.length >= 3) {
-        $('#loader').show();
-        
-                $.ajax({
-                url:"http://127.0.0.1:88/TimeSheet/web/app_dev.php/search/" + this.value,
-                        method:"GET",
-                        
-                        success:function (data) {
-                            $('#loader').hide();
-                            $('#table').val(data);
-                        }
-                });
-        } else{
-        $('#loader').hide();
-    }
+        ],
+        loading: function (isLoading) {
+            if (isLoading) { //Display/Hide a pop-up showing an animated icon during the Ajax query.
+                $('#loading').modal('show');
+            } else {
+                $('#loading').modal('hide');
+            }
+        },
+        eventRender: function (event, element) {
+            var tooltip = event.description;
+            $(element).attr("data-original-title", tooltip)
+            $(element).tooltip({container: "body"})
+        },
     });
+    $('#calendar_collegue').fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay,listMonth'
+        },
+        defaultDate: '2018-03-12',
+        navLinks: true, // can click day/week names to navigate views
+        businessHours: true, // display business hours
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events
+        eventSources: [
+            // your event source
+            {
+                url: 'http://localhost/timesheet/Symfony/web/app_dev.php/api/absence_collegue_rest',
+            }
+
+        ],
+        eventRender: function (event, element) {
+            var tooltip = event.description;
+            $(element).attr("data-original-title", tooltip)
+            $(element).tooltip({container: "body"})
+        },
+        loading: function (isLoading) {
+            if (isLoading) { //Display/Hide a pop-up showing an animated icon during the Ajax query.
+                $('#loading_c').modal('show');
+            } else {
+                $('#loading_c').modal('hide');
+            }
+        }
+    });
+
+
 });
